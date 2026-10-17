@@ -13,9 +13,10 @@ coverage/
 .npmrc
 
 # Local experiments, caches, and test output
-/hardhat_test/
+/scouter_test/
 .phase0-runs/
 .test-results/
+/.eval-results/
 .npm/
 .pnpm-store/
 
@@ -29,4 +30,4 @@ Thumbs.db
 Desktop.ini
 
 # Raw qualification reports contain machine paths. Publish reviewed summaries instead.
-/hardhat-cli/docs/evidence/*.json
+/scouter-cli/docs/evidence/*.json

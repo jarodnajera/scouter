@@ -1,0 +1,25 @@
+{
+  "suiteVersion": "1.0",
+  "reviewTime": "2026-10-17T17:00:00Z",
+  "cutoff": "2026-10-10T17:00:00Z",
+  "caseIds": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12"
+  ],
+  "scriptedFollowups": {
+    "03": [
+      "followups/03-approved.md"
+    ]
+  },
+  "mode": "offline decision and proposed-action simulation; no real package operations"
+}
