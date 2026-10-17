@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:hardhat:inspection-report:1.0.0",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "enum": [
+        "1.0.0"
+      ]
+    },
+    "toolVersion": {
+      "type": "string",
+      "enum": [
+        "0.1.0"
+      ]
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "supplied-evidence"
+      ]
+    },
+    "authorization": {
+      "type": "string",
+      "enum": [
+        "none"
+      ]
+    },
+    "reviewId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 8192,
+      "pattern": "\\S"
+    },
+    "evaluatedAt": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 8192,
+      "pattern": "\\S"
+    },
+    "inputDigest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "policyRevision": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 8192,
+      "pattern": "\\S"
+    },
+    "policyDigest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "inspection-report"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "unsupported"
+      ]
+    },
+    "manager": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192,
+          "pattern": "\\S"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192,
+          "pattern": "\\S"
+        },
+        "nodeVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192,
+          "pattern": "\\S"
+        },
+        "entrypoint": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192,
+          "pattern": "\\S"
+        },
+        "platform": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192,
+          "pattern": "\\S"
+        },
+        "arch": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "name",
+        "version",
+        "nodeVersion",
+        "entrypoint",
+        "platform",
+        "arch"
+      ],
+      "additionalProperties": false
+    },
+    "lockfileVersion": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 8192,
+        "pattern": "\\S"
+      },
+      "maxItems": 10000
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 8192,
+        "pattern": "\\S"
+      },
+      "maxItems": 10000
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "toolVersion",
+    "mode",
+    "authorization",
+    "reviewId",
+    "evaluatedAt",
+    "inputDigest",
+    "policyRevision",
+    "policyDigest",
+    "kind",
+    "status",
+    "manager",
+    "lockfileVersion",
+    "issues",
+    "limitations"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,1535 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:hardhat:graph:1.1.0",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "enum": [
+        "1.1.0"
+      ]
+    },
+    "toolVersion": {
+      "type": "string",
+      "enum": [
+        "0.1.0"
+      ]
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "graph-review-report"
+      ]
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "supplied-proposal"
+      ]
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "REVIEW"
+      ]
+    },
+    "authorization": {
+      "type": "string",
+      "enum": [
+        "none"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "partial",
+        "unsupported",
+        "unavailable"
+      ]
+    },
+    "checkedAt": {
+      "type": "string",
+      "maxLength": 8192
+    },
+    "expiresAt": {
+      "type": "string",
+      "maxLength": 8192
+    },
+    "preflight": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:hardhat:preflight:1.1.0",
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "type": "string",
+          "enum": [
+            "1.1.0"
+          ]
+        },
+        "toolVersion": {
+          "type": "string",
+          "enum": [
+            "0.1.0"
+          ]
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "preflight-report"
+          ]
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "live-preflight"
+          ]
+        },
+        "authorization": {
+          "type": "string",
+          "enum": [
+            "none"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "complete",
+            "review",
+            "unsupported"
+          ]
+        },
+        "checkedAt": {
+          "type": "string",
+          "maxLength": 8192
+        },
+        "projectRoot": {
+          "type": "string",
+          "maxLength": 8192
+        },
+        "operation": {
+          "type": "string",
+          "enum": [
+            "resolution",
+            "locked-install",
+            "runner"
+          ]
+        },
+        "intendedManager": {
+          "type": "string",
+          "maxLength": 8192
+        },
+        "managerSignals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "manager": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "source": {
+                "type": "string",
+                "maxLength": 8192
+              }
+            },
+            "required": [
+              "manager",
+              "source"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 10000
+        },
+        "toolchain": {
+          "type": "object",
+          "properties": {
+            "nodeVersion": {
+              "type": "string",
+              "maxLength": 8192
+            },
+            "npmVersion": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 8192
+            },
+            "npmCli": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 8192
+            },
+            "platform": {
+              "type": "string",
+              "maxLength": 8192
+            },
+            "arch": {
+              "type": "string",
+              "maxLength": 8192
+            },
+            "qualified": {
+              "type": "boolean"
+            },
+            "supportStatus": {
+              "type": "string",
+              "enum": [
+                "validated",
+                "experimental",
+                "unsupported"
+              ]
+            }
+          },
+          "required": [
+            "nodeVersion",
+            "npmVersion",
+            "npmCli",
+            "platform",
+            "arch",
+            "qualified",
+            "supportStatus"
+          ],
+          "additionalProperties": false
+        },
+        "protectionMode": {
+          "type": "string",
+          "enum": [
+            "native",
+            "manual-required",
+            "unknown"
+          ]
+        },
+        "settings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "value": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "source": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "supported": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "key",
+              "value",
+              "source",
+              "supported"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 10000
+        },
+        "registries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "scope": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "display": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "source": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "public": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scope",
+              "display",
+              "source",
+              "public"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 10000
+        },
+        "cutoff": {
+          "type": "object",
+          "properties": {
+            "effectiveBefore": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 8192
+            },
+            "source": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 8192
+            },
+            "meetsSevenDayPolicy": {
+              "type": "boolean"
+            },
+            "exclusionsPresent": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "effectiveBefore",
+            "source",
+            "meetsSevenDayPolicy",
+            "exclusionsPresent"
+          ],
+          "additionalProperties": false
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "scope": {
+                "type": "string",
+                "enum": [
+                  "context",
+                  "protections"
+                ]
+              },
+              "message": {
+                "type": "string",
+                "maxLength": 8192
+              }
+            },
+            "required": [
+              "code",
+              "scope",
+              "message"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 10000
+        },
+        "inputDigests": {
+          "type": "object",
+          "properties": {
+            "manifest": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 8192
+            },
+            "lockfile": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 8192
+            },
+            "relevantConfig": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 8192
+            }
+          },
+          "required": [
+            "manifest",
+            "lockfile",
+            "relevantConfig"
+          ],
+          "additionalProperties": false
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 8192,
+                "pattern": "\\S"
+              },
+              "category": {
+                "type": "string",
+                "enum": [
+                  "context",
+                  "graph",
+                  "protections",
+                  "binding",
+                  "identity",
+                  "release",
+                  "behavior",
+                  "vulnerabilities",
+                  "malware"
+                ]
+              },
+              "subject": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 8192,
+                "pattern": "\\S"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "complete",
+                  "partial",
+                  "unavailable",
+                  "unsupported",
+                  "not_applicable"
+                ]
+              },
+              "coverage": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "unsupported",
+                  "unknown"
+                ]
+              },
+              "outcome": {
+                "type": "string",
+                "enum": [
+                  "clear",
+                  "concern",
+                  "unknown"
+                ]
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 8192,
+                "pattern": "\\S"
+              },
+              "checkedAt": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "expiresAt": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "details": {
+                "type": "string",
+                "maxLength": 8192
+              }
+            },
+            "required": [
+              "id",
+              "category",
+              "subject",
+              "status",
+              "coverage",
+              "outcome",
+              "source",
+              "checkedAt",
+              "expiresAt",
+              "details"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 10000
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 8192
+          },
+          "maxItems": 10000
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "toolVersion",
+        "kind",
+        "mode",
+        "authorization",
+        "status",
+        "checkedAt",
+        "projectRoot",
+        "operation",
+        "intendedManager",
+        "managerSignals",
+        "toolchain",
+        "protectionMode",
+        "settings",
+        "registries",
+        "cutoff",
+        "issues",
+        "inputDigests",
+        "checks",
+        "limitations"
+      ],
+      "additionalProperties": false
+    },
+    "snapshotDirectory": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 8192
+    },
+    "resolution": {
+      "type": "object",
+      "properties": {
+        "available": {
+          "type": "boolean",
+          "enum": [
+            false
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "maxLength": 8192
+        }
+      },
+      "required": [
+        "available",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "inputDigests": {
+      "type": "object",
+      "properties": {
+        "baselineManifest": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 8192
+        },
+        "baselineLock": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 8192
+        },
+        "candidateManifest": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 8192
+        },
+        "candidateLock": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 8192
+        }
+      },
+      "required": [
+        "baselineManifest",
+        "baselineLock",
+        "candidateManifest",
+        "candidateLock"
+      ],
+      "additionalProperties": false
+    },
+    "baseline": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "instances": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "installedAs": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "version": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "origin": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "resolved": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "integrity": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "dev": {
+                "type": "boolean"
+              },
+              "optional": {
+                "type": "boolean"
+              },
+              "devOptional": {
+                "type": "boolean"
+              },
+              "peer": {
+                "type": "boolean"
+              },
+              "hasInstallScript": {
+                "type": "boolean"
+              },
+              "direct": {
+                "type": "boolean"
+              },
+              "reachable": {
+                "type": "boolean"
+              },
+              "parentPaths": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "maxLength": 8192
+                },
+                "maxItems": 40000
+              },
+              "conditions": {
+                "type": "object",
+                "properties": {
+                  "os": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "maxLength": 8192
+                    },
+                    "maxItems": 40000
+                  },
+                  "cpu": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "maxLength": 8192
+                    },
+                    "maxItems": 40000
+                  },
+                  "libc": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "maxLength": 8192
+                    },
+                    "maxItems": 40000
+                  }
+                },
+                "required": [
+                  "os",
+                  "cpu",
+                  "libc"
+                ],
+                "additionalProperties": false
+              },
+              "engines": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "maxLength": 8192
+                    },
+                    "range": {
+                      "type": "string",
+                      "maxLength": 8192
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "range"
+                  ],
+                  "additionalProperties": false
+                },
+                "maxItems": 40000
+              }
+            },
+            "required": [
+              "path",
+              "installedAs",
+              "name",
+              "version",
+              "origin",
+              "resolved",
+              "integrity",
+              "dev",
+              "optional",
+              "devOptional",
+              "peer",
+              "hasInstallScript",
+              "direct",
+              "reachable",
+              "parentPaths",
+              "conditions",
+              "engines"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 10000
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "from": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "to": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "dependency": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "spec": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "type": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "optional": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "from",
+              "to",
+              "dependency",
+              "spec",
+              "type",
+              "optional"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 40000
+        },
+        "digest": {
+          "type": "string",
+          "maxLength": 8192
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "path": {
+                "type": "string",
+                "maxLength": 8192
+              }
+            },
+            "required": [
+              "code",
+              "path"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 40000
+        }
+      },
+      "required": [
+        "instances",
+        "edges",
+        "digest",
+        "issues"
+      ],
+      "additionalProperties": false
+    },
+    "candidate": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "instances": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "installedAs": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "version": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "origin": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "resolved": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "integrity": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "dev": {
+                "type": "boolean"
+              },
+              "optional": {
+                "type": "boolean"
+              },
+              "devOptional": {
+                "type": "boolean"
+              },
+              "peer": {
+                "type": "boolean"
+              },
+              "hasInstallScript": {
+                "type": "boolean"
+              },
+              "direct": {
+                "type": "boolean"
+              },
+              "reachable": {
+                "type": "boolean"
+              },
+              "parentPaths": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "maxLength": 8192
+                },
+                "maxItems": 40000
+              },
+              "conditions": {
+                "type": "object",
+                "properties": {
+                  "os": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "maxLength": 8192
+                    },
+                    "maxItems": 40000
+                  },
+                  "cpu": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "maxLength": 8192
+                    },
+                    "maxItems": 40000
+                  },
+                  "libc": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "maxLength": 8192
+                    },
+                    "maxItems": 40000
+                  }
+                },
+                "required": [
+                  "os",
+                  "cpu",
+                  "libc"
+                ],
+                "additionalProperties": false
+              },
+              "engines": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "maxLength": 8192
+                    },
+                    "range": {
+                      "type": "string",
+                      "maxLength": 8192
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "range"
+                  ],
+                  "additionalProperties": false
+                },
+                "maxItems": 40000
+              }
+            },
+            "required": [
+              "path",
+              "installedAs",
+              "name",
+              "version",
+              "origin",
+              "resolved",
+              "integrity",
+              "dev",
+              "optional",
+              "devOptional",
+              "peer",
+              "hasInstallScript",
+              "direct",
+              "reachable",
+              "parentPaths",
+              "conditions",
+              "engines"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 10000
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "from": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "to": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "dependency": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "spec": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "type": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "optional": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "from",
+              "to",
+              "dependency",
+              "spec",
+              "type",
+              "optional"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 40000
+        },
+        "digest": {
+          "type": "string",
+          "maxLength": 8192
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "path": {
+                "type": "string",
+                "maxLength": 8192
+              }
+            },
+            "required": [
+              "code",
+              "path"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 40000
+        }
+      },
+      "required": [
+        "instances",
+        "edges",
+        "digest",
+        "issues"
+      ],
+      "additionalProperties": false
+    },
+    "declarationChanges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string",
+            "maxLength": 8192
+          },
+          "key": {
+            "type": "string",
+            "maxLength": 8192
+          },
+          "before": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 8192
+          },
+          "after": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 8192
+          }
+        },
+        "required": [
+          "field",
+          "key",
+          "before",
+          "after"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 40000
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "maxLength": 8192
+          },
+          "kinds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 8192
+            },
+            "maxItems": 40000
+          },
+          "before": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "installedAs": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "version": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "origin": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "resolved": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "integrity": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "dev": {
+                "type": "boolean"
+              },
+              "optional": {
+                "type": "boolean"
+              },
+              "devOptional": {
+                "type": "boolean"
+              },
+              "peer": {
+                "type": "boolean"
+              },
+              "hasInstallScript": {
+                "type": "boolean"
+              },
+              "direct": {
+                "type": "boolean"
+              },
+              "reachable": {
+                "type": "boolean"
+              },
+              "parentPaths": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "maxLength": 8192
+                },
+                "maxItems": 40000
+              },
+              "conditions": {
+                "type": "object",
+                "properties": {
+                  "os": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "maxLength": 8192
+                    },
+                    "maxItems": 40000
+                  },
+                  "cpu": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "maxLength": 8192
+                    },
+                    "maxItems": 40000
+                  },
+                  "libc": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "maxLength": 8192
+                    },
+                    "maxItems": 40000
+                  }
+                },
+                "required": [
+                  "os",
+                  "cpu",
+                  "libc"
+                ],
+                "additionalProperties": false
+              },
+              "engines": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "maxLength": 8192
+                    },
+                    "range": {
+                      "type": "string",
+                      "maxLength": 8192
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "range"
+                  ],
+                  "additionalProperties": false
+                },
+                "maxItems": 40000
+              }
+            },
+            "required": [
+              "path",
+              "installedAs",
+              "name",
+              "version",
+              "origin",
+              "resolved",
+              "integrity",
+              "dev",
+              "optional",
+              "devOptional",
+              "peer",
+              "hasInstallScript",
+              "direct",
+              "reachable",
+              "parentPaths",
+              "conditions",
+              "engines"
+            ],
+            "additionalProperties": false
+          },
+          "after": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "installedAs": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "version": {
+                "type": "string",
+                "maxLength": 8192
+              },
+              "origin": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "resolved": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "integrity": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 8192
+              },
+              "dev": {
+                "type": "boolean"
+              },
+              "optional": {
+                "type": "boolean"
+              },
+              "devOptional": {
+                "type": "boolean"
+              },
+              "peer": {
+                "type": "boolean"
+              },
+              "hasInstallScript": {
+                "type": "boolean"
+              },
+              "direct": {
+                "type": "boolean"
+              },
+              "reachable": {
+                "type": "boolean"
+              },
+              "parentPaths": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "maxLength": 8192
+                },
+                "maxItems": 40000
+              },
+              "conditions": {
+                "type": "object",
+                "properties": {
+                  "os": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "maxLength": 8192
+                    },
+                    "maxItems": 40000
+                  },
+                  "cpu": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "maxLength": 8192
+                    },
+                    "maxItems": 40000
+                  },
+                  "libc": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "maxLength": 8192
+                    },
+                    "maxItems": 40000
+                  }
+                },
+                "required": [
+                  "os",
+                  "cpu",
+                  "libc"
+                ],
+                "additionalProperties": false
+              },
+              "engines": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "maxLength": 8192
+                    },
+                    "range": {
+                      "type": "string",
+                      "maxLength": 8192
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "range"
+                  ],
+                  "additionalProperties": false
+                },
+                "maxItems": 40000
+              }
+            },
+            "required": [
+              "path",
+              "installedAs",
+              "name",
+              "version",
+              "origin",
+              "resolved",
+              "integrity",
+              "dev",
+              "optional",
+              "devOptional",
+              "peer",
+              "hasInstallScript",
+              "direct",
+              "reachable",
+              "parentPaths",
+              "conditions",
+              "engines"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "path",
+          "kinds",
+          "before",
+          "after"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 40000
+    },
+    "releases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "artifactId": {
+            "type": "string",
+            "maxLength": 8192
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 8192
+          },
+          "version": {
+            "type": "string",
+            "maxLength": 8192
+          },
+          "paths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 8192
+            },
+            "maxItems": 40000
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 8192
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "complete",
+              "unavailable",
+              "unsupported"
+            ]
+          },
+          "publishedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 8192
+          },
+          "ageSeconds": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "issues": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 8192
+            },
+            "maxItems": 40000
+          }
+        },
+        "required": [
+          "artifactId",
+          "name",
+          "version",
+          "paths",
+          "source",
+          "status",
+          "publishedAt",
+          "ageSeconds",
+          "issues"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 40000
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "maxLength": 8192
+          },
+          "path": {
+            "type": "string",
+            "maxLength": 8192
+          }
+        },
+        "required": [
+          "code",
+          "path"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 40000
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 8192
+      },
+      "maxItems": 40000
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "toolVersion",
+    "kind",
+    "mode",
+    "decision",
+    "authorization",
+    "status",
+    "checkedAt",
+    "expiresAt",
+    "preflight",
+    "snapshotDirectory",
+    "resolution",
+    "inputDigests",
+    "baseline",
+    "candidate",
+    "declarationChanges",
+    "changes",
+    "releases",
+    "issues",
+    "limitations"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:hardhat:exceptions:1.0.0",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "enum": [
+        "1.0.0"
+      ]
+    },
+    "exceptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8192,
+            "pattern": "\\S"
+          },
+          "actor": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8192,
+            "pattern": "\\S"
+          },
+          "authorizationSource": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8192,
+            "pattern": "\\S"
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8192,
+            "pattern": "\\S"
+          },
+          "artifactId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8192,
+            "pattern": "\\S"
+          },
+          "ruleCode": {
+            "type": "string",
+            "enum": [
+              "AGE_TOO_RECENT",
+              "PRERELEASE",
+              "REVIEW_FINDING"
+            ]
+          },
+          "findingId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 8192
+          },
+          "operation": {
+            "type": "string",
+            "enum": [
+              "add",
+              "upgrade",
+              "compare"
+            ]
+          },
+          "binding": {
+            "type": "object",
+            "properties": {
+              "manifestDigest": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "lockfileDigest": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "configDigest": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "graphDigest": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "policyRevision": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 8192,
+                "pattern": "\\S"
+              },
+              "target": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 8192,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "manifestDigest",
+              "lockfileDigest",
+              "configDigest",
+              "graphDigest",
+              "policyRevision",
+              "target"
+            ],
+            "additionalProperties": false
+          },
+          "createdAt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8192,
+            "pattern": "\\S"
+          },
+          "expiresAt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8192,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "id",
+          "actor",
+          "authorizationSource",
+          "rationale",
+          "artifactId",
+          "ruleCode",
+          "findingId",
+          "operation",
+          "binding",
+          "createdAt",
+          "expiresAt"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 10000
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "exceptions"
+  ],
+  "additionalProperties": false
+}

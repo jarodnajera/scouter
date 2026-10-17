@@ -1,0 +1,32 @@
+# Dependencies and generated output
+node_modules/
+dist/
+coverage/
+*.log
+*.tsbuildinfo
+
+# Local secrets and package-manager credentials
+.env
+.env.*
+!.env.example
+!.env.*.example
+.npmrc
+
+# Local experiments, caches, and test output
+/hardhat_test/
+.phase0-runs/
+.test-results/
+.npm/
+.pnpm-store/
+
+# Machine-specific editor and agent settings
+/.vscode/
+/.idea/
+/.codex/
+/.agents/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Raw qualification reports contain machine paths. Publish reviewed summaries instead.
+/hardhat-cli/docs/evidence/*.json
