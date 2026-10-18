@@ -1,6 +1,6 @@
 # pip guarded installs
 
-Use with the skill's five dependency checks and [protection preflight](package-manager-protections.md). This workflow uses `sfw` directly; the optional Scouter CLI is npm-only. Official documentation checked on 2026-10-16; verify capabilities against the installed pip. Examples are templates, not approved packages or runnable commands until placeholders are replaced. Follow the [shared version-discrepancy procedure](package-manager-protections.md#resolve-version-discrepancies) when installed capabilities differ from these examples.
+Use with the core and either [routine preflight](routine-review.md) or detailed [protection preflight](package-manager-protections.md). Eligible routine work needs this guide, not full protection/Socket/reporting reads; linked exception guides are conditional. This workflow uses `sfw` directly; the optional Scouter CLI is npm-only. Official documentation checked on 2026-10-16; verify capabilities against the installed pip. Examples are templates, not approved packages or runnable commands until placeholders are replaced. Follow the [shared version-discrepancy procedure](package-manager-protections.md#resolve-version-discrepancies) when installed capabilities differ from these examples.
 
 ## Select the environment and inputs
 
@@ -52,4 +52,4 @@ Apply the same verified cutoff and reviewed registry configuration. Do not add `
 
 Inspect firewall output even after exit zero. On warnings needing review or failures, stop before running new code; never retry without `sfw`. Compare the installation report and resulting environment metadata with the reviewed graph, accounting for already-satisfied packages. Review dependency-file diffs and update the project's intended declarations within the authorized task: pip installation alone does not save them. Keep temporary pins/reports separate from committed dependency files unless the project expects them. Report partial environment changes on failure without automatic rollback. Summarize checks, cutoff, graph preservation, download coverage, outcome, and remaining concerns.
 
-Use the [standalone report format](reporting.md); proposal generation and installation are separate operations. Include wheel-age/hash coverage and already-satisfied/cache gaps without dumping the JSON report.
+Use the [core report](../SKILL.md#single-package-report) for routine work, otherwise [reporting](reporting.md). Proposal generation and installation are separate operations. Include wheel-age/hash coverage and already-satisfied/cache gaps without dumping the JSON report.

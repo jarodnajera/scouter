@@ -17,6 +17,7 @@ coverage/
 .phase0-runs/
 .test-results/
 /.eval-results/
+/evals/__pycache__/
 .npm/
 .pnpm-store/
 

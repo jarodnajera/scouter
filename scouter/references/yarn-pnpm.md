@@ -1,6 +1,6 @@
 # Yarn and pnpm guarded installs
 
-Use this reference after the skill's five dependency checks and [protection preflight](package-manager-protections.md). These workflows invoke the package manager through sfw; the optional Scouter CLI supports npm only. Guidance checked against official documentation on 2026-10-16; verify syntax against the project's installed version. Examples use placeholder package coordinates and paths, not approved dependencies. Follow the [shared version-discrepancy procedure](package-manager-protections.md#resolve-version-discrepancies) when installed capabilities differ from these examples.
+Use this reference after the skill's five checks and either [routine preflight](routine-review.md) or detailed [protection preflight](package-manager-protections.md). Read the common sections and only the selected manager section. Routine preflight replaces full protection/Socket/reporting reads while eligible; linked exception guides are conditional. These workflows invoke the package manager through sfw; the optional Scouter CLI supports npm only. Guidance checked against official documentation on 2026-10-16; verify syntax against the project's installed version. Examples use placeholder package coordinates and paths, not approved dependencies. Follow the [shared version-discrepancy procedure](package-manager-protections.md#resolve-version-discrepancies) when installed capabilities differ from these examples.
 
 ## Choose the correct workflow
 
@@ -75,4 +75,4 @@ For subsequent installs of an already reviewed graph, use supported frozen/immut
 
 Socket documents both managers as supported, but checks downloads, not reused artifacts. Stop on failures or warnings needing review; never fall back to an unwrapped install. [Socket Firewall Free](https://docs.socket.dev/docs/socket-firewall-free).
 
-Use the [standalone report format](reporting.md), retaining workspace/graph scope, age method, script disposition, cache/mirror gaps, and the observed install/build outcome.
+Use the [core report](../SKILL.md#single-package-report) for routine work; otherwise read [reporting](reporting.md). Retain workspace/graph scope, age method, script disposition, cache/mirror gaps, and the observed install/build outcome.

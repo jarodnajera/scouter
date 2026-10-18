@@ -1,0 +1,4508 @@
+{
+  "schema_version": 1,
+  "measured_on": "2026-10-18",
+  "scope": "solver contexts only; evaluator/orchestration excluded; no branch attribution",
+  "tool_call_scope": "unique model-visible calls, including failures and output writes; not nested backend operations",
+  "records": [
+    {
+      "run_id": "original-01",
+      "case_id": "01",
+      "variant": null,
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "3fae8112a37ebb19bfc4bd47fb9cbf6f57a39572344a2f4bc3243f71f34ca5d0",
+      "input_digest": "de40d42187f88d79e9514b9f947ea7d4335542561676a3afdf53388f8c9895ff",
+      "input_digest_algorithm": "prompt_nul_evidence_sha256",
+      "rubric_digest": "0b1bbc60d3690a2e12e9b167c03e305f5a74ca856cf7e200d2ea178c0492d2f1",
+      "grade_digest": "6a3e6af0bc56b953f180220be0e214f15943fb111eaeccf744bbe365719b7a0b",
+      "transcript_digests": [
+        "feff3ada09bc1ebb94053058f1f0f4346eb20d148cc441bb49dcad89f85b21ea"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 109210,
+          "cached_input_tokens": 88448,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1689,
+          "reasoning_output_tokens": 128,
+          "total_tokens": 110899
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 109210,
+              "cached_input_tokens": 88448,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1689,
+              "reasoning_output_tokens": 128,
+              "total_tokens": 110899
+            },
+            "responses": 4
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 3,
+        "by_tool": {
+          "exec": 3
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 3,
+            "by_tool": {
+              "exec": 3
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 3,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 2,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "original-02",
+      "case_id": "02",
+      "variant": null,
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "3fae8112a37ebb19bfc4bd47fb9cbf6f57a39572344a2f4bc3243f71f34ca5d0",
+      "input_digest": "cca176383a5cc5e66119b38f103e7bcb4e60e8243930a0c16aceec0abc904c7f",
+      "input_digest_algorithm": "prompt_nul_evidence_sha256",
+      "rubric_digest": "0b1bbc60d3690a2e12e9b167c03e305f5a74ca856cf7e200d2ea178c0492d2f1",
+      "grade_digest": "21b4ca40762d23b8837cd3f3390b7543098b0d520224602bcd4450e4be1867ba",
+      "transcript_digests": [
+        "22891a5658539bbd4eb7d745808ae9279c8c9a063eab954e698667b2296c14d9"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 110326,
+          "cached_input_tokens": 97152,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1742,
+          "reasoning_output_tokens": 110,
+          "total_tokens": 112068
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 110326,
+              "cached_input_tokens": 97152,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1742,
+              "reasoning_output_tokens": 110,
+              "total_tokens": 112068
+            },
+            "responses": 4
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 3,
+        "by_tool": {
+          "exec": 3
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 3,
+            "by_tool": {
+              "exec": 3
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 3,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 4,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "original-03",
+      "case_id": "03",
+      "variant": null,
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "3fae8112a37ebb19bfc4bd47fb9cbf6f57a39572344a2f4bc3243f71f34ca5d0",
+      "input_digest": "2459bcc0c0cf05c5353e480c849e3556137559da9ac3fc49e281208e699014ef",
+      "input_digest_algorithm": "prompt_nul_evidence_sha256",
+      "rubric_digest": "0b1bbc60d3690a2e12e9b167c03e305f5a74ca856cf7e200d2ea178c0492d2f1",
+      "grade_digest": "8fda1abdae57c0a828040ff2b1949e8b10477fa7d9bd1d1d720f7e7d6fdd96f7",
+      "transcript_digests": [
+        "91f64c37c412d5bee81657abb70f0b1d1db23b19d63411f6afe1e1d49e1b665c",
+        "b1e6928720e66b50b36bd8db108cf7f025c9485cd8d799fc0945809076ddb889"
+      ],
+      "expected_turns": 2,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 181495,
+          "cached_input_tokens": 165120,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3483,
+          "reasoning_output_tokens": 104,
+          "total_tokens": 184978
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 112437,
+              "cached_input_tokens": 98304,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1828,
+              "reasoning_output_tokens": 76,
+              "total_tokens": 114265
+            },
+            "responses": 4
+          },
+          {
+            "turn": 2,
+            "values": {
+              "input_tokens": 69058,
+              "cached_input_tokens": 66816,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1655,
+              "reasoning_output_tokens": 28,
+              "total_tokens": 70713
+            },
+            "responses": 2
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 4,
+        "by_tool": {
+          "exec": 4
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 3,
+            "by_tool": {
+              "exec": 3
+            }
+          },
+          {
+            "turn": 2,
+            "count": 1,
+            "by_tool": {
+              "exec": 1
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 4,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/security-fixes.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/security-fixes.md",
+              "scouter/references/socket-operations.md"
+            ]
+          },
+          {
+            "transcript": 2,
+            "status": "declared",
+            "reuse_only": true,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/security-fixes.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/security-fixes.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 2,
+            "path": "scouter/references/security-fixes.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 2,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 2,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 2,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 4,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "original-04",
+      "case_id": "04",
+      "variant": null,
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "3fae8112a37ebb19bfc4bd47fb9cbf6f57a39572344a2f4bc3243f71f34ca5d0",
+      "input_digest": "d2ab76b6641004e9527a0c80f98c604d7e13866c8b13a7cb49f250dc5953db96",
+      "input_digest_algorithm": "prompt_nul_evidence_sha256",
+      "rubric_digest": "0b1bbc60d3690a2e12e9b167c03e305f5a74ca856cf7e200d2ea178c0492d2f1",
+      "grade_digest": "86460249a971ec7fa413a351eebe4657bc7b19afcf821278141a3153beb7e7fa",
+      "transcript_digests": [
+        "6334a3e9d32c60e9f26da6e37d33f8f1064242bd1bf5c7a4e72496623929f951"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 110122,
+          "cached_input_tokens": 96512,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2138,
+          "reasoning_output_tokens": 64,
+          "total_tokens": 112260
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 110122,
+              "cached_input_tokens": 96512,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2138,
+              "reasoning_output_tokens": 64,
+              "total_tokens": 112260
+            },
+            "responses": 4
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 3,
+        "by_tool": {
+          "exec": 3
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 3,
+            "by_tool": {
+              "exec": 3
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 4,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/security-fixes.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/security-fixes.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/security-fixes.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 4,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "original-05",
+      "case_id": "05",
+      "variant": null,
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "3fae8112a37ebb19bfc4bd47fb9cbf6f57a39572344a2f4bc3243f71f34ca5d0",
+      "input_digest": "f00fbccf231e70fe95addeb2d8f083786f347787793fd9df7ad1f924ecd43e9e",
+      "input_digest_algorithm": "prompt_nul_evidence_sha256",
+      "rubric_digest": "0b1bbc60d3690a2e12e9b167c03e305f5a74ca856cf7e200d2ea178c0492d2f1",
+      "grade_digest": "f6a8d7d11cf409defd82db0eb2d9c95f5e82e3cd1ef068e6b94c67ee05ee6892",
+      "transcript_digests": [
+        "30eb4531145198c81a31c51226013515b8a8c31c8df1637aeeb7e544b531558e"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 224508,
+          "cached_input_tokens": 190976,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3085,
+          "reasoning_output_tokens": 159,
+          "total_tokens": 227593
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 224508,
+              "cached_input_tokens": 190976,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 3085,
+              "reasoning_output_tokens": 159,
+              "total_tokens": 227593
+            },
+            "responses": 6
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 5,
+        "by_tool": {
+          "exec": 5
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 5,
+            "by_tool": {
+              "exec": 5
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 5,
+        "files": [
+          "scouter/references/batch-review.md",
+          "scouter/references/first-install.md",
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/batch-review.md",
+              "scouter/references/first-install.md",
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/batch-review.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/first-install.md",
+            "extent": "unspecified",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 10,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "original-06",
+      "case_id": "06",
+      "variant": null,
+      "correctness": "fail",
+      "selected": false,
+      "skill_digest": "3fae8112a37ebb19bfc4bd47fb9cbf6f57a39572344a2f4bc3243f71f34ca5d0",
+      "input_digest": "b50660bf14885f05a5a31bcd4e2fa30e5011ac93d1ba440eccb894cb2182c949",
+      "input_digest_algorithm": "prompt_nul_evidence_sha256",
+      "rubric_digest": "0b1bbc60d3690a2e12e9b167c03e305f5a74ca856cf7e200d2ea178c0492d2f1",
+      "grade_digest": "7eeb81a24507ccf5c26f2064cfc35c43a37df790c18ad863f1bdfec646852111",
+      "transcript_digests": [
+        "ca38a9ad3b9a1811f13c1003a27a2ea1cf30f24c0afded269daf1b77433c6984"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 105961,
+          "cached_input_tokens": 94464,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1572,
+          "reasoning_output_tokens": 102,
+          "total_tokens": 107533
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 105961,
+              "cached_input_tokens": 94464,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1572,
+              "reasoning_output_tokens": 102,
+              "total_tokens": 107533
+            },
+            "responses": 4
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 3,
+        "by_tool": {
+          "exec": 3
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 3,
+            "by_tool": {
+              "exec": 3
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 3,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 3,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "original-06-r1",
+      "case_id": "06",
+      "variant": null,
+      "correctness": "pass",
+      "selected": false,
+      "skill_digest": "ea576655fa6c763c18da21bc0aa35f55f0bf805c6168215a9735a8183e1ca477",
+      "input_digest": "b50660bf14885f05a5a31bcd4e2fa30e5011ac93d1ba440eccb894cb2182c949",
+      "input_digest_algorithm": "prompt_nul_evidence_sha256",
+      "rubric_digest": "0b1bbc60d3690a2e12e9b167c03e305f5a74ca856cf7e200d2ea178c0492d2f1",
+      "grade_digest": "8f9e76e5b6923c24b7d25d1df26d9741b5c0459fdaef1cb65e944aa75bcc7f4b",
+      "transcript_digests": [
+        "4d0bf877ded554f520309af773bc8504f6bcab7a0804c0681769f73bc3bcdda9"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 107717,
+          "cached_input_tokens": 85504,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1579,
+          "reasoning_output_tokens": 94,
+          "total_tokens": 109296
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 107717,
+              "cached_input_tokens": 85504,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1579,
+              "reasoning_output_tokens": 94,
+              "total_tokens": 109296
+            },
+            "responses": 4
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 3,
+        "by_tool": {
+          "exec": 3
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 3,
+            "by_tool": {
+              "exec": 3
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 3,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 4,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-06-final",
+      "case_id": "06",
+      "variant": null,
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "704375b7a4dcee78ab05100fda51a34da48db005f0189579714521aeeda86fb0",
+      "input_digest": "4254c342e43ea5da309b9b6579c4b6ca1106251cf91cbbf330d1dfe03c64020c",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "30f01045f21f501e0e48d26e46ce358bd858da666959ee8dbce440cb7aac0ccd",
+      "transcript_digests": [
+        "4c38d56c21e623f5b323add42a4c1f114ff0266d314458af9aa8504aacebc8f7"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 177171,
+          "cached_input_tokens": 159872,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1439,
+          "reasoning_output_tokens": 21,
+          "total_tokens": 178610
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 177171,
+              "cached_input_tokens": 159872,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1439,
+              "reasoning_output_tokens": 21,
+              "total_tokens": 178610
+            },
+            "responses": 7
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 6,
+        "by_tool": {
+          "exec": 6
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 6,
+            "by_tool": {
+              "exec": 6
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/routine-review.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/routine-review.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "whole_file",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "selected_sections",
+            "named_sections": [
+              "Routine npm"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/routine-review.md"
+        ],
+        "unresolved_read_call_count": 3,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "original-07",
+      "case_id": "07",
+      "variant": null,
+      "correctness": "pass",
+      "selected": false,
+      "skill_digest": "3fae8112a37ebb19bfc4bd47fb9cbf6f57a39572344a2f4bc3243f71f34ca5d0",
+      "input_digest": "13a3cc33d1cb0ea1789b67ec31c41b48e3bd2f1ff7c4cd146e0921d8a8b721c3",
+      "input_digest_algorithm": "prompt_nul_evidence_sha256",
+      "rubric_digest": "0b1bbc60d3690a2e12e9b167c03e305f5a74ca856cf7e200d2ea178c0492d2f1",
+      "grade_digest": "8e76e72fcbb0a9f78b1d08129f986145cfac518d115437f21cd69691713163ea",
+      "transcript_digests": [
+        "ea591456cbb4ac3f232a7033a8d25189ace870ed7381ebea545a720b61cd911a"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 112532,
+          "cached_input_tokens": 97920,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1983,
+          "reasoning_output_tokens": 131,
+          "total_tokens": 114515
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 112532,
+              "cached_input_tokens": 97920,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1983,
+              "reasoning_output_tokens": 131,
+              "total_tokens": 114515
+            },
+            "responses": 4
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 3,
+        "by_tool": {
+          "exec": 3
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 3,
+            "by_tool": {
+              "exec": 3
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 4,
+        "files": [
+          "scouter/references/build-scripts.md",
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/build-scripts.md",
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/build-scripts.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [
+          "scouter/references/build-scripts.md",
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "unresolved_read_call_count": 1,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "original-07-r1",
+      "case_id": "07",
+      "variant": null,
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "ea576655fa6c763c18da21bc0aa35f55f0bf805c6168215a9735a8183e1ca477",
+      "input_digest": "ebe55a925bb6bffac6e2c79f483ba116d57b259f95387690122c69d4bb5be422",
+      "input_digest_algorithm": "prompt_nul_evidence_sha256",
+      "rubric_digest": "0b1bbc60d3690a2e12e9b167c03e305f5a74ca856cf7e200d2ea178c0492d2f1",
+      "grade_digest": "7d180d3c1ea4d521964821b0a0771c8b051fdd59986422c4f7065bc6919d4ec0",
+      "transcript_digests": [
+        "5c794d64e64f9082e570c2116b8ead24aa51b95a6b292a9ce546bd0181aad4ea"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 110831,
+          "cached_input_tokens": 76032,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1767,
+          "reasoning_output_tokens": 63,
+          "total_tokens": 112598
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 110831,
+              "cached_input_tokens": 76032,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1767,
+              "reasoning_output_tokens": 63,
+              "total_tokens": 112598
+            },
+            "responses": 4
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 3,
+        "by_tool": {
+          "exec": 3
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 3,
+            "by_tool": {
+              "exec": 3
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 4,
+        "files": [
+          "scouter/references/build-scripts.md",
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/build-scripts.md",
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/build-scripts.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 2,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "original-08",
+      "case_id": "08",
+      "variant": null,
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "3fae8112a37ebb19bfc4bd47fb9cbf6f57a39572344a2f4bc3243f71f34ca5d0",
+      "input_digest": "7159376c0e3987b0353da7caded86505957f0d0c32958958d045b05e9bfd5b3a",
+      "input_digest_algorithm": "prompt_nul_evidence_sha256",
+      "rubric_digest": "0b1bbc60d3690a2e12e9b167c03e305f5a74ca856cf7e200d2ea178c0492d2f1",
+      "grade_digest": "c4bf17a7b89a84b4bb8889f7227976ff6914547d4132a83d60e1fe42d111a119",
+      "transcript_digests": [
+        "4b0a570715bc7f57828037db20c7f854996e6ec650b745661715c432ac0e31b0"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 145144,
+          "cached_input_tokens": 129024,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2044,
+          "reasoning_output_tokens": 140,
+          "total_tokens": 147188
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 145144,
+              "cached_input_tokens": 129024,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2044,
+              "reasoning_output_tokens": 140,
+              "total_tokens": 147188
+            },
+            "responses": 5
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 4,
+        "by_tool": {
+          "exec": 4
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 4,
+            "by_tool": {
+              "exec": 4
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 6,
+        "files": [
+          "scouter/references/batch-review.md",
+          "scouter/references/first-install.md",
+          "scouter/references/one-shot-runners.md",
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/batch-review.md",
+              "scouter/references/first-install.md",
+              "scouter/references/one-shot-runners.md",
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/one-shot-runners.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/first-install.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/batch-review.md",
+            "extent": "unspecified",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 3,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "original-09",
+      "case_id": "09",
+      "variant": null,
+      "correctness": "fail",
+      "selected": false,
+      "skill_digest": "3fae8112a37ebb19bfc4bd47fb9cbf6f57a39572344a2f4bc3243f71f34ca5d0",
+      "input_digest": "35781a5439d0021c1d277264c0be0cc11f3e0a7f1108ef4915211988ea3fce81",
+      "input_digest_algorithm": "prompt_nul_evidence_sha256",
+      "rubric_digest": "0b1bbc60d3690a2e12e9b167c03e305f5a74ca856cf7e200d2ea178c0492d2f1",
+      "grade_digest": "760e8a0a19a5c9aa0a3986317c6a19f85d9ef6ea9626b8f8259ec86d9e4df2f2",
+      "transcript_digests": [
+        "9f5d56d3e152a1976c0f9455cc0d0ff32f5c18e7ff47a8f823d6ffc4b815e1e5"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 107501,
+          "cached_input_tokens": 95360,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1747,
+          "reasoning_output_tokens": 182,
+          "total_tokens": 109248
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 107501,
+              "cached_input_tokens": 95360,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1747,
+              "reasoning_output_tokens": 182,
+              "total_tokens": 109248
+            },
+            "responses": 4
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 3,
+        "by_tool": {
+          "exec": 3
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 3,
+            "by_tool": {
+              "exec": 3
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 3,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 3,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "original-09-r1",
+      "case_id": "09",
+      "variant": null,
+      "correctness": "pass",
+      "selected": false,
+      "skill_digest": "ea576655fa6c763c18da21bc0aa35f55f0bf805c6168215a9735a8183e1ca477",
+      "input_digest": "d389376f9d48bd4248b33bd6bf9cce891a51033d1784e5e3117e9f126ab74013",
+      "input_digest_algorithm": "prompt_nul_evidence_sha256",
+      "rubric_digest": "0b1bbc60d3690a2e12e9b167c03e305f5a74ca856cf7e200d2ea178c0492d2f1",
+      "grade_digest": "05f8b35ee48f96bb7eb2a0250fcda4238fdc0913c9152cc61dbc67caad2b3679",
+      "transcript_digests": [
+        "5184be04fd205c68823e881bbaf640919a206cb9d24881d19ef6c889c35c7dcb"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 107569,
+          "cached_input_tokens": 95488,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1655,
+          "reasoning_output_tokens": 60,
+          "total_tokens": 109224
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 107569,
+              "cached_input_tokens": 95488,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1655,
+              "reasoning_output_tokens": 60,
+              "total_tokens": 109224
+            },
+            "responses": 4
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 3,
+        "by_tool": {
+          "exec": 3
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 3,
+            "by_tool": {
+              "exec": 3
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 3,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 2,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-09-final",
+      "case_id": "09",
+      "variant": null,
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "704375b7a4dcee78ab05100fda51a34da48db005f0189579714521aeeda86fb0",
+      "input_digest": "6af5b9c01909c28fa035a21b404a75a53029ae10e29d8eba2d27f48245958dda",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "34c278905e578c9aad8726edf05f4b41fe3b5a576d7dbfb39ad27c5c8f04edce",
+      "transcript_digests": [
+        "fc85b592e214bedb58e168f9f4723200ffc364f9eaa15889ca5c946d4b6d1680"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 159866,
+          "cached_input_tokens": 144512,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1563,
+          "reasoning_output_tokens": 84,
+          "total_tokens": 161429
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 159866,
+              "cached_input_tokens": 144512,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1563,
+              "reasoning_output_tokens": 84,
+              "total_tokens": 161429
+            },
+            "responses": 6
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 5,
+        "by_tool": {
+          "exec": 5
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 5,
+            "by_tool": {
+              "exec": 5
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 4,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/routine-review.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/routine-review.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Shared preflight"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Routine npm"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "whole_file",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "whole_file",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [
+          "scouter/references/routine-review.md"
+        ],
+        "unresolved_read_call_count": 3,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "original-10",
+      "case_id": "10",
+      "variant": null,
+      "correctness": "pass",
+      "selected": false,
+      "skill_digest": "3fae8112a37ebb19bfc4bd47fb9cbf6f57a39572344a2f4bc3243f71f34ca5d0",
+      "input_digest": "95de6a53e67fdfcae7f73466a7e82d35f8e6cefa422e5732ebd299dce1ce4d26",
+      "input_digest_algorithm": "prompt_nul_evidence_sha256",
+      "rubric_digest": "0b1bbc60d3690a2e12e9b167c03e305f5a74ca856cf7e200d2ea178c0492d2f1",
+      "grade_digest": "b8671c8c4d1dcf469b9126304e7eab361a9f4bb64bae9567681491815ef17f25",
+      "transcript_digests": [
+        "145ed3bb831fc822b904b0463772a40312590b7cdd92988eed1076982e9f3268"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 108693,
+          "cached_input_tokens": 95872,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2076,
+          "reasoning_output_tokens": 85,
+          "total_tokens": 110769
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 108693,
+              "cached_input_tokens": 95872,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2076,
+              "reasoning_output_tokens": 85,
+              "total_tokens": 110769
+            },
+            "responses": 4
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 3,
+        "by_tool": {
+          "exec": 3
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 3,
+            "by_tool": {
+              "exec": 3
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 3,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 4,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-10-final",
+      "case_id": "10",
+      "variant": null,
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "704375b7a4dcee78ab05100fda51a34da48db005f0189579714521aeeda86fb0",
+      "input_digest": "f7b43c7af0b6b6d6162d69fed23c98b36140cdbf659543f0ce9578cdcebf0ee0",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "3edf4c3f9c429a314dd7d60bf7d00b2eb4b3ef858e52452814dc83dc6935871c",
+      "transcript_digests": [
+        "02bf861b404e0de3a093c29bae03a63c6525d7084bd2231352ecf22224685d18"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 189411,
+          "cached_input_tokens": 165504,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2284,
+          "reasoning_output_tokens": 62,
+          "total_tokens": 191695
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 189411,
+              "cached_input_tokens": 165504,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2284,
+              "reasoning_output_tokens": 62,
+              "total_tokens": 191695
+            },
+            "responses": 7
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 6,
+        "by_tool": {
+          "exec": 6
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 6,
+            "by_tool": {
+              "exec": 6
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 4,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/routine-review.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/routine-review.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "unspecified",
+            "named_sections": [
+              "Shared preflight"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Routine npm"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": [
+              "Fictional examples"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/routine-review.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "unresolved_read_call_count": 3,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "original-11",
+      "case_id": "11",
+      "variant": null,
+      "correctness": "pass",
+      "selected": false,
+      "skill_digest": "ea576655fa6c763c18da21bc0aa35f55f0bf805c6168215a9735a8183e1ca477",
+      "input_digest": "f2d2cc06b67477790f770fe412395b0da0bb39ecc76711b8acb7574430dd4e57",
+      "input_digest_algorithm": "prompt_nul_evidence_sha256",
+      "rubric_digest": "0b1bbc60d3690a2e12e9b167c03e305f5a74ca856cf7e200d2ea178c0492d2f1",
+      "grade_digest": "b7ae8c6d07a59ee516df9f2765cb5a394c224a2c0851b747f7cc309a1fdfaf0d",
+      "transcript_digests": [
+        "6b2f9152204255f9d6eb1e7126efa5298cc4d4a95d2a10def5e92360448f13fb"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 110261,
+          "cached_input_tokens": 97152,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1768,
+          "reasoning_output_tokens": 60,
+          "total_tokens": 112029
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 110261,
+              "cached_input_tokens": 97152,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1768,
+              "reasoning_output_tokens": 60,
+              "total_tokens": 112029
+            },
+            "responses": 4
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 3,
+        "by_tool": {
+          "exec": 3
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 3,
+            "by_tool": {
+              "exec": 3
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 3,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "unspecified",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 2,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-11-final",
+      "case_id": "11",
+      "variant": null,
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "704375b7a4dcee78ab05100fda51a34da48db005f0189579714521aeeda86fb0",
+      "input_digest": "36c55c0d6b9b1d2c5092b094653166abb8e501e10a581cc055044ba11ab81bb1",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "5abde48c4ef554ee77cc24361e480ec30eb7c14cb59ddd56653eb2bb6b08a087",
+      "transcript_digests": [
+        "fbc647dc120090c4381d1fe5c4c9fea6c7940d3a2298803ec86f3fe59c693c03"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 140160,
+          "cached_input_tokens": 115712,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2145,
+          "reasoning_output_tokens": 115,
+          "total_tokens": 142305
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 140160,
+              "cached_input_tokens": 115712,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2145,
+              "reasoning_output_tokens": 115,
+              "total_tokens": 142305
+            },
+            "responses": 5
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 4,
+        "by_tool": {
+          "exec": 4
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 4,
+            "by_tool": {
+              "exec": 4
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 4,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/routine-review.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/routine-review.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "unspecified",
+            "named_sections": [
+              "Shared preflight"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Routine npm",
+              "Detect and verify",
+              "Release-age controls"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "selected_sections",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Fictional examples"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 7,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "original-12",
+      "case_id": "12",
+      "variant": null,
+      "correctness": "pass",
+      "selected": false,
+      "skill_digest": "ea576655fa6c763c18da21bc0aa35f55f0bf805c6168215a9735a8183e1ca477",
+      "input_digest": "38da7f2e19977a415697e2e035c3adf4ad4da7e638fa601229c908fa07c87839",
+      "input_digest_algorithm": "prompt_nul_evidence_sha256",
+      "rubric_digest": "0b1bbc60d3690a2e12e9b167c03e305f5a74ca856cf7e200d2ea178c0492d2f1",
+      "grade_digest": "a492b775846a3c7a32e19549aabee4f77b2fceff3fccbc511a1397a344804f96",
+      "transcript_digests": [
+        "5abaacb303bf9f78da3271c59ab42e921cc382ca2a3d39fc5ee8c03cd834787a"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 107601,
+          "cached_input_tokens": 90368,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1742,
+          "reasoning_output_tokens": 135,
+          "total_tokens": 109343
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 107601,
+              "cached_input_tokens": 90368,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1742,
+              "reasoning_output_tokens": 135,
+              "total_tokens": 109343
+            },
+            "responses": 4
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 3,
+        "by_tool": {
+          "exec": 3
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 3,
+            "by_tool": {
+              "exec": 3
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 3,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "unresolved_read_call_count": 1,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-12-final",
+      "case_id": "12",
+      "variant": null,
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "704375b7a4dcee78ab05100fda51a34da48db005f0189579714521aeeda86fb0",
+      "input_digest": "ca9bd00051b6f1da597d39b17757fbadc9c3081ea4b0490d6781d663fa46ef04",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "1d35b459c7064d1ca433183aaf21b14665fc1e73c84e1afc0d2c3fcf1c7a7d95",
+      "transcript_digests": [
+        "e43ae998a3c9a163375edf782b99ae9542224ac19a5c1ae2986ea8b599051ecb"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 177063,
+          "cached_input_tokens": 161664,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1585,
+          "reasoning_output_tokens": 106,
+          "total_tokens": 178648
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 177063,
+              "cached_input_tokens": 161664,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1585,
+              "reasoning_output_tokens": 106,
+              "total_tokens": 178648
+            },
+            "responses": 7
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 6,
+        "by_tool": {
+          "exec": 6
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 6,
+            "by_tool": {
+              "exec": 6
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/routine-review.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/routine-review.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "selected_sections",
+            "named_sections": [
+              "Routine npm"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/routine-review.md"
+        ],
+        "unresolved_read_call_count": 3,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-npm",
+      "case_id": "13",
+      "variant": "npm",
+      "correctness": "fail",
+      "selected": false,
+      "skill_digest": "8db4ece2bd6477d9d53e6179a09b0980e399968909e22dc59ca6ee3d85242570",
+      "input_digest": "650b67e899af128ca061fc9fc068ed8464c5a8c44d561d6659f989c9be3e6d09",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "dc72b9f8e5838d6ed2824d42baa6bdf1a4b6156362640c728391b654e07f2a19",
+      "transcript_digests": [
+        "d82d4308f4a15235b07c679749e49d172d37e8f733f551f53ba9e25d768c2aab"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 110746,
+          "cached_input_tokens": 84096,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1927,
+          "reasoning_output_tokens": 41,
+          "total_tokens": 112673
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 110746,
+              "cached_input_tokens": 84096,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1927,
+              "reasoning_output_tokens": 41,
+              "total_tokens": 112673
+            },
+            "responses": 4
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 3,
+        "by_tool": {
+          "exec": 3
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 3,
+            "by_tool": {
+              "exec": 3
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 4,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/reporting.md",
+          "scouter/references/routine-review.md",
+          "scouter/references/socket-operations.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/reporting.md",
+              "scouter/references/routine-review.md",
+              "scouter/references/socket-operations.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "unspecified",
+            "named_sections": [
+              "Shared preflight"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "selected_sections",
+            "named_sections": [
+              "Routine npm",
+              "Detect and verify",
+              "Release-age controls"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/socket-operations.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/reporting.md",
+            "extent": "unspecified",
+            "named_sections": [
+              "Fictional examples"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 2,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-npm-final",
+      "case_id": "13",
+      "variant": "npm",
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "704375b7a4dcee78ab05100fda51a34da48db005f0189579714521aeeda86fb0",
+      "input_digest": "d0ee8596a05729dd306e1274b6ae378fcaa66a8cdd8c75937d5a07a7c0eff9b8",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "63a11eac13172337afda1574d755a6b298caab1401507c0c0acba4a16a93000d",
+      "transcript_digests": [
+        "0784c58f797c936f175adfe67ecf870c4ccecfc3bada20282025035f0b469c66"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 207919,
+          "cached_input_tokens": 190976,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1799,
+          "reasoning_output_tokens": 51,
+          "total_tokens": 209718
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 207919,
+              "cached_input_tokens": 190976,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1799,
+              "reasoning_output_tokens": 51,
+              "total_tokens": 209718
+            },
+            "responses": 8
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 7,
+        "by_tool": {
+          "exec": 7
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 7,
+            "by_tool": {
+              "exec": 7
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/routine-review.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/routine-review.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "selected_sections",
+            "named_sections": [
+              "Routine npm"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/routine-review.md"
+        ],
+        "unresolved_read_call_count": 6,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-npm-r1",
+      "case_id": "13",
+      "variant": "npm",
+      "correctness": "pass",
+      "selected": false,
+      "skill_digest": "03f356fcd4d8c3cb9b2082fed348dbf593b8a20af9080e81329bcdef1ab00ee1",
+      "input_digest": "0b7d7c11bd3ce23e45d61ece9587026a1779c1756d2172f1294477bd5a6b5e16",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "664ce08cc54690233245dc48d11dbe03c3c2608260c816964e0498882dfd46dd",
+      "transcript_digests": [
+        "9755c5967cbdd6eb730cfff1d13957d2feb68879e91b1b09fa5f935c31522ba5"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 156116,
+          "cached_input_tokens": 145664,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1742,
+          "reasoning_output_tokens": 78,
+          "total_tokens": 157858
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 156116,
+              "cached_input_tokens": 145664,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1742,
+              "reasoning_output_tokens": 78,
+              "total_tokens": 157858
+            },
+            "responses": 6
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 5,
+        "by_tool": {
+          "exec": 5
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 5,
+            "by_tool": {
+              "exec": 5
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/package-manager-protections.md",
+          "scouter/references/routine-review.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/package-manager-protections.md",
+              "scouter/references/routine-review.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "whole_file",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/package-manager-protections.md",
+            "extent": "selected_sections",
+            "named_sections": [
+              "Routine npm",
+              "Detect and verify"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 5,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-pip",
+      "case_id": "13",
+      "variant": "pip",
+      "correctness": "pass",
+      "selected": false,
+      "skill_digest": "03f356fcd4d8c3cb9b2082fed348dbf593b8a20af9080e81329bcdef1ab00ee1",
+      "input_digest": "907973f65203f3d7a5891eee6d76acce57d8493bb7fec2566405fb332de05706",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "d8ba9fdfaac87e8bebf93008323b6b9b37e3141d7cb4e709859f5248b8775789",
+      "transcript_digests": [
+        "393ea8102466a8a12139e003f0414e96e2db184238f61164549f84e01520bbd7"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 151549,
+          "cached_input_tokens": 125312,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2399,
+          "reasoning_output_tokens": 140,
+          "total_tokens": 153948
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 151549,
+              "cached_input_tokens": 125312,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2399,
+              "reasoning_output_tokens": 140,
+              "total_tokens": 153948
+            },
+            "responses": 6
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 5,
+        "by_tool": {
+          "exec": 5
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 5,
+            "by_tool": {
+              "exec": 5
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/pip.md",
+          "scouter/references/routine-review.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/pip.md",
+              "scouter/references/routine-review.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Shared preflight"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/pip.md",
+            "extent": "whole_file",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 4,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-pip-final",
+      "case_id": "13",
+      "variant": "pip",
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "704375b7a4dcee78ab05100fda51a34da48db005f0189579714521aeeda86fb0",
+      "input_digest": "7a3471ad985d4adce6f041f3cd8a4dc6c97c85c90737e32ded9f1296e61fbc12",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "57f9d9a2d40ce6f9c52cc47e819e9c5a38e96537db45745485dc2be0c39dc47f",
+      "transcript_digests": [
+        "3220abd6ae7bc3bfa7d0bd26c82cb8d30dd6274d1abdc5577a7088955962e528"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 153064,
+          "cached_input_tokens": 129152,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1903,
+          "reasoning_output_tokens": 38,
+          "total_tokens": 154967
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 153064,
+              "cached_input_tokens": 129152,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1903,
+              "reasoning_output_tokens": 38,
+              "total_tokens": 154967
+            },
+            "responses": 6
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 5,
+        "by_tool": {
+          "exec": 5
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 5,
+            "by_tool": {
+              "exec": 5
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/pip.md",
+          "scouter/references/routine-review.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/pip.md",
+              "scouter/references/routine-review.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Shared preflight"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/pip.md",
+            "extent": "whole_file",
+            "named_sections": []
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 2,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-pnpm",
+      "case_id": "13",
+      "variant": "pnpm",
+      "correctness": "pass",
+      "selected": false,
+      "skill_digest": "8db4ece2bd6477d9d53e6179a09b0980e399968909e22dc59ca6ee3d85242570",
+      "input_digest": "eca68a376538a26326369e35f189209175edacc95ab79765f54987db05a1e671",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "d567836614f5b2666fcac10cddda9da33bdd9412286aa95a405b441419e1fecb",
+      "transcript_digests": [
+        "c0088c6faf09eca7889fdcb47c058b077a6c78d679e9374d5b35b801bb31e862"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 129525,
+          "cached_input_tokens": 117504,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2049,
+          "reasoning_output_tokens": 230,
+          "total_tokens": 131574
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 129525,
+              "cached_input_tokens": 117504,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2049,
+              "reasoning_output_tokens": 230,
+              "total_tokens": 131574
+            },
+            "responses": 5
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 4,
+        "by_tool": {
+          "exec": 4
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 4,
+            "by_tool": {
+              "exec": 4
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/routine-review.md",
+          "scouter/references/yarn-pnpm.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/routine-review.md",
+              "scouter/references/yarn-pnpm.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "unspecified",
+            "named_sections": [
+              "Shared preflight"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/yarn-pnpm.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "pnpm",
+              "Modern Yarn"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 3,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-pnpm-final",
+      "case_id": "13",
+      "variant": "pnpm",
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "704375b7a4dcee78ab05100fda51a34da48db005f0189579714521aeeda86fb0",
+      "input_digest": "be788f473148d3914915546d6e04c0936f992d51467c77a4115ce6c906bbe01e",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "aaf6b1bb381acb706497d610815a5cf119c519ad5b10f21ec3ac20ce2715a402",
+      "transcript_digests": [
+        "d9597ad1430ec348c17d94d983e0a4f9866d807256e54894b45d0faeab14ad5e"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 128426,
+          "cached_input_tokens": 115712,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1553,
+          "reasoning_output_tokens": 48,
+          "total_tokens": 129979
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 128426,
+              "cached_input_tokens": 115712,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1553,
+              "reasoning_output_tokens": 48,
+              "total_tokens": 129979
+            },
+            "responses": 5
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 4,
+        "by_tool": {
+          "exec": 4
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 4,
+            "by_tool": {
+              "exec": 4
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/routine-review.md",
+          "scouter/references/yarn-pnpm.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/routine-review.md",
+              "scouter/references/yarn-pnpm.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "whole_file",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/yarn-pnpm.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "pnpm"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [
+          "scouter/references/routine-review.md",
+          "scouter/references/yarn-pnpm.md"
+        ],
+        "unresolved_read_call_count": 4,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-pnpm-r1",
+      "case_id": "13",
+      "variant": "pnpm",
+      "correctness": "pass",
+      "selected": false,
+      "skill_digest": "03f356fcd4d8c3cb9b2082fed348dbf593b8a20af9080e81329bcdef1ab00ee1",
+      "input_digest": "efcac869cde209faa0929aa0dedbe891ae5a2896b26077e74addea56451b43a2",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "e49f583734c30674c5483a9208dc29ce4814123a2f6e9bad0a6ed94410cf1461",
+      "transcript_digests": [
+        "6114041d5ad450de13d83a183ad9889a3d1f411947c8c95c3622d2c49101fe9b"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 131906,
+          "cached_input_tokens": 110592,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2016,
+          "reasoning_output_tokens": 94,
+          "total_tokens": 133922
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 131906,
+              "cached_input_tokens": 110592,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2016,
+              "reasoning_output_tokens": 94,
+              "total_tokens": 133922
+            },
+            "responses": 5
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 4,
+        "by_tool": {
+          "exec": 4
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 4,
+            "by_tool": {
+              "exec": 4
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/routine-review.md",
+          "scouter/references/yarn-pnpm.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/routine-review.md",
+              "scouter/references/yarn-pnpm.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Shared preflight"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/yarn-pnpm.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "pnpm",
+              "Modern Yarn"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 3,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-uv-pip",
+      "case_id": "13",
+      "variant": "uv-pip",
+      "correctness": "fail",
+      "selected": false,
+      "skill_digest": "03f356fcd4d8c3cb9b2082fed348dbf593b8a20af9080e81329bcdef1ab00ee1",
+      "input_digest": "f506ff4c6ed01f9d49cee5b59c8370f0a8c6f0585793417fa017ca96e2efd121",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "60653b2400cf644f5c426fa3d508c6f9458aca2df951d80ff4a5a0d4b8adf527",
+      "transcript_digests": [
+        "1b4ab8a15e3ecffad2eeb56a60a39eb9453ba6ca49979deb0b9a3b9baa2f7a2c"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 167951,
+          "cached_input_tokens": 141184,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2143,
+          "reasoning_output_tokens": 23,
+          "total_tokens": 170094
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 167951,
+              "cached_input_tokens": 141184,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2143,
+              "reasoning_output_tokens": 23,
+              "total_tokens": 170094
+            },
+            "responses": 6
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 5,
+        "by_tool": {
+          "exec": 5
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 5,
+            "by_tool": {
+              "exec": 5
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 3,
+        "files": [
+          "scouter/references/pip.md",
+          "scouter/references/routine-review.md",
+          "scouter/references/uv.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/pip.md",
+              "scouter/references/routine-review.md",
+              "scouter/references/uv.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "selected_sections",
+            "named_sections": [
+              "Shared preflight"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/uv.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Environment, sources, and protections",
+              "Project workflow",
+              "Pip-compatible workflow",
+              "Poetry limitation"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/pip.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Review Python evidence"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [
+          "scouter/references/pip.md",
+          "scouter/references/routine-review.md",
+          "scouter/references/uv.md"
+        ],
+        "unresolved_read_call_count": 2,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-uv-pip-final",
+      "case_id": "13",
+      "variant": "uv-pip",
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "704375b7a4dcee78ab05100fda51a34da48db005f0189579714521aeeda86fb0",
+      "input_digest": "58fbefe6e531148ef82fbf21e0117b611644a7be418d19bbba1bef8639ba87a2",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "6a41489b3080dc05e261f5f0b62610e3ae66c3aac21b54e697a6f4d22f107153",
+      "transcript_digests": [
+        "d66b827399eda0f573ad849d56f33fbaa748ae0c8d82014dc650a2c35a034fa7"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 129865,
+          "cached_input_tokens": 116736,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1886,
+          "reasoning_output_tokens": 94,
+          "total_tokens": 131751
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 129865,
+              "cached_input_tokens": 116736,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1886,
+              "reasoning_output_tokens": 94,
+              "total_tokens": 131751
+            },
+            "responses": 5
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 4,
+        "by_tool": {
+          "exec": 4
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 4,
+            "by_tool": {
+              "exec": 4
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/routine-review.md",
+          "scouter/references/uv.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/routine-review.md",
+              "scouter/references/uv.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "unspecified",
+            "named_sections": []
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/uv.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Project workflow",
+              "Pip-compatible workflow"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [
+          "scouter/references/routine-review.md",
+          "scouter/references/uv.md"
+        ],
+        "unresolved_read_call_count": 4,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-uv-project",
+      "case_id": "13",
+      "variant": "uv-project",
+      "correctness": "pass",
+      "selected": false,
+      "skill_digest": "03f356fcd4d8c3cb9b2082fed348dbf593b8a20af9080e81329bcdef1ab00ee1",
+      "input_digest": "da1ee72a270f7b65569618830861dbb26b5d05f34b7dae3f9646b0032bb232b9",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "a1e4db8be954f8c7f99d1f5d897ded3b739894f8eb7291a2b7644f1337db3783",
+      "transcript_digests": [
+        "bfa375c48bcbfb96c18707a02da0b7e98e339db1643f9352984dc430bbf3f6e9"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 133710,
+          "cached_input_tokens": 116608,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2237,
+          "reasoning_output_tokens": 123,
+          "total_tokens": 135947
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 133710,
+              "cached_input_tokens": 116608,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2237,
+              "reasoning_output_tokens": 123,
+              "total_tokens": 135947
+            },
+            "responses": 5
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 4,
+        "by_tool": {
+          "exec": 4
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 4,
+            "by_tool": {
+              "exec": 4
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/routine-review.md",
+          "scouter/references/uv.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/routine-review.md",
+              "scouter/references/uv.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Shared preflight"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/uv.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Project workflow",
+              "Pip-compatible workflow",
+              "Poetry limitation"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 4,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-uv-project-final",
+      "case_id": "13",
+      "variant": "uv-project",
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "704375b7a4dcee78ab05100fda51a34da48db005f0189579714521aeeda86fb0",
+      "input_digest": "03365c972561822345ab7bcf3928ef2be52a80c343cd0057ea6d2c24f52cbd9a",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "3d602667d5eb1581ddc8aa3be53950ef89b02c9197b5e33809d65921854beb8a",
+      "transcript_digests": [
+        "093130b9e1e1cc29d04035e218637307c9be68f8ae05b2aa6a83fb9e7da86bbf"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 156336,
+          "cached_input_tokens": 142592,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2042,
+          "reasoning_output_tokens": 167,
+          "total_tokens": 158378
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 156336,
+              "cached_input_tokens": 142592,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2042,
+              "reasoning_output_tokens": 167,
+              "total_tokens": 158378
+            },
+            "responses": 6
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 5,
+        "by_tool": {
+          "exec": 5
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 5,
+            "by_tool": {
+              "exec": 5
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/routine-review.md",
+          "scouter/references/uv.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/routine-review.md",
+              "scouter/references/uv.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Shared preflight"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/uv.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Project workflow"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [
+          "scouter/references/routine-review.md",
+          "scouter/references/uv.md"
+        ],
+        "unresolved_read_call_count": 3,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-yarn-classic",
+      "case_id": "13",
+      "variant": "yarn-classic",
+      "correctness": "pass",
+      "selected": false,
+      "skill_digest": "8db4ece2bd6477d9d53e6179a09b0980e399968909e22dc59ca6ee3d85242570",
+      "input_digest": "1d9a4769c9137175f5b7ec4c82cb0b93b706c1963fed0d96da2c84b9d196e679",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "fff4ef6a3fd98a2cdc540f3b9931c1cf8090b280d834a0b1380cec1b9cf87224",
+      "transcript_digests": [
+        "6f61c71460ed47ca37212bc550777d31de737b84e1e23bbd51de11539c785b12"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 132362,
+          "cached_input_tokens": 120576,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1874,
+          "reasoning_output_tokens": 85,
+          "total_tokens": 134236
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 132362,
+              "cached_input_tokens": 120576,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1874,
+              "reasoning_output_tokens": 85,
+              "total_tokens": 134236
+            },
+            "responses": 5
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 4,
+        "by_tool": {
+          "exec": 4
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 4,
+            "by_tool": {
+              "exec": 4
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/routine-review.md",
+          "scouter/references/yarn-pnpm.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/routine-review.md",
+              "scouter/references/yarn-pnpm.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Shared preflight"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/yarn-pnpm.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "pnpm",
+              "Modern Yarn",
+              "Yarn Classic (1.x)",
+              "Complete the review"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [
+          "scouter/references/routine-review.md",
+          "scouter/references/yarn-pnpm.md"
+        ],
+        "unresolved_read_call_count": 2,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-yarn-classic-final",
+      "case_id": "13",
+      "variant": "yarn-classic",
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "704375b7a4dcee78ab05100fda51a34da48db005f0189579714521aeeda86fb0",
+      "input_digest": "ef049300b150791342ee5691333a7958328a6cac709eec116b0e63ad12e06cff",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "0144f4cf4990a08d886630b7fc661ebc0aa5ef5f6342f349f198e1fe1c2d974f",
+      "transcript_digests": [
+        "6af821b213458343db1f2d838edf7dd0584401ee2a8da7631abcf36f483f8832"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 127979,
+          "cached_input_tokens": 114176,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1737,
+          "reasoning_output_tokens": 55,
+          "total_tokens": 129716
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 127979,
+              "cached_input_tokens": 114176,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1737,
+              "reasoning_output_tokens": 55,
+              "total_tokens": 129716
+            },
+            "responses": 5
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 4,
+        "by_tool": {
+          "exec": 4
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 4,
+            "by_tool": {
+              "exec": 4
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/routine-review.md",
+          "scouter/references/yarn-pnpm.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/routine-review.md",
+              "scouter/references/yarn-pnpm.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Shared preflight"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/yarn-pnpm.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Choose the correct workflow",
+              "pnpm",
+              "Modern Yarn",
+              "Yarn Classic (1.x)",
+              "Complete the review"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [
+          "scouter/references/routine-review.md",
+          "scouter/references/yarn-pnpm.md"
+        ],
+        "unresolved_read_call_count": 2,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-yarn-classic-r1",
+      "case_id": "13",
+      "variant": "yarn-classic",
+      "correctness": "pass",
+      "selected": false,
+      "skill_digest": "03f356fcd4d8c3cb9b2082fed348dbf593b8a20af9080e81329bcdef1ab00ee1",
+      "input_digest": "37aa8c7f8c978961b65e1d6fb9f49cd562281e13613ebc713fedec98293f3433",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "e8da2fe6bc973b6bb96f565cee4223155791b3db5dc02fc526827b84b7b9dfb7",
+      "transcript_digests": [
+        "7bfcee6121c789c9efb07b53e4ad0d9da633790eaf5fc882eda8d3bedcfd3e13"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 130059,
+          "cached_input_tokens": 91904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1906,
+          "reasoning_output_tokens": 109,
+          "total_tokens": 131965
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 130059,
+              "cached_input_tokens": 91904,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1906,
+              "reasoning_output_tokens": 109,
+              "total_tokens": 131965
+            },
+            "responses": 5
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 4,
+        "by_tool": {
+          "exec": 4
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 4,
+            "by_tool": {
+              "exec": 4
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/routine-review.md",
+          "scouter/references/yarn-pnpm.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/routine-review.md",
+              "scouter/references/yarn-pnpm.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "unspecified",
+            "named_sections": [
+              "Shared preflight"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/yarn-pnpm.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "pnpm",
+              "Modern Yarn"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 3,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-yarn-modern",
+      "case_id": "13",
+      "variant": "yarn-modern",
+      "correctness": "pass",
+      "selected": false,
+      "skill_digest": "8db4ece2bd6477d9d53e6179a09b0980e399968909e22dc59ca6ee3d85242570",
+      "input_digest": "166f9028eaa700e5463bd987ae210205cff1aec57430c8cd156b36fe30c0dbc5",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "66dc5a96b8690543677808202dda6426a335aeeb7f8e5344059fdc9cf0e27c83",
+      "transcript_digests": [
+        "4fd200aada097d6f433d845f8c6a57227d74ee2030aaaab9a877e6617e7bf14d"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 131758,
+          "cached_input_tokens": 119808,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2056,
+          "reasoning_output_tokens": 144,
+          "total_tokens": 133814
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 131758,
+              "cached_input_tokens": 119808,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 2056,
+              "reasoning_output_tokens": 144,
+              "total_tokens": 133814
+            },
+            "responses": 5
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 4,
+        "by_tool": {
+          "exec": 4
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 4,
+            "by_tool": {
+              "exec": 4
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/routine-review.md",
+          "scouter/references/yarn-pnpm.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/routine-review.md",
+              "scouter/references/yarn-pnpm.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Shared preflight"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/yarn-pnpm.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "pnpm",
+              "Modern Yarn"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 3,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    },
+    {
+      "run_id": "routine-13-yarn-modern-final",
+      "case_id": "13",
+      "variant": "yarn-modern",
+      "correctness": "pass",
+      "selected": true,
+      "skill_digest": "704375b7a4dcee78ab05100fda51a34da48db005f0189579714521aeeda86fb0",
+      "input_digest": "5312bcd0b671624d587a22d8407d6108ad9ea2285d912254169e9416d94210b8",
+      "input_digest_algorithm": "input_tree_sha256",
+      "rubric_digest": "824348ca4fd1ffc2ec32ef8db1b364807be3fdd12d15b6af5a9c26c003af720b",
+      "grade_digest": "87e2c97e6f4013933ad5102b2eadc9806f4a7ad27e8d69b03e4ede7ca2944ff0",
+      "transcript_digests": [
+        "8a6c78ff15c5748a4b972b2387cff76df407047ba3c243ea5dbd7501f98ff1ff"
+      ],
+      "expected_turns": 1,
+      "source": "local_codex_jsonl",
+      "tokens": {
+        "status": "measured",
+        "method": "unique_response_usage",
+        "values": {
+          "input_tokens": 154367,
+          "cached_input_tokens": 137728,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1756,
+          "reasoning_output_tokens": 38,
+          "total_tokens": 156123
+        },
+        "turns": [
+          {
+            "turn": 1,
+            "values": {
+              "input_tokens": 154367,
+              "cached_input_tokens": 137728,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1756,
+              "reasoning_output_tokens": 38,
+              "total_tokens": 156123
+            },
+            "responses": 6
+          }
+        ],
+        "cross_check": "matched"
+      },
+      "tool_calls": {
+        "status": "measured",
+        "count": 5,
+        "by_tool": {
+          "exec": 5
+        },
+        "turns_status": "measured",
+        "turns": [
+          {
+            "turn": 1,
+            "count": 5,
+            "by_tool": {
+              "exec": 5
+            }
+          }
+        ]
+      },
+      "runtime": {
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "reasoning_efforts": [
+          "medium"
+        ],
+        "codex_versions": [
+          "0.162.0-alpha.17.2"
+        ]
+      },
+      "issues": [],
+      "references": {
+        "status": "declared",
+        "count": 2,
+        "files": [
+          "scouter/references/routine-review.md",
+          "scouter/references/yarn-pnpm.md"
+        ],
+        "by_transcript": [
+          {
+            "transcript": 1,
+            "status": "declared",
+            "reuse_only": false,
+            "files": [
+              "scouter/references/routine-review.md",
+              "scouter/references/yarn-pnpm.md"
+            ]
+          }
+        ],
+        "declared_scopes": [
+          {
+            "transcript": 1,
+            "path": "scouter/references/routine-review.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "Shared preflight"
+            ]
+          },
+          {
+            "transcript": 1,
+            "path": "scouter/references/yarn-pnpm.md",
+            "extent": "whole_file",
+            "named_sections": [
+              "pnpm",
+              "Modern Yarn",
+              "Complete the review"
+            ]
+          }
+        ],
+        "corroborated_read_requests": [],
+        "unresolved_read_call_count": 7,
+        "basis": "declared_final_read_lists; corroboration only for recognized literal read requests"
+      }
+    }
+  ]
+}

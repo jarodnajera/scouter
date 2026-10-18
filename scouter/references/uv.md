@@ -1,6 +1,6 @@
 # uv guarded installs
 
-Use for uv projects and uv's pip-compatible interface, with the [Ready criteria](../SKILL.md#minimum-evidence-for-ready), [manager preflight](package-manager-protections.md), [batch review](batch-review.md), and [Socket assessment](socket-operations.md). Documentation checked on 2026-10-17. Commands below are templates requiring local capability checks; they are not live-tested compatibility claims. Follow the [shared version-discrepancy procedure](package-manager-protections.md#resolve-version-discrepancies) when installed capabilities differ from these examples.
+Use for uv projects and uv's pip-compatible interface with the [Ready criteria](../SKILL.md#minimum-evidence-for-ready). Eligible routine work uses [routine preflight](routine-review.md), common sections here and its selected workflow; linked exception guides are conditional. Other work requires [manager preflight](package-manager-protections.md) and [Socket assessment](socket-operations.md); multiple dependencies require [batch review](batch-review.md). Documentation checked on 2026-10-17. Commands below require local verification, not live-tested compatibility claims. Follow the [discrepancy procedure](package-manager-protections.md#resolve-version-discrepancies) when capabilities differ.
 
 ## Environment, sources, and protections
 
@@ -34,7 +34,7 @@ For a lock-only upgrade within the existing compatible constraints:
 sfw uv --no-cache --no-python-downloads lock --upgrade-package "example==1.2.3" --no-build --exclude-newer <UTC-cutoff> --python <python-path>
 ```
 
-Review the resulting exact graph and target artifacts, dependency/behavior changes, and bulk advisory results. A universal `uv.lock` may contain alternatives for multiple targets: identify the installed subset and justify exclusions; do not claim excluded artifacts were checked. Associate each permitted wheel with its registry origin, hash, upload date, Python/platform compatibility, and yanked status. Review later uploads individually, as in [pip evidence](pip.md#review-python-evidence). Artifact lists/hashes alone do not establish age or safety.
+Review the resulting exact graph and target artifacts, dependency/behavior changes, and bulk advisory results. A universal `uv.lock` may contain alternatives for multiple targets: identify the installed subset and justify exclusions; do not claim excluded artifacts were checked. Associate each permitted wheel with its registry origin, hash, upload date, Python/platform compatibility, and yanked status. Review later uploads individually. These wheel checks apply to both uv workflows; no pip-guide read is required. Artifact lists/hashes alone do not establish age or safety.
 
 After READY, install third-party dependencies while excluding unreviewed project/workspace builds:
 
@@ -64,7 +64,7 @@ Install does not save project declarations or remove all extraneous packages. If
 
 Inspect firewall output and resulting environment/lock/report evidence before executing code; compare installed versions/origins with the reviewed graph, and disclose already-satisfied/cache coverage. Stop on warning/failure or graph drift without plain-manager retries, automatic relocking, or undoing unrelated changes. For a clone, also follow [first install](first-install.md); for `uvx`, follow [staged runners](one-shot-runners.md).
 
-Use the [standalone report format](reporting.md). Distinguish lock/proposal changes, environment installation, excluded project/workspace builds, and pending execution; retain wheel-age/hash and cache-coverage details.
+Use the [core report](../SKILL.md#single-package-report) for routine work, otherwise [reporting](reporting.md). Distinguish lock/proposal changes, environment installation, excluded project/workspace builds, and pending execution; retain wheel-age/hash and cache-coverage details.
 
 ## Poetry limitation
 

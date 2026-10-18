@@ -1,6 +1,14 @@
 # Package-manager protection preflight
 
-Read before resolving, installing, upgrading, or executing third-party packages. These examples map Scouter's default seven-day cooldown to native controls; use the project's explicit policy instead when present. Documentation checked on 2026-10-16. Verify syntax and behavior against the installed version before use.
+Read before resolving, installing, upgrading, or executing third-party packages outside the [routine route](routine-review.md). Eligible routine reviews use that shared preflight and only their manager instructions; npm reads the section below. These examples map Scouter's default seven-day cooldown to native controls; use the project's explicit policy instead when present. Documentation checked on 2026-10-16. Verify syntax and behavior against the installed version before use.
+
+## Routine npm
+
+Use with the core and [routine review](routine-review.md); no other section is required unless capabilities or eligibility are uncertain. Preserve project configuration, dependency category, registry/TLS and exact pins. Verify `ignore-scripts` and effective `audit=false`, or explicitly pass `--audit=false` on acquisition unless that disclosure was separately approved. Inspect age exclusions and `before` precedence; verify cutoff syntax, units and coverage for the installed version rather than assuming newer flags work. Existing locks may bypass native age filtering: manually check exact artifact dates and retain the reviewed graph.
+
+Prepare a supported guarded lock-only proposal with scripts suppressed before installing changed dependencies. Inspect its manifest/lock changes and complete graph/artifact checks first. If a proposal already exists, verify its consistency and provenance rather than resolving it again. No safe proposal path means REVIEW.
+
+Acquire through `sfw` with script/audit suppression and a compatible empty task-owned npm cache. A matching reviewed manifest/lock can use `npm ci --ignore-scripts --audit=false --cache <fresh-task-cache>` only when replacing `node_modules` is authorized. Otherwise review a graph-preserving alternative; do not force replacement. Do not put frozen-install flags on additions. Verify resulting versions/origins/integrity and stop before code execution on drift, warnings or failures. `npm install` alone is not proof of a frozen graph. [npm CI](https://docs.npmjs.com/cli/v11/commands/npm-ci/).
 
 For actionable Yarn Classic, modern Yarn, and pnpm workflows, read [Yarn and pnpm guarded installs](yarn-pnpm.md). The Yarn age setting below is not available in Classic; older manager versions may require the manual fallback described here.
 

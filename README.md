@@ -1,12 +1,65 @@
-# Scouter Skill
+# scouter
+
+<p align="center">
+  <img src="scouter_transparent.png" alt="Scouter skill logo" width="192" height="192">
+</p>
 
 Review dependencies during coding tasks, then guard eligible installs with Socket Firewall Free (`sfw`). Scouter checks identity, release maturity, dependency and behavior changes, and security evidence. It complements a separate security audit and does not guarantee package safety.
+
+**Socket requirement:** Ready and guarded installation require a trusted, compatible `sfw` launcher and verified protections for the planned operation. Without Socket, Scouter can still review evidence and report findings or gaps, but it cannot mark the package Ready or attempt a guarded install. See [Socket setup, cache and telemetry](scouter/references/socket-operations.md).
 
 The standalone skill is the primary workflow. The **optional CLI** supports npm projects only and requires exactly **Node 24.22.0 and npm 11.19.1**. Windows x64 is validated; macOS arm64/x64 is experimental and requires `--experimental-macos true` for live commands; Linux is unsupported. These CLI restrictions do not apply to the standalone skill's direct workflows. See [CLI compatibility](scouter-cli/docs/compatibility.md).
 
 Scouter also handles advisories or audit findings in installed dependencies: assess applicability, choose a mitigation or compatible fix, and verify the result. Fresh security fixes require an advisory-backed, explicitly approved cooldown exception scoped to one package and version; see [Security fixes](scouter/SKILL.md#security-fixes).
 
 The standalone skill includes npm, pnpm, modern Yarn, Yarn Classic, pip, and uv guidance, plus first-install and staged runner/scaffolder workflows. Classic requires manual release-age checks; other manager protections depend on the installed version. Poetry has no documented guarded workflow and must not be silently migrated. The optional Scouter CLI remains npm-only; the skill invokes Socket's `sfw` directly for supported managers, regardless of how Socket was installed. Runner guidance does not imply Socket support for every runner or protection of the application's own network activity.
+
+For one established public package in an existing single-root project, [routine review](scouter/references/routine-review.md) shares preflight across these managers and uses only the applicable manager instructions. All five checks and Ready criteria remain required, including artifact inspection and exact-artifact ages. The core includes a compact report; detailed setup, exception and reporting guides load when needed. See [current static instruction counts](evals/README.md#current-instruction-counts) and [historical scoped offline results](evals/routine-results.md); word counts are not measured token or execution savings.
+
+**Project name and installation:** Checked on 2026-10-18: unrelated packages already use [`scouter` on npm](https://www.npmjs.com/package/scouter) and [`scouter` on PyPI](https://pypi.org/project/scouter/). Neither `npm install scouter` nor `pip install scouter` installs this project. Install Scouter from this repository using Option 1 or Option 2 below. Socket Firewall Free is a separate tool; its installation instructions are linked under Option 1.
+
+## Option 1: Skill only
+
+1. Download or install the `scouter/` folder from this repository into your agent's supported skills directory. Keep `SKILL.md`, `LICENSE`, and the entire `references/` folder together. Consult your agent's instructions for its skill location and activation method.
+2. Install Socket Firewall Free using [Socket's official instructions](https://docs.socket.dev/docs/socket-firewall-free). Its npm installation command is `npm i -g sfw`. Reuse an existing trusted installation if available.
+3. Ask your agent to use `$scouter` when adding dependencies to your coding project. It can review packages and invoke `sfw` directly; the Scouter CLI is not needed.
+
+Socket recommends clearing your package manager's cache when adopting it (for npm, `npm cache clean --force`) and using `sfw` for subsequent downloads. Cache clearing removes cached artifacts and requires fresh downloads. A fresh per-operation cache is an alternative; neither approach rescans already installed packages. Socket Free supports public registries and collects telemetry.
+
+Some skill installers copy only `scouter/`. That is a complete standalone installation, not an error. The skill must not assume the optional sibling CLI was copied too.
+
+## Option 2: Skill plus optional CLI
+
+Clone this repository or download and extract its full ZIP. Keep the complete `scouter-cli/` folder; do not copy only `src/cli.mjs`. Install the skill as above, and tell the agent the absolute path to the downloaded repository or CLI entrypoint if it is no longer beside the installed skill.
+
+Here, `repository/` represents your checkout directory; its actual name may differ. The child directories are `scouter/` and `scouter-cli/`.
+
+```text
+repository/
+  README.md
+  scouter/          # Standalone skill and references
+  scouter-cli/      # Optional local Node CLI
+```
+
+Within the [CLI compatibility baseline](scouter-cli/docs/compatibility.md), projects must use public npm, a single root with no workspaces, and a v3 `package-lock.json`. Private registries are unsupported. Follow the setup and platform-specific instructions below.
+
+The CLI has no third-party runtime dependencies. No `npm install`, build, global link, or registry package installation is required. It is distributed as source in this repository.
+
+From the extracted repository root:
+
+```powershell
+node ./scouter-cli/src/cli.mjs --help
+```
+
+From any directory, replace the example repository path with your actual path:
+
+```powershell
+node "C:\path\to\repository\scouter-cli\src\cli.mjs" inspect --project "C:\path\to\app" --format text
+```
+
+`inspect` reads project configuration without installing packages. Use the [optional CLI reference](scouter/references/optional-cli.md) for dependency checks, guarded installation, discovery, and result handling. Socket must be installed for `check` to be ready and for `install` to proceed. The CLI recognizes the installed Windows npm launcher as well as a native Socket binary.
+
+For macOS shell examples, test commands, and pending validation criteria, see the [macOS validation](scouter-cli/docs/macos-validation.md). The opt-in changes platform eligibility only; all dependency guards remain active.
 
 ## Example conversations (simulated)
 
@@ -36,50 +89,7 @@ Operation: not run — installation and Socket not run; offer reviewed 1.0.0 or 
 Evidence: case 02 fixtures, reviewed 2026-10-17T17:00:00Z
 ```
 
-The [evaluation rubric](evals/rubric.md#strengths-regression-map) protects untrusted-evidence handling, decision tiers, existing authorization, firewall failure handling, honest coverage limits, data minimization, progressive reference loading, and skill-only operation. Evaluation inputs and rubrics stay outside the installable skill.
-
-## Option 1: Skill only
-
-1. Download or install the `scouter/` folder from this repository into your agent's supported skills directory. Keep `SKILL.md`, `LICENSE`, and the entire `references/` folder together. Consult your agent's instructions for its skill location and activation method.
-2. Install Socket Firewall Free using [Socket's official instructions](https://docs.socket.dev/docs/socket-firewall-free). Its npm installation command is `npm i -g sfw`. Reuse an existing trusted installation if available.
-3. Ask your agent to use `$scouter` when adding dependencies to your coding project. It can review packages and invoke `sfw` directly; the Scouter CLI is not needed.
-
-Socket recommends clearing your package manager's cache when adopting it (for npm, `npm cache clean --force`) and using `sfw` for subsequent downloads. Cache clearing removes cached artifacts and requires fresh downloads. A fresh per-operation cache is an alternative; neither approach rescans already installed packages. Socket Free supports public registries and collects telemetry.
-
-Some skill installers copy only `scouter/`. That is a complete standalone installation, not an error. The skill must not assume the optional sibling CLI was copied too.
-
-## Option 2: Skill plus optional CLI
-
-Clone this repository or download and extract its full ZIP. Keep the complete `scouter-cli/` folder; do not copy only `src/cli.mjs`. Install the skill as above, and tell the agent the absolute path to the downloaded repository or CLI entrypoint if it is no longer beside the installed skill.
-
-Here, `repository/` represents your checkout directory; its actual name may differ. The child directories are `scouter/` and `scouter-cli/`.
-
-```text
-repository/
-  README.md
-  scouter/          # Standalone skill and references
-  scouter-cli/      # Optional local Node CLI
-```
-
-Within the [CLI compatibility baseline](scouter-cli/docs/compatibility.md), projects must use public npm, a single root with no workspaces, and a v3 `package-lock.json`. Private registries are unsupported. Follow the setup and platform-specific instructions below.
-
-The CLI has no third-party runtime dependencies. No `npm install`, build, global link, or registry package installation is required. It is distributed as source in this repository; do not run `npm install scouter` to obtain this repository.
-
-From the extracted repository root:
-
-```powershell
-node ./scouter-cli/src/cli.mjs --help
-```
-
-From any directory, replace the example repository path with your actual path:
-
-```powershell
-node "C:\path\to\repository\scouter-cli\src\cli.mjs" inspect --project "C:\path\to\app" --format text
-```
-
-`inspect` reads project configuration without installing packages. Use the [optional CLI reference](scouter/references/optional-cli.md) for dependency checks, guarded installation, discovery, and result handling. Socket must be installed for `check` to be ready and for `install` to proceed. The CLI recognizes the installed Windows npm launcher as well as a native Socket binary.
-
-For macOS shell examples, test commands, and pending validation criteria, see the [macOS validation](scouter-cli/docs/macos-validation.md). The opt-in changes platform eligibility only; all dependency guards remain active.
+The [evaluation rubric](evals/rubric.md#strengths-regression-map) protects untrusted-evidence handling, decision tiers, existing authorization, firewall failure handling, honest coverage limits, data minimization, progressive reference loading, and skill-only operation. Evaluation inputs and rubrics stay outside the installable skill. The [prepared offline experiment](evals/EXPERIMENT.md) covers guided skill use and neutral no-skill tasks. It was stopped before independent grading, so it provides no comparison conclusion. External agents, trigger activation and live evidence gathering remain pending.
 
 ## Usage and development
 
@@ -87,6 +97,7 @@ Scouter limits agent-initiated external lookups to necessary public package info
 
 - [Skill instructions](scouter/SKILL.md)
 - [Package-manager protections](scouter/references/package-manager-protections.md)
+- [Shared routine review](scouter/references/routine-review.md)
 - [Security-fix procedures](scouter/references/security-fixes.md)
 - [Socket setup, cache, and telemetry](scouter/references/socket-operations.md)
 - [Batch review and scaled effort](scouter/references/batch-review.md)

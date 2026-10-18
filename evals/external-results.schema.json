@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Offline external results import v1",
+  "type": "object",
+  "required": ["schema_version", "experiment", "skill_digest", "rubric_digest", "runs"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "experiment": {"const": "repeated-offline-v1"},
+    "skill_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rubric_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "runs": {"type": "array", "items": {
+      "type": "object",
+      "required": ["run_id", "packet_digest", "model", "harness", "transcripts", "telemetry", "approval_sequence"],
+      "properties": {
+        "run_id": {"type": "string"},
+        "packet_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "model": {"type": "string"}, "harness": {"type": "string"},
+        "transcripts": {"type": "array", "items": {"type": "object", "required": ["file", "sha256"], "properties": {"file": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}},
+        "approval_sequence": {"enum": ["not_applicable", "turn_1_retained_before_approval"]},
+        "telemetry": {"const": {"status": "unavailable"}}
+      }
+    }}
+  }
+}

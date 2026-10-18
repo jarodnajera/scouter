@@ -1,6 +1,6 @@
 # Standalone reports
 
-Use this format when reporting Scouter's dependency-review decisions and operation outcomes. Apply the existing [decision tiers and Ready evidence](../SKILL.md#decide-and-install); formatting does not create a new policy or approval. Reports are chat output unless saving is separately requested. The optional CLI's renderer, schema, and statuses remain unchanged.
+The [core single-package template](../SKILL.md#single-package-report) is sufficient for routine reports. Read this guide for batches, exceptions, specialized workflows, or examples. Apply the existing [decision tiers and Ready evidence](../SKILL.md#decide-and-install); formatting does not create a new policy or approval. Reports are chat output unless saving is separately requested. The optional CLI's renderer, schema, and statuses remain unchanged.
 
 ## Single package
 

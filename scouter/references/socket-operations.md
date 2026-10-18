@@ -1,6 +1,6 @@
 # Socket operations and data handling
 
-Read before first Socket use in a task. Reuse this assessment unless tooling, configuration, or policy changes. Apply the [core trust rules](../SKILL.md#data-minimization) and [manager protections](package-manager-protections.md).
+Complete this assessment before first Socket use in a task, or use the equivalent assessment in [routine review](routine-review.md) when eligible. Read this full guide for setup, uncertainty, restricted policy, or other escalation. Reuse only while tooling, configuration, policy, and operation scope remain compatible. Apply the [core trust rules](../SKILL.md#data-minimization) and [manager protections](package-manager-protections.md).
 
 ## Setup and cache
 
