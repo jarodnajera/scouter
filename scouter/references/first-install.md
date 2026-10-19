@@ -8,7 +8,7 @@ Identify project/workspace instructions, actual manager/version, intended regist
 
 Extract the locked graph locally and check exact versions, origins/integrity, dependency paths, install behavior, and public advisory results using batch review. A committed lockfile is input evidence, not prior approval. No historical baseline is needed for a first install; inspect the current graph/artifacts instead. Missing graph data needed for these checks remains REVIEW.
 
-Check release ages independently for locked artifacts outside verified native coverage. Preserve stronger cooldowns, pip/uv selected-wheel upload dates, and existing scoped exceptions. Frozen/immutable controls preserve versions; they do not establish age, advisory, or malware coverage. Follow Socket's cache rules and disclose installed/reused artifacts that will not download.
+Check release ages independently for locked artifacts outside verified native coverage. Preserve stronger cooldowns, pip/uv selected-wheel age evidence and hash binding. Existing exclusions do not establish cooldown compliance. Frozen/immutable controls preserve versions; they do not establish age, advisory, or malware coverage. Follow Socket's cache rules and disclose installed/reused artifacts that will not download.
 
 Before choosing a clean/exact install, inspect existing `node_modules` or Python environment metadata and local changes. npm CI removes `node_modules`; exact sync can remove unrelated packages. Use an intended disposable/project environment only when replacement fits the authorized task. Otherwise explain the impact and resolve the environment choice before invoking it; do not silently delete or force replacement.
 
@@ -18,7 +18,7 @@ Run in the intended project/workspace. These are command shapes, not a substitut
 
 | Manager | Guarded command shape | Additional controls |
 | --- | --- | --- |
-| npm | `sfw npm ci --ignore-scripts --audit=false --cache <fresh-task-cache>` | Require a consistent npm lockfile and matching resolution configuration. Check locked ages separately; preserve verified age settings. Do not run `npm install` to repair a mismatch automatically. [npm CI](https://docs.npmjs.com/cli/v11/commands/npm-ci/) |
+| npm | `sfw npm ci --ignore-scripts --audit=false --cache <fresh-task-cache>` | Require a consistent npm lockfile and matching resolution configuration. Manually check locked ages outside native coverage; preserve verified age settings. Do not run `npm install` to repair a mismatch automatically. [npm CI](https://docs.npmjs.com/cli/v11/commands/npm-ci/) |
 | pnpm | `sfw pnpm install --frozen-lockfile --ignore-scripts` | Apply the [pnpm guide](yarn-pnpm.md#pnpm), including hook/build settings and compatible fresh store/cache handling. Never fix store incompatibility with automatic deletion or `--force`. [pnpm install](https://pnpm.io/cli/install) |
 | Modern Yarn | `sfw yarn install --immutable --mode=skip-build` | Verify mode spelling and cache/mirror protections from the [Yarn guide](yarn-pnpm.md#modern-yarn). Preserve immutable-cache policy where present; do not modify committed archives implicitly. [Yarn install](https://yarnpkg.com/cli/install) |
 | Yarn Classic | `sfw yarn install --frozen-lockfile --ignore-scripts --cache-folder <fresh-task-cache>` | Apply manual exact-artifact ages and inspect offline mirrors. Do not infer the major version from `yarn.lock` alone. [Classic install](https://classic.yarnpkg.com/en/docs/cli/install/) |

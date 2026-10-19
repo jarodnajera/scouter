@@ -10,7 +10,7 @@ Verify the installed subcommands' help against the [uv CLI](https://docs.astral.
 
 If a required control is unavailable, use a documented equivalent or return REVIEW with the gap. Do not silently omit flags, upgrade uv, or perform trial installs to discover whether protections work.
 
-Use `--exclude-newer <UTC-cutoff>` for new resolution, at least seven days old or the stronger project cutoff. Verify duration support before using relative forms. Inspect per-package overrides and source/index upload-time coverage; check locked/selected artifacts separately. Missing timestamps or incomplete native coverage require the exact-artifact fallback, not a cooldown exclusion. [uv resolution](https://docs.astral.sh/uv/concepts/resolution/), [settings](https://docs.astral.sh/uv/reference/settings/).
+Use `--exclude-newer <UTC-cutoff>` for new resolution, at least seven days old or the stronger project cutoff. Verify duration support before using relative forms. Verify per-package overrides and selected-artifact coverage; manually check uncovered locks/artifacts, without duplicating verified native checks. Missing timestamps or incomplete native coverage require the exact-artifact fallback, not a cooldown exclusion. [uv resolution](https://docs.astral.sh/uv/concepts/resolution/), [settings](https://docs.astral.sh/uv/reference/settings/).
 
 Preflight local/editable/VCS/direct-URL requirements and dynamic metadata before resolution. Default to public registry wheels. `--no-build` rejects source builds but can reuse cached built wheels and does not prevent first-party/workspace or editable backends from executing. `--no-build-isolation` and `--no-editable` are not substitutes. Stop for separate review of these sources/builds; do not silently erase `tool.uv.sources` or reroute packages. Verify build exceptions against [uv settings](https://docs.astral.sh/uv/reference/settings/#no-build).
 
@@ -34,7 +34,7 @@ For a lock-only upgrade within the existing compatible constraints:
 sfw uv --no-cache --no-python-downloads lock --upgrade-package "example==1.2.3" --no-build --exclude-newer <UTC-cutoff> --python <python-path>
 ```
 
-Review the resulting exact graph and target artifacts, dependency/behavior changes, and bulk advisory results. A universal `uv.lock` may contain alternatives for multiple targets: identify the installed subset and justify exclusions; do not claim excluded artifacts were checked. Associate each permitted wheel with its registry origin, hash, upload date, Python/platform compatibility, and yanked status. Review later uploads individually. These wheel checks apply to both uv workflows; no pip-guide read is required. Artifact lists/hashes alone do not establish age or safety.
+Review the resulting exact graph and target artifacts, dependency/behavior changes, and bulk advisory results. A universal `uv.lock` may contain alternatives for multiple targets: identify the installed subset and justify exclusions; do not claim excluded artifacts were checked. Bind each permitted wheel to its registry origin, hash, Python/platform compatibility and yanked status. Record native age coverage or a manually verified upload date; coverage must include later uploads. These wheel checks apply to both uv workflows; no pip-guide read is required. Artifact lists/hashes alone do not establish age or safety.
 
 After READY, install third-party dependencies while excluding unreviewed project/workspace builds:
 

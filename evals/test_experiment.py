@@ -122,6 +122,57 @@ class ProtocolTests(unittest.TestCase):
         self.assertFalse((self.base/'graders/01').exists())
 
 
+    def synthetic_grade(self, key):
+        mapping=json.loads((self.base/'blind-mappings'/(key+'.json')).read_text())
+        rubric=json.loads((self.base/'rubric.json').read_text())
+        responses={}
+        for anon in mapping['responses']:
+            available=mapping.get('availability',{}).get(anon,True)
+            citation={'location':'report','quote':'reviewed exact package'} if available else {'location':'unavailable placeholder','omission':True}
+            responses[anon]={group:{k:{'status':'pass' if available else 'ungraded','evidence':copy.deepcopy(citation)} for k in set(rubric[group+'_global']) | set(rubric['cases'][key[:2]][group])} for group in ('shared','scouter')}
+            responses[anon]['critical_failures']=[]
+        return {'schema_version':1,'case_key':key,'packet_digest':mapping['packet_digest'],'responses':responses}
+
+    def test_partial_packet_preserves_missing_slots_and_anonymity(self):
+        (self.base/'responses').mkdir()
+        m,_=e.load(self.base)
+        rows=[r for r in m['runs'] if r['case_key']=='01']
+        for r in rows[:4]:
+            (self.base/'responses'/(r['run_id']+'.md')).write_text('reviewed exact package '+str(self.base)+'/packets/'+r['run_id'])
+        with contextlib.redirect_stdout(io.StringIO()):e.grader_packet(self.base,'01',available_only=True)
+        mapping=json.loads((self.base/'blind-mappings/01.json').read_text())
+        self.assertEqual(sum(mapping['availability'].values()),4)
+        self.assertEqual(len(list((self.base/'responses').iterdir())),4)
+        for file in (self.base/'graders/01').glob('response-*.md'):
+            text=file.read_text()
+            self.assertNotIn(str(self.base),text)
+            self.assertTrue(all(r['run_id'] not in text for r in rows))
+        grade=self.synthetic_grade('01');e.dump(self.base/'grades/01.json',grade);e.validate_grade(self.base,'01')
+        missing=next(k for k,v in mapping['availability'].items() if not v)
+        grade['responses'][missing]['shared']['offline']['status']='pass'
+        e.dump(self.base/'grades/01.json',grade)
+        with self.assertRaisesRegex(ValueError,'unavailable_response'):e.validate_grade(self.base,'01')
+
+    def test_nested_citation_and_packet_tamper(self):
+        (self.base/'responses').mkdir()
+        m,_=e.load(self.base)
+        for r in m['runs']:
+            if r['case_key']=='01':(self.base/'responses'/(r['run_id']+'.md')).write_text('reviewed exact package')
+        with contextlib.redirect_stdout(io.StringIO()):e.grader_packet(self.base,'01')
+        grade=self.synthetic_grade('01');e.dump(self.base/'grades/01.json',grade);e.validate_grade(self.base,'01')
+        grade['responses']['response-1']['shared']['offline']['evidence']['quote']='fabricated citation'
+        e.dump(self.base/'grades/01.json',grade)
+        with self.assertRaisesRegex(ValueError,'quote_not_in_response'):e.validate_grade(self.base,'01')
+        e.dump(self.base/'grades/01.json',self.synthetic_grade('01'))
+        (self.base/'graders/01/response-1.md').write_text('tampered')
+        with self.assertRaisesRegex(ValueError,'grade_binding'):e.validate_grade(self.base,'01')
+
+    def test_registration_accepts_lifecycle_metadata(self):
+        state=json.loads((self.base/'state.json').read_text());state['execution_status']='stopped_at_user_request';state['grading_date']='2026-10-18';e.dump(self.base/'state.json',state)
+        e.register(self.base,'01','/root/grader')
+        self.assertIn('01',json.loads((self.base/'state.json').read_text())['graders'])
+
+
 class MetricDimensionsTests(unittest.TestCase):
     def test_backward_compatible_and_absence_explicit(self):
         from metrics import experiment_dimensions, MetricsError
@@ -141,5 +192,40 @@ class RangeTests(unittest.TestCase):
         self.assertEqual(result['total_tokens']['max'],30)
         self.assertIsNone(result['input_tokens']['min'])
         rows.pop();self.assertIsNone(e.cost_ranges(rows)[0]['metrics']['total_tokens']['min'])
+
+class ComparisonTests(unittest.TestCase):
+    def rows(self):
+        rubric=json.loads((Path(__file__).parent/'experiment-rubric.json').read_text())
+        keys=set(rubric['shared_global']) | set(rubric['cases']['13']['shared'])
+        rows=[]
+        for trial in (1,2,3):
+            for condition in e.CONDITIONS:
+                status='pass' if trial==1 or (trial==2 and condition=='skill') or (trial==3 and condition=='no-skill') else 'fail'
+                criteria={k:'pass' for k in keys};criteria['routine']=status
+                rows.append({'case_key':'13-npm','trial':trial,'condition':condition,'status':'graded','shared':status,'critical_failures':0,'critical_kinds':[],
+                    'criterion_statuses':{'shared':criteria,'scouter':{'loading_reporting':'fail'}}})
+        return rows,rubric
+    def test_paired_comparison_ignores_policy_and_tracks_task_handling(self):
+        rows,rubric=self.rows()
+        with patch.object(e,'KEYS',['13-npm']):result=e.comparison(rows,rubric)
+        p=result['paired_summary']
+        self.assertEqual((p['both_pass'],p['scouter_only_pass'],p['baseline_only_pass'],p['neither_pass']),(1,1,1,0))
+        self.assertEqual(p['shared_pass_difference_percentage_points'],0)
+        for condition in e.CONDITIONS:
+            self.assertEqual(result['conditions'][condition]['eligible_task_handling']['pass'],2)
+            self.assertEqual(result['conditions'][condition]['graded'],3)
+    def test_incomplete_pairs_remain_ungraded_and_critical_costs_separate(self):
+        rows,rubric=self.rows()
+        for row in rows:
+            if row['trial']==3:
+                row.update(status='not-run',shared='ungraded',critical_failures=None,criterion_statuses={})
+        rows[2]['critical_failures']=1;rows[2]['critical_kinds']=['disclosure']
+        with patch.object(e,'KEYS',['13-npm']):result=e.comparison(rows,rubric)
+        self.assertEqual((result['paired_summary']['graded'],result['paired_summary']['available'],result['paired_summary']['planned']),(2,2,3))
+        self.assertEqual(result['paired_summary']['ungraded'],1)
+        self.assertEqual(result['conditions']['skill']['critical_trials'],1)
+        self.assertEqual(result['conditions']['skill']['critical_trial_denominator'],2)
+        self.assertEqual(result['conditions']['skill']['eligible_task_handling']['ungraded'],1)
+
 
 if __name__=='__main__':unittest.main()

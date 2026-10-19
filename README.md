@@ -1,65 +1,41 @@
-# scouter
-
 <p align="center">
   <img src="scouter_transparent.png" alt="Scouter skill logo" width="192" height="192">
 </p>
 
-Review dependencies during coding tasks, then guard eligible installs with Socket Firewall Free (`sfw`). Scouter checks identity, release maturity, dependency and behavior changes, and security evidence. It complements a separate security audit and does not guarantee package safety.
+<h1 align="center">scouter</h1>
 
-**Socket requirement:** Ready and guarded installation require a trusted, compatible `sfw` launcher and verified protections for the planned operation. Without Socket, Scouter can still review evidence and report findings or gaps, but it cannot mark the package Ready or attempt a guarded install. See [Socket setup, cache and telemetry](scouter/references/socket-operations.md).
+Scouter helps your coding agent review dependencies before installing them. It checks the package and proposed changes, then uses Socket Firewall Free (`sfw`) for authorized installation.
 
-The standalone skill is the primary workflow. The **optional CLI** supports npm projects only and requires exactly **Node 24.22.0 and npm 11.19.1**. Windows x64 is validated; macOS arm64/x64 is experimental and requires `--experimental-macos true` for live commands; Linux is unsupported. These CLI restrictions do not apply to the standalone skill's direct workflows. See [CLI compatibility](scouter-cli/docs/compatibility.md).
+1. Identify the package needed for the task.
+2. Review identity, release maturity, dependencies, behavior and security evidence.
+3. **READY:** proceed through `sfw` when authorized. **REVIEW:** resolve concerns or ask for a scoped decision. **BLOCK:** do not install.
+4. Inspect installation results before executing new code and continuing the task.
 
-Scouter also handles advisories or audit findings in installed dependencies: assess applicability, choose a mitigation or compatible fix, and verify the result. Fresh security fixes require an advisory-backed, explicitly approved cooldown exception scoped to one package and version; see [Security fixes](scouter/SKILL.md#security-fixes).
+READY and guarded installation require a trusted, compatible `sfw` launcher and verified protections. Approval cannot replace missing evidence or bypass cooldown or BLOCK findings.
 
-The standalone skill includes npm, pnpm, modern Yarn, Yarn Classic, pip, and uv guidance, plus first-install and staged runner/scaffolder workflows. Classic requires manual release-age checks; other manager protections depend on the installed version. Poetry has no documented guarded workflow and must not be silently migrated. The optional Scouter CLI remains npm-only; the skill invokes Socket's `sfw` directly for supported managers, regardless of how Socket was installed. Runner guidance does not imply Socket support for every runner or protection of the application's own network activity.
+## Installation
 
-For one established public package in an existing single-root project, [routine review](scouter/references/routine-review.md) shares preflight across these managers and uses only the applicable manager instructions. All five checks and Ready criteria remain required, including artifact inspection and exact-artifact ages. The core includes a compact report; detailed setup, exception and reporting guides load when needed. See [current static instruction counts](evals/README.md#current-instruction-counts) and [historical scoped offline results](evals/routine-results.md); word counts are not measured token or execution savings.
+**Install from this repository.** Checked on 2026-10-18: [`scouter` on npm](https://www.npmjs.com/package/scouter) and [`scouter` on PyPI](https://pypi.org/project/scouter/) are unrelated packages. Neither `npm install scouter` nor `pip install scouter` installs this project.
 
-**Project name and installation:** Checked on 2026-10-18: unrelated packages already use [`scouter` on npm](https://www.npmjs.com/package/scouter) and [`scouter` on PyPI](https://pypi.org/project/scouter/). Neither `npm install scouter` nor `pip install scouter` installs this project. Install Scouter from this repository using Option 1 or Option 2 below. Socket Firewall Free is a separate tool; its installation instructions are linked under Option 1.
+Socket Firewall Free is a separate required tool with mandatory telemetry. Check [setup, cache and telemetry](scouter/references/socket-operations.md) for policy compatibility before use.
 
-## Option 1: Skill only
+1. Copy the repository's complete `scouter/` folder into your agent's supported skills directory, retaining `SKILL.md`, `LICENSE` and `references/`. Follow your agent's skill-location and activation instructions.
+2. Reuse a trusted Socket installation or follow [Socket's official instructions](https://docs.socket.dev/docs/socket-firewall-free) (`npm i -g sfw`).
+3. Ask your agent to use `$scouter` when adding dependencies; it reviews packages and invokes `sfw` directly.
 
-1. Download or install the `scouter/` folder from this repository into your agent's supported skills directory. Keep `SKILL.md`, `LICENSE`, and the entire `references/` folder together. Consult your agent's instructions for its skill location and activation method.
-2. Install Socket Firewall Free using [Socket's official instructions](https://docs.socket.dev/docs/socket-firewall-free). Its npm installation command is `npm i -g sfw`. Reuse an existing trusted installation if available.
-3. Ask your agent to use `$scouter` when adding dependencies to your coding project. It can review packages and invoke `sfw` directly; the Scouter CLI is not needed.
+The `scouter/` folder is a complete standalone skill.
 
-Socket recommends clearing your package manager's cache when adopting it (for npm, `npm cache clean --force`) and using `sfw` for subsequent downloads. Cache clearing removes cached artifacts and requires fresh downloads. A fresh per-operation cache is an alternative; neither approach rescans already installed packages. Socket Free supports public registries and collects telemetry.
+## Coverage and limits
 
-Some skill installers copy only `scouter/`. That is a complete standalone installation, not an error. The skill must not assume the optional sibling CLI was copied too.
+Scouter reviews package additions, explicitly requested upgrades, first installs and staged runners. Vulnerability investigation, mitigation selection and remediation are separate work. A fresh requested security fix remains REVIEW under the normal cooldown; Scouter does not grant cooldown waivers. See [installation scope](scouter/SKILL.md#installation-scope).
 
-## Option 2: Skill plus optional CLI
+Guidance covers npm, pnpm, modern Yarn, Yarn Classic, pip and uv. Classic requires manual release-age checks; other controls depend on installed versions. Poetry has no documented guarded workflow: preserve its tooling. The skill invokes `sfw` directly, regardless of its installation method. Staged runner guidance does not establish Socket coverage for every runner or the tool's own network traffic.
 
-Clone this repository or download and extract its full ZIP. Keep the complete `scouter-cli/` folder; do not copy only `src/cli.mjs`. Install the skill as above, and tell the agent the absolute path to the downloaded repository or CLI entrypoint if it is no longer beside the installed skill.
+For one established public package in an existing single-root project, use [routine review](scouter/references/routine-review.md) and applicable manager instructions. All checks and Ready criteria remain required. Verified native controls satisfy covered checks; manual evidence fills gaps. Detailed setup, exception and reporting guides load when needed.
 
-Here, `repository/` represents your checkout directory; its actual name may differ. The child directories are `scouter/` and `scouter-cli/`.
+Native controls enforce verified restrictions; `sfw` scans supported downloads. Cached artifacts may bypass checks. Without Socket, Scouter can report findings and gaps, but cannot declare READY or attempt guarded installation. Neither tool guarantees safety.
 
-```text
-repository/
-  README.md
-  scouter/          # Standalone skill and references
-  scouter-cli/      # Optional local Node CLI
-```
-
-Within the [CLI compatibility baseline](scouter-cli/docs/compatibility.md), projects must use public npm, a single root with no workspaces, and a v3 `package-lock.json`. Private registries are unsupported. Follow the setup and platform-specific instructions below.
-
-The CLI has no third-party runtime dependencies. No `npm install`, build, global link, or registry package installation is required. It is distributed as source in this repository.
-
-From the extracted repository root:
-
-```powershell
-node ./scouter-cli/src/cli.mjs --help
-```
-
-From any directory, replace the example repository path with your actual path:
-
-```powershell
-node "C:\path\to\repository\scouter-cli\src\cli.mjs" inspect --project "C:\path\to\app" --format text
-```
-
-`inspect` reads project configuration without installing packages. Use the [optional CLI reference](scouter/references/optional-cli.md) for dependency checks, guarded installation, discovery, and result handling. Socket must be installed for `check` to be ready and for `install` to proceed. The CLI recognizes the installed Windows npm launcher as well as a native Socket binary.
-
-For macOS shell examples, test commands, and pending validation criteria, see the [macOS validation](scouter-cli/docs/macos-validation.md). The opt-in changes platform eligibility only; all dependency guards remain active.
+Socket recommends clearing caches when adopting it (npm: `npm cache clean --force`); explain the removal and fresh-download effects first. A fresh per-operation cache is an alternative. Neither rescans installed packages. Socket Free supports public registries and has non-disableable telemetry.
 
 ## Example conversations (simulated)
 
@@ -84,21 +60,32 @@ Evidence: case 12 fixtures, reviewed 2026-10-17T17:00:00Z
 ```text
 Scouter: scouter-eval-age@1.1.0 — REVIEW
 Checks: identity checked; maturity finding (2 days; seven-day cooldown unmet); deps incomplete (prior-release comparison pending); behavior checked (current artifact, no hooks); advisories checked (OSV-response fixture, complete, no known findings)
-Gaps: requested release is too fresh; no cooldown exception approved; 1.0.0-to-1.1.0 source comparison missing
+Gaps: requested release is too fresh; cooldown unmet; 1.0.0-to-1.1.0 source comparison missing
 Operation: not run — installation and Socket not run; offer reviewed 1.0.0 or wait for 1.1.0 to meet policy
 Evidence: case 02 fixtures, reviewed 2026-10-17T17:00:00Z
 ```
 
-The [evaluation rubric](evals/rubric.md#strengths-regression-map) protects untrusted-evidence handling, decision tiers, existing authorization, firewall failure handling, honest coverage limits, data minimization, progressive reference loading, and skill-only operation. Evaluation inputs and rubrics stay outside the installable skill. The [prepared offline experiment](evals/EXPERIMENT.md) covers guided skill use and neutral no-skill tasks. It was stopped before independent grading, so it provides no comparison conclusion. External agents, trigger activation and live evidence gathering remain pending.
+## Evaluation
+
+The [evaluation rubric](evals/rubric.md#strengths-regression-map) and inputs remain outside the installable skill. An [independently graded offline comparison](evals/experiment-results.md#independently-graded-comparison) found shared-check passes in **50/50 Scouter responses and 48/50 baseline responses**, with two simulated privacy-reporting failures in the baseline. Both conditions passed 29/29 eligible-task handling checks; Scouter met its own stricter policy criteria in 40/50 responses. These results describe an older snapshot with synthetic evidence, not the current skill or real-world risk reduction. External-model, activation and live-evidence testing remain pending.
+
+See [current static instruction counts](evals/README.md#current-instruction-counts) and [historical scoped offline results](evals/routine-results.md). Document word counts are not measured token or execution savings.
 
 ## Usage and development
 
 Scouter limits agent-initiated external lookups to necessary public package information and prohibits project-code, secret, and PII uploads for dependency review. This is an instruction-level guardrail, not network isolation. Socket Free has mandatory telemetry beyond package identifiers, so it cannot satisfy a strictly package-only egress policy. See the skill's [data-minimization rules](scouter/SKILL.md#data-minimization) before use in a restricted environment.
 
+For enforcement beyond agent instructions, configure your environment separately:
+
+- Use a sandbox or devcontainer with restricted network egress.
+- Configure the coding agent's permissions to require approval for dependency installation.
+- Use install-command interception hooks to block or request approval for covered package-management commands.
+
+Configure and verify these controls separately. Scouter provides no network isolation; `sfw` does not sandbox application execution.
+
 - [Skill instructions](scouter/SKILL.md)
 - [Package-manager protections](scouter/references/package-manager-protections.md)
 - [Shared routine review](scouter/references/routine-review.md)
-- [Security-fix procedures](scouter/references/security-fixes.md)
 - [Socket setup, cache, and telemetry](scouter/references/socket-operations.md)
 - [Batch review and scaled effort](scouter/references/batch-review.md)
 - [Yarn and pnpm guarded installs](scouter/references/yarn-pnpm.md)
@@ -109,10 +96,6 @@ Scouter limits agent-initiated external lookups to necessary public package info
 - [Scoped build-script exceptions](scouter/references/build-scripts.md)
 - [Standalone report format](scouter/references/reporting.md)
 - [Offline behavioral evaluations and results](evals/README.md)
-- [Optional CLI workflow and limits](scouter-cli/docs/workflow.md)
-- [Advanced CLI commands and tests](scouter-cli/docs/cli.md)
-
-The CLI is a convenience, not a mandatory gate. Missing or unsupported CLI tooling leaves the standalone workflow available, but dependency concerns must still be resolved.
 
 ## Reference maintenance
 
@@ -120,11 +103,11 @@ Maintainers review upstream guidance at least every three months and before each
 
 Review command names/options, release-age units and operation-specific coverage, script/build controls, cache and registry behavior, Socket support/telemetry, official source links, and consistency across command examples. Resolve differences using the [shared version-discrepancy procedure](scouter/references/package-manager-protections.md#resolve-version-discrepancies), including version-matched configuration documentation when help omits a setting.
 
-Each “documentation checked” date describes the material actually reviewed, not live platform validation or a blanket certification of all references. Update only rechecked material and record relevant tool versions, source evidence, and validation limits alongside it. Leave other dates unchanged; editorial changes alone do not reset them. The optional CLI's [compatibility matrix](scouter-cli/docs/compatibility.md) changes only after its separate qualification process.
+Each “documentation checked” date describes the material actually reviewed, not live platform validation or a blanket certification of all references. Update only rechecked material and record relevant tool versions, source evidence, and validation limits alongside it. Leave other dates unchanged; editorial changes alone do not reset them.
 
 ## Security disclaimer
 
-Scouter provides dependency-review guidance and optional tooling. It does not guarantee that a package, installation, or project is secure, and it may miss malicious behavior, vulnerabilities, or prompt-injection attempts. A successful check or installation is not a security certification.
+Scouter provides dependency-review guidance. It does not guarantee that a package, installation, or project is secure, and it may miss malicious behavior, vulnerabilities, or prompt-injection attempts. A successful check or installation is not a security certification.
 
 You are responsible for evaluating dependencies and maintaining security controls appropriate to your environment, including independent reviews, testing, monitoring, and incident response. Scouter and third-party tools such as Socket complement those controls; they do not replace them.
 
@@ -134,4 +117,4 @@ Scouter is provided without warranties. To the extent permitted by applicable la
 
 ## License
 
-Scouter is licensed under the [MIT License](LICENSE). Copies are included in the standalone skill and CLI folders for separate distribution. Third-party tools retain their own licenses and terms.
+Scouter is licensed under the [MIT License](LICENSE). A copy is included in the standalone skill folder for separate distribution. Third-party tools retain their own licenses and terms.

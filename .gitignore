@@ -30,5 +30,8 @@ coverage/
 Thumbs.db
 Desktop.ini
 
-# Raw qualification reports contain machine paths. Publish reviewed summaries instead.
-/scouter-cli/docs/evidence/*.json
+# Deferred local CLI; retain files without publishing them.
+/scouter-cli/
+
+# Retired local guidance; excluded from the installable skill.
+/local-archive/

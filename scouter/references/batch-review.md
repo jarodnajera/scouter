@@ -1,6 +1,6 @@
 # Batch review and scaled effort
 
-Use when adding/upgrading multiple dependencies or reusing findings within a coding task. Retain the skill's [five checks and decision tiers](../SKILL.md#review-the-dependency), [manager protections](package-manager-protections.md), and [security-fix exception criteria](../SKILL.md#security-fixes). This is the standalone workflow; the optional CLI does not implement batch installation.
+Use when adding/upgrading multiple dependencies or reusing findings within a coding task. Retain the skill's [five checks and decision tiers](../SKILL.md#review-the-dependency), [manager protections](package-manager-protections.md), and [installation scope](../SKILL.md#installation-scope).
 
 ## Choose review depth
 
@@ -11,7 +11,7 @@ Assess each direct candidate individually, using the same five checks at either 
 | Routine | Established package; corroborated intended identity; no concerning publisher signal; candidate past cooldown; no suspicious dependency or behavior changes | Brief identity corroboration, exact release metadata/age, dependency and behavior comparison, and completed advisory lookup. Reuse valid evidence and bulk results. |
 | Full | Unfamiliar package, ambiguous identity or similar-name confusion, publisher change, new scripts/binaries/network behavior, fresh release, incomplete evidence, or another concrete concern | Deeper official-source corroboration and release/artifact comparison; investigate the signal and resolve gaps before READY. |
 
-Popularity alone never qualifies a package for routine review. Start deeper if routine eligibility cannot be established. Review depth describes effort, not a decision: full review can end READY, REVIEW, or BLOCK, and routine review cannot skip a check. Both depths use the same [minimum evidence for Ready](../SKILL.md#minimum-evidence-for-ready); disclosed optional history gaps alone do not block READY. A fresh security fix still needs the existing scoped exception process.
+Popularity alone does not establish routine eligibility. Both depths use the same [Ready requirements](../SKILL.md#minimum-evidence-for-ready); depth changes effort, not checks or decision policy. Use full review when routine evidence is incomplete.
 
 For five or more direct additions/upgrades across the requested task, show one compact plan before grouped resolution/install: package names and exact candidate versions, routine/full depth, shared checks, known gaps, and qualitative effort (such as mostly bulk checks versus several artifact investigations). Continue when the task already authorizes installation. Ask only for unresolved concerns, exceptions, or missing authorization; do not add a batch-size approval gate or promise a fixed completion time.
 
@@ -21,7 +21,7 @@ Manual research of every transitive package is unnecessary. Extract exact resolv
 
 Use structured metadata, native manager controls, and local graph comparisons for transitive identity consistency, release-age coverage, advisory checks, and available dependency/behavior deltas. Inspect new/changed install scripts, binaries, source changes, and other material signals using relevant manifests or static artifact evidence. A lockfile that omits scripts does not establish their absence. Investigate flagged transitives in depth; missing required coverage remains REVIEW rather than an instruction to research everything by hand or mark it clean.
 
-Native age controls count only within their verified coverage. Existing locks, cache reuse, absent timestamps, or unsupported manager features still need the documented exact-artifact fallback. Preserve pip's selected-wheel upload dates and hashes, including later-uploaded wheels; bulk processing cannot substitute a release's first publication date. Socket checks downloads for malware; it does not replace advisory lookups, age checks, graph comparison, or script review.
+Apply the shared [age coverage rules](package-manager-protections.md#release-age-controls), retaining selected-wheel/hash binding and evidence for later uploads. Bulk checks do not expand native or Socket coverage.
 
 ## Batch public advisory lookups
 

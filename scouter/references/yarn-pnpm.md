@@ -1,6 +1,6 @@
 # Yarn and pnpm guarded installs
 
-Use this reference after the skill's five checks and either [routine preflight](routine-review.md) or detailed [protection preflight](package-manager-protections.md). Read the common sections and only the selected manager section. Routine preflight replaces full protection/Socket/reporting reads while eligible; linked exception guides are conditional. These workflows invoke the package manager through sfw; the optional Scouter CLI supports npm only. Guidance checked against official documentation on 2026-10-16; verify syntax against the project's installed version. Examples use placeholder package coordinates and paths, not approved dependencies. Follow the [shared version-discrepancy procedure](package-manager-protections.md#resolve-version-discrepancies) when installed capabilities differ from these examples.
+Use this reference after the skill's five checks and either [routine preflight](routine-review.md) or detailed [protection preflight](package-manager-protections.md). Read the common sections and only the selected manager section. Routine preflight replaces full protection/Socket/reporting reads while eligible; linked exception guides are conditional. These workflows invoke the package manager through sfw. Guidance checked against official documentation on 2026-10-16; verify syntax against the project's installed version. Examples use placeholder package coordinates and paths, not approved dependencies. Follow the [shared version-discrepancy procedure](package-manager-protections.md#resolve-version-discrepancies) when installed capabilities differ from these examples.
 
 ## Choose the correct workflow
 
@@ -21,7 +21,7 @@ minimumReleaseAge: 10080
 ignoreScripts: true
 ```
 
-Age is in minutes; support begins at 10.16.0. On versions supporting them (11+), verify `minimumReleaseAgeStrict: true` and `minimumReleaseAgeIgnoreMissingTime: false`. Inspect exclusions and `trustLockfile`: relaxed settings must not silently admit fresh, undated, or unchecked locked packages. Older versions need independent checks for unsupported protections. [Resolution settings](https://pnpm.io/settings/dependency-resolution), [configuration locations](https://pnpm.io/settings).
+Age is in minutes; support begins at 10.16.0. On versions supporting them (11+), verify `minimumReleaseAgeStrict: true` and `minimumReleaseAgeIgnoreMissingTime: false`. Inspect exclusions and `trustLockfile`: relaxed settings must not silently admit fresh, undated, or unchecked locked packages. Use native enforcement for covered artifacts; manually check uncovered locks, exclusions or unsupported protections. [Resolution settings](https://pnpm.io/settings/dependency-resolution), [configuration locations](https://pnpm.io/settings).
 
 After checking the effective settings, use:
 
@@ -41,7 +41,7 @@ For a new project or compatible existing store layout, a fresh task-owned `--sto
 
 On versions supporting it, preserve or merge `npmMinimalAgeGate: "7d"` in `.yarnrc.yml`. Inspect `npmPreapprovedPackages` for bypasses. `enableScripts: false` alone still permits workspace scripts and package-specific exceptions. For fresh-cache use, account for `enableGlobalCache`, `cacheFolder`, and `enableMirror`; a new local directory alone may still reuse the global mirror. Preserve stronger settings. [Yarn configuration](https://yarnpkg.com/configuration/yarnrc).
 
-After verifying the age control and cache handling, use the installed version's documented build-skipping mode:
+Use verified age enforcement without duplicate manual dates; check uncovered locks/exclusions manually. After checking cache handling, use the installed version's documented build-skipping mode:
 
 ```text
 sfw yarn add example@1.2.3 --exact --mode=skip-build
