@@ -17,7 +17,7 @@ Informed approval can accept disclosed uncertainty for an exact package/version/
 
 **Install from this repository.** Checked on 2026-10-18: [`scouter` on npm](https://www.npmjs.com/package/scouter) and [`scouter` on PyPI](https://pypi.org/project/scouter/) are unrelated packages. Neither `npm install scouter` nor `pip install scouter` installs this project.
 
-Socket Firewall Free is a separate required tool with mandatory telemetry. Check [launcher, cache and telemetry rules](scouter/references/socket-operations.md) for policy compatibility before use.
+Socket Firewall Free is a separate required tool with mandatory telemetry: package coordinates, a machine identifier, timing/errors and potentially a GitHub organization name. Free cannot disable this telemetry. These are [vendor-documented fields](https://docs.socket.dev/docs/socket-firewall-free#telemetry), not an independent traffic audit. Check [launcher, cache and telemetry rules](scouter/references/socket-operations.md) for policy compatibility before each task's first use. In-task discussion is needed for policy conflicts, uncertainty requiring assurance or user questions, rather than a routine consent prompt.
 
 1. Copy the repository's complete `scouter/` folder into your agent's supported skills directory, retaining `SKILL.md`, `LICENSE` and `references/`. Follow your agent's skill-location and activation instructions.
 2. Reuse a trusted Socket installation or follow [Socket's official instructions](https://docs.socket.dev/docs/socket-firewall-free) (`npm i -g sfw`).
@@ -62,6 +62,8 @@ All packages, evidence and outcomes below are fictional. No install or scan occu
 ## Evaluation
 
 The current metadata-based routine path changes review depth and advisory timing. It has received local document/fixture checks, not a new model evaluation or live installation test. Earlier results below apply to their recorded snapshots; they do not validate this changed policy. Previously cancelled tests remain cancelled. A fresh-session repeat is documented as a handoff only.
+
+The Tailwind feedback revision adds npm's verified `--before` fallback, runtime identity and authoritative lockfile baselines. [Offline checks and limits](evals/npm-cooldown-checks.md) record this revision separately; the fresh-session installation and browser repeat remain pending.
 
 The [v1 offline pass](evals/v1/results.md) completed 16 contexts: **15 pass, one retained uv-requirements efficiency failure**, with a duplicate-pin fixture limitation. It tests decisions using supplied evidence, not live evidence gathering. [Live observations](evals/v1/live-results.md) record guarded npm, pip and uv requirements installations and real advisory findings for an initially considered old Python candidate. Updated tools resolved the earlier Python prerequisites; pnpm's guarded proposal stopped on a sandbox store-lock failure. Fresh candidates were not installed. There is no full four-manager validation claim.
 

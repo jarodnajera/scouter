@@ -1,17 +1,17 @@
 {
   "checkedDate": "2026-10-19",
-  "skillDigest": "c9d7264017b8b8566a4dab306781864abb0491df5b701489a1bcd5c2d606cf1e",
-  "coreBodyWords": 1145,
-  "coreIncludingMetadataWords": 1224,
+  "skillDigest": "be57dbfc499eee599acef284248322f8086f4382dfe30d1e051f19bf8d3f1f07",
+  "coreBodyWords": 1286,
+  "coreIncludingMetadataWords": 1365,
   "referenceWords": {
-    "npm.md": 287,
+    "npm.md": 533,
     "pip.md": 335,
     "pnpm.md": 241,
     "socket-operations.md": 460,
     "uv.md": 485,
     "yarn.md": 395
   },
-  "behavioralEvaluation": "Metadata-based routine revision: local validation only; no new model or live-install evaluation. Fresh-session repeat is a documented handoff.",
+  "behavioralEvaluation": "Tailwind feedback revision: seven offline installed-npm checks and manual policy walkthrough; no new model or live-install evaluation. Fresh-session repeat remains a handoff.",
   "testedSnapshot": "70fbf6df9170abe2d37f93bc85efae33ccf422e2335bc111e3f8cfd7f175717c",
   "round4Snapshot": "d2afc72914e01d4345f35f572a10fef00159e190c676b42a2a5155f2b0ebb0a5"
 }
