@@ -1,0 +1,72 @@
+{
+  "revision": "round4",
+  "fixedClock": "2026-10-19T17:00:00Z",
+  "skillDigest": "d2afc72914e01d4345f35f572a10fef00159e190c676b42a2a5155f2b0ebb0a5",
+  "rubricDigest": "04a1aed9af8f341c74da405c1b67155801e7efa8b4eebc99fbfaa8ec79b8c6d3",
+  "plannedContexts": 6,
+  "grading": "primary-agent manual, no independent graders",
+  "cases": [
+    {
+      "id": "routine-skill",
+      "sourceCase": "13-npm",
+      "skillAvailable": true,
+      "promptDigest": "4b66d567a483511ccd39b3ab353627974b354395fa4d3080f5576cd7561d1b9d",
+      "evidenceDigest": "e435aa6d6a4aa84edd03ad6012d00c32a3c36664fbbf0ab69191bf750130fa6f",
+      "instructionDigest": "636afdddc4073a81a4b862eb96bcdd9ec1331e2cf70df316286daa702faaa11c",
+      "skillDigest": "d2afc72914e01d4345f35f572a10fef00159e190c676b42a2a5155f2b0ebb0a5",
+      "followupDigests": []
+    },
+    {
+      "id": "routine-baseline",
+      "sourceCase": "13-npm",
+      "skillAvailable": false,
+      "promptDigest": "4b66d567a483511ccd39b3ab353627974b354395fa4d3080f5576cd7561d1b9d",
+      "evidenceDigest": "e435aa6d6a4aa84edd03ad6012d00c32a3c36664fbbf0ab69191bf750130fa6f",
+      "instructionDigest": "51fa101991125733abd49b0f1ea1b5197ee01133f50ab3e8d41557fab62ca9eb",
+      "skillDigest": null,
+      "followupDigests": []
+    },
+    {
+      "id": "uv-pip-corrected",
+      "sourceCase": "13-uv-pip",
+      "skillAvailable": true,
+      "promptDigest": "22fb97ad0fb5414407407508d27f0a86b380f7d03c1c5fb2c3a9eaac00b7aa1c",
+      "evidenceDigest": "21f71585c6fb2e075296c2620ac9a72dd60dcfd15071ebeb1e03034afba5b7d0",
+      "instructionDigest": "636afdddc4073a81a4b862eb96bcdd9ec1331e2cf70df316286daa702faaa11c",
+      "skillDigest": "d2afc72914e01d4345f35f572a10fef00159e190c676b42a2a5155f2b0ebb0a5",
+      "followupDigests": []
+    },
+    {
+      "id": "fresh",
+      "sourceCase": "02-fresh",
+      "skillAvailable": true,
+      "promptDigest": "845570bf56f1a2396b2a8b1bced67f2284f6bee2827c5441ff7facde33310a91",
+      "evidenceDigest": "5c7c1aa7b853640e58058c7183e4c2fd4a8b5942e183a10238e864bebc1656a9",
+      "instructionDigest": "636afdddc4073a81a4b862eb96bcdd9ec1331e2cf70df316286daa702faaa11c",
+      "skillDigest": "d2afc72914e01d4345f35f572a10fef00159e190c676b42a2a5155f2b0ebb0a5",
+      "followupDigests": [
+        "033fec813beed6f7475ad2fcfd13981990af56bd14d9ed359e099877447ceb48"
+      ]
+    },
+    {
+      "id": "yarn-modern",
+      "sourceCase": "13-yarn-modern",
+      "skillAvailable": true,
+      "promptDigest": "22fb97ad0fb5414407407508d27f0a86b380f7d03c1c5fb2c3a9eaac00b7aa1c",
+      "evidenceDigest": "6ef94c2b03510fb4df3dc3308f42484c59337c1fe06301a36b09c7127c54cf64",
+      "instructionDigest": "636afdddc4073a81a4b862eb96bcdd9ec1331e2cf70df316286daa702faaa11c",
+      "skillDigest": "d2afc72914e01d4345f35f572a10fef00159e190c676b42a2a5155f2b0ebb0a5",
+      "followupDigests": []
+    },
+    {
+      "id": "npm-regression",
+      "sourceCase": "13-npm",
+      "skillAvailable": true,
+      "promptDigest": "22fb97ad0fb5414407407508d27f0a86b380f7d03c1c5fb2c3a9eaac00b7aa1c",
+      "evidenceDigest": "d1c4de79614a006d51d09393479f2bc0670284cb8f864b9e17a05f197867976e",
+      "instructionDigest": "636afdddc4073a81a4b862eb96bcdd9ec1331e2cf70df316286daa702faaa11c",
+      "skillDigest": "d2afc72914e01d4345f35f572a10fef00159e190c676b42a2a5155f2b0ebb0a5",
+      "followupDigests": []
+    }
+  ]
+}

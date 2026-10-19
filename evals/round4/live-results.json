@@ -1,0 +1,205 @@
+{
+  "skillDigest": "d2afc72914e01d4345f35f572a10fef00159e190c676b42a2a5155f2b0ebb0a5",
+  "reviewTime": "2026-10-19T18:31:47.153022+00:00",
+  "cutoff": "2026-10-12T18:31:47.153022+00:00",
+  "mode": "primary-agent controlled live checks; not model evaluation",
+  "runtime": {
+    "node": "22.14.0",
+    "npmUsed": "11.2.0",
+    "npmReviewedNotUsed": "11.21.0",
+    "pnpm": "12.14.0",
+    "Yarn": "1.22.22",
+    "uv": "0.13.1",
+    "Python": "3.15.0",
+    "pip": "26.2.1",
+    "sfwNative": "1.15.4"
+  },
+  "scenarios": [
+    {
+      "id": "npm-tool",
+      "status": "pending user decision honored",
+      "package": "npm",
+      "version": "11.21.0",
+      "decision": "REVIEW",
+      "operation": "artifact review only; tool not installed or executed",
+      "coordinatesChecked": 144,
+      "affectedCoordinates": [
+        {
+          "ecosystem": "npm",
+          "name": "brace-expansion",
+          "version": "5.0.9",
+          "advisoryIds": [
+            "GHSA-6j4f-fj2g-mc7p",
+            "GHSA-q2hr-2g5m-vwhr",
+            "GHSA-qhr7-859c-m2p7"
+          ]
+        },
+        {
+          "ecosystem": "npm",
+          "name": "http-cache-semantics",
+          "version": "4.2.0",
+          "advisoryIds": [
+            "GHSA-ch52-4w7c-c8xp"
+          ]
+        },
+        {
+          "ecosystem": "npm",
+          "name": "ip-address",
+          "version": "10.5.0",
+          "advisoryIds": [
+            "GHSA-2vr4-cq9g-pvrc",
+            "GHSA-h3mg-xc3c-68pw",
+            "GHSA-j6r3-76f7-8jcv",
+            "GHSA-rpw4-54j3-4h4q"
+          ]
+        },
+        {
+          "ecosystem": "npm",
+          "name": "postcss-selector-parser",
+          "version": "7.1.4",
+          "advisoryIds": [
+            "GHSA-rj75-hqrm-r3gf"
+          ]
+        },
+        {
+          "ecosystem": "npm",
+          "name": "undici",
+          "version": "6.28.0",
+          "advisoryIds": [
+            "GHSA-3wwx-pv8p-q78v",
+            "GHSA-r53p-7pc4-xj5r",
+            "GHSA-rfgv-xxqx-mfg5"
+          ]
+        }
+      ],
+      "approval": "user declined isolated use despite findings",
+      "advisoryIdCount": 12,
+      "disclosureCorrection": "Approval question said 13 IDs; reconciled result is 12 across the same five coordinates. User decision remains pending."
+    },
+    {
+      "id": "npm-rejection",
+      "status": "completed",
+      "package": "react",
+      "version": "19.3.1",
+      "ageDays": 5.072591007199074,
+      "manager": "npm 11.2.0",
+      "control": "--before original absolute cutoff; not --min-release-age",
+      "outcome": "age-specific ETARGET rejection; no lock or installation",
+      "decision": "REVIEW"
+    },
+    {
+      "id": "npm-approved-fresh",
+      "status": "pending",
+      "package": "react",
+      "version": "19.3.1",
+      "registry": "https://registry.npmjs.org/",
+      "decision": "REVIEW",
+      "approval": "user approved exact disposable React test",
+      "reason": "Compatible age-exclusion npm tool has bundled advisories and user left its use pending; no fresh installation or exclusion enforcement claim",
+      "artifactReview": "Integrity verified; no runtime deps or install hooks; prior-release diff only version strings; exact OSV result empty"
+    },
+    {
+      "id": "express-graph",
+      "status": "completed",
+      "package": "express",
+      "version": "5.3.0",
+      "manager": "npm 11.2.0",
+      "decision": "READY",
+      "instances": 65,
+      "transitives": 64,
+      "advisoryCoordinates": 65,
+      "advisoryFindings": 0,
+      "advisoryPages": 65,
+      "nativeCutoff": "--before original cutoff",
+      "lockPreserved": true,
+      "installedVersionsMatch": true,
+      "directSourceMatches": true,
+      "scriptsDisabled": true,
+      "auditDisabled": true
+    },
+    {
+      "id": "sphinx-graph",
+      "status": "completed",
+      "package": "Sphinx",
+      "version": "9.1.0",
+      "manager": "uv 0.13.1 requirements; pip 26.2.1 wheel proposal/acquisition",
+      "decision": "READY",
+      "distributions": 22,
+      "transitives": 21,
+      "advisoryCoordinates": 22,
+      "advisoryFindings": 0,
+      "advisoryPages": 22,
+      "nativeCutoff": "uv --exclude-newer and pip --uploaded-prior-to",
+      "selectedWheelHashesOriginsDatesBound": true,
+      "reviewedPinsPreserved": true,
+      "installedWheelBytesMatchExceptInstallerRecord": true,
+      "buildsDisabled": true,
+      "pythonDownloadsDisabled": true,
+      "reviewedStartupHook": "sphinxcontrib-jsmath 1.0.1 namespace .pth statically reviewed; this venv interpreter was not invoked afterward"
+    },
+    {
+      "id": "pnpm",
+      "status": "completed",
+      "manager": "pnpm 12.14.0",
+      "package": "is-number",
+      "version": "7.0.0",
+      "decision": "READY",
+      "fix": "Private task-owned mode-0700 XDG_RUNTIME_DIR; no broader sandbox permissions",
+      "controls": [
+        "strict minimumReleaseAge 10080 minutes",
+        "missing timestamps fail",
+        "no exclusions",
+        "trustLockfile false",
+        "scripts/pnpmfile disabled",
+        "fresh store and integrity checks"
+      ],
+      "lockPreserved": true,
+      "installedSourceMatches": true
+    },
+    {
+      "id": "yarn-classic",
+      "status": "completed",
+      "manager": "Yarn 1.22.22",
+      "package": "is-number",
+      "version": "7.0.0",
+      "decision": "READY",
+      "nativeTransitiveAgeCoverage": "unavailable; reviewed graph has zero transitives; direct age independently checked",
+      "scriptsDisabled": true,
+      "frozenLockPreserved": true,
+      "installedSourceMatches": true,
+      "cacheLimit": "Frozen verification reported already up-to-date; not a new scan"
+    },
+    {
+      "id": "uv-project",
+      "status": "completed with harness sequencing limitation",
+      "manager": "uv 0.13.1",
+      "package": "six",
+      "version": "1.17.0",
+      "decision": "REVIEW",
+      "lockPreserved": true,
+      "sourceHashOriginVerified": true,
+      "projectInstalled": false,
+      "buildsDisabled": true,
+      "pythonDownloadsDisabled": true,
+      "gap": "Sync was launched before a trailing-slash-only precheck assertion was examined; later normalized origin/hash checks passed."
+    },
+    {
+      "id": "yarn-modern-live",
+      "status": "pending",
+      "reason": "Only Classic is installed; no Yarn bootstrap or migration performed"
+    }
+  ],
+  "firewallObservation": "Acquisition/install commands showed Protected by Socket Firewall; no per-artifact clean-scan proof. No unwrapped retries.",
+  "limits": [
+    "No candidate imports, builds, runner execution or application functionality tests; reviewed tool executables ran",
+    "No new npm tool was installed or executed; React installation remains pending",
+    "Native absolute-cutoff rejection observed; newer name-exclusion path not exercised",
+    "Real bulk OSV results were unpaginated and empty for application graphs; no fabricated pagination or transitive findings",
+    "Native age filtering used during resolution; no injected fresh transitive rejection test",
+    "Targeted static comparison, not exhaustive code/binary audit",
+    "Installer RECORD metadata changes normally; source/metadata bytes checked separately",
+    "Uv project sync began before a trailing-slash-only precheck assertion was examined; later normalized origin/hash checks passed",
+    "Disposable filesystem sandbox allowed public networking; not a traffic audit or complete credential isolation",
+    "Internal comparison helper syntax and artifact-inspection assertions were corrected; failures retained privately without broader package retries"
+  ]
+}

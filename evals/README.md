@@ -2,29 +2,27 @@
 
 ## Current revision
 
-Use the [small v1 suite](v1/README.md): nine decision scenarios and seven manager variants, one run each. It tests proposed decisions with supplied fictional evidence. [Current results](v1/results.md) retain 16 completed contexts/22 turns: 15 pass and one uv-requirements efficiency failure, with a duplicate-pin fixture limitation. No independent grading or comparative safety claim is made for this revision.
+Start with the [Round 4 follow-up](round4/README.md): six targeted contexts against the current frozen revision, including a matched routine npm pair. [Results](round4/results.md) retain five passes and one corrected uv efficiency failure; shared task/safety checks passed in all six under primary-agent manual grading. Token/tool-call costs remain unavailable, not zero. No comparative safety benefit or causal savings claim is made.
 
-[Live observations](v1/live-results.md) separately record real public evidence gathering and completed sfw-guarded npm, pip and uv requirements installations in disposable OS environments. After user tool updates, pnpm's guarded proposal remained blocked by a sandbox store-lock failure; the initial pending/unavailable states are retained. Fresh versions were not installed. This is not four-manager qualification, automatic-activation validation or proof that every artifact was scanned.
+[Round 4 live observations](round4/live-results.md) cover real Express/Sphinx graphs (64 and 21 transitives), pnpm/Yarn Classic installs, native absolute-cutoff rejection and uv project sync with a disclosed sequencing gap. Approved fresh installation remains pending after the user declined the newer npm tool's bundled-advisory risk. Modern Yarn is not live-qualified.
 
-Historical cases, rubrics, comparison results and cost ledgers remain unchanged. The old six-criteria waiver does not define the current informed-approval policy. Current adaptations live separately; do not grade this revision with the old rubric.
-
-The current skill adds a separate Socket operations reference and an explicit data-minimization section after those runs. The saved results apply to the frozen snapshot, not this documentation update; no model or live tests were rerun.
+Earlier [v1 inputs](v1/README.md), [16-context results](v1/results.md), [live observations](v1/live-results.md), rubrics and cost ledgers remain unchanged. The original uv fixture inconsistency and failure remain reproducible; the corrected input is separate. The old six-criteria remediation waiver does not define the current installation-approval policy.
 
 ## Current instruction counts
 
-Recounted 2026-10-19. [Current content record](current-skill.json): SHA-256 `17b1417316e2750c1efb4e2248973c48d3427704a75e2b68e5fe4c0dfeb13cdf`. Core body **887** words; including metadata **958**. Routine loading remains core plus the applicable manager guide. The Socket guide is conditional, adding **460** words for setup, uncertainty, cache adoption or restricted policy.
+Recounted 2026-10-19. [Current content record](current-skill.json): SHA-256 `d2afc72914e01d4345f35f572a10fef00159e190c676b42a2a5155f2b0ebb0a5`. Core body **918** words; including metadata **997**. Routine loading is core plus the applicable manager guide. The conditional Socket guide adds **460** words for setup, uncertainty, cache adoption or restricted policy.
 
 | Workflow | Manager guide words | Core + entire manager guide |
 | --- | ---: | ---: |
-| npm | 250 | 1208 |
-| pnpm | 234 | 1192 |
-| Yarn Classic | 380 | 1338 |
-| modern Yarn | 380 | 1338 |
-| pip | 314 | 1272 |
-| uv project | 432 | 1390 |
-| uv requirements | 432 | 1390 |
+| npm | 282 | 1279 |
+| pnpm | 234 | 1231 |
+| Yarn Classic | 386 | 1383 |
+| modern Yarn | 386 | 1383 |
+| pip | 314 | 1311 |
+| uv project | 432 | 1429 |
+| uv requirements | 432 | 1429 |
 
-Counts are whitespace-separated words including headings, tables and metadata; whole-file bounds include incidental Yarn/uv sections. These are document sizes, not measured savings. The tested v1 snapshot had 799 core-body words (870 with metadata), with path totals npm 1120, pnpm 1104, Yarn 1250, pip 1184 and uv 1302. Its digest and results remain unchanged. Earlier counts are retained in [the historical guide](legacy-guide.md).
+Counts are whitespace-separated document sizes, not measured tokens or savings. Whole-file bounds include incidental Yarn/uv sections. The earlier v1 snapshot had 799 core-body words (870 including metadata), with path totals npm 1120, pnpm 1104, Yarn 1250, pip 1184 and uv 1302. Its digests and results are unchanged. Earlier counts and protocols remain in [the historical guide](legacy-guide.md).
 
 ## Local validation
 

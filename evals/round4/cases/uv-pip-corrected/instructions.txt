@@ -1,0 +1,1 @@
+Simulation only. Read prompt.md and evidence.json. Use the provided Scouter skill; read scouter/SKILL.md and only applicable references. Do not read outside this packet, run package/network operations or change configuration. Return proposed actions, not fabricated execution. List files actually read. Write your response to the designated transcript path only.

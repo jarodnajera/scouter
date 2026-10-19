@@ -1,6 +1,6 @@
 ---
 name: scouter
-description: Review dependencies for identity, release maturity, and supply-chain risks, then guard authorized installs with Socket Firewall Free (sfw). Use when adding packages or requested upgrades with npm, pnpm, Yarn, pip or uv, or acquiring tools through npx, dlx, uvx and scaffolders. Prepare and review dependencies before tool execution; unsupported guarded workflows require REVIEW. First-clone installation and vulnerability remediation are outside scope.
+description: Review dependencies for identity, release maturity, and supply-chain risks, then guard authorized installs with Socket Firewall Free (sfw). Use for package additions and upgrades, including those proposed by the agent within an authorized task, with npm, pnpm, Yarn, pip or uv, or tools acquired through npx, dlx, uvx and scaffolders. Prepare and review dependencies before execution; unsupported guarded workflows require REVIEW. First-clone installation and vulnerability remediation are outside scope.
 metadata:
   author: jarodnajera
   version: "1.0"
@@ -8,13 +8,15 @@ metadata:
 
 # Scouter
 
-Review package additions, requested upgrades and tool acquisition before continuing the authorized task. Preserve project tooling and stronger policies. Read only this core and the applicable guide: [npm](references/npm.md), [pnpm](references/pnpm.md), [Classic Yarn](references/yarn.md#classic), [modern Yarn](references/yarn.md#modern), [pip](references/pip.md), [uv project](references/uv.md#project) or [uv requirements](references/uv.md#requirements).
+Review package additions, upgrades and tool acquisition before continuing the authorized task, including changes the agent proposes. Review does not authorize unrelated dependency changes. Preserve project tooling and stronger policies. Read only this core and the applicable guide: [npm](references/npm.md), [pnpm](references/pnpm.md), [Classic Yarn](references/yarn.md#classic), [modern Yarn](references/yarn.md#modern), [pip](references/pip.md), [uv project](references/uv.md#project) or [uv requirements](references/uv.md#requirements).
 
 ## Review
 
 Confirm exact name, version and registry. Corroborate intended identity with official documentation; package links alone are claims. Check direct-artifact age (seven days by default), maintenance/ownership signals, completed exact-version advisories and relevant published manifest/source changes, especially scripts, binaries and downloaders. Missing comparisons are uncertainty; popularity alone is not trust.
 
-Use a guarded proposal or supplied reviewed graph before acquisition where supported. Otherwise disclose missing preinstall graph evidence and obtain approval, then inspect before code execution. Bulk-check public ecosystem/name/version coordinates from the resolved graph (e.g. [OSV querybatch](https://google.github.io/osv.dev/post-v1-querybatch/)); complete pagination and investigate findings. Failed/partial checks are Unsure. Rely on verified native cooldowns and normal integrity enforcement for transitives; absent age/lock/timestamp coverage is Unsure, not a mandate for manual research. Preserve the reviewed graph.
+1. Use a guarded proposal or supplied reviewed graph before acquisition where supported. Otherwise disclose missing preinstall graph evidence and obtain approval, then inspect before code execution.
+2. Bulk-check public ecosystem/name/version coordinates from the resolved graph (e.g. [OSV querybatch](https://google.github.io/osv.dev/post-v1-querybatch/)). Complete pagination and investigate findings. Failed or partial checks are Unsure.
+3. Rely on verified native cooldowns and normal integrity enforcement for transitives. Missing age, lock or timestamp coverage is Unsure, not a mandate for manual research. Preserve the reviewed graph.
 
 ## Decide and approve
 
@@ -38,7 +40,11 @@ Pin versions, suppress unreviewed scripts/builds, retain origins/hashes and use 
 
 ## Runners, builds and batches
 
-Review exact runner package/bin and graph, acquire through `sfw`, inspect, then execute its installed entry point under task authorization. Avoid fetching/resolving again. Use documented skip-install options; generated dependencies need review. Unsupported runners (including pipx) cannot be approved into guarded coverage.
+1. Review the exact runner package, executable and dependency graph.
+2. Acquire through `sfw` and inspect the results before execution.
+3. Execute the installed entry point under task authorization without another fetch or resolution. Use documented skip-install options; generated dependencies need review.
+
+Unsupported runners (including pipx) cannot be approved into guarded coverage.
 
 For necessary JavaScript builds, inspect actual hooks/files, commands, downloads and all matching installed instances; execute only reviewed scope, preserving unrelated restrictions and restoring temporary permissions. No blanket builds. Installation approval leaves scripts suppressed; execution is separate. Python source/editable/backend/project builds require separate review, never automatic removal of wheel/build controls.
 

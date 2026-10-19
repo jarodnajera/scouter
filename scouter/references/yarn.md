@@ -24,6 +24,6 @@ Read the core and only the installed major's section. Inspect `yarnPath`, plugin
 | Script/build suppression | Verify `skip-build` spelling. `enableScripts: false` has exceptions; review workspace and per-package settings. Use inspected per-package build permissions and targeted `sfw yarn rebuild <name>` only after reviewing all matching versions/instances. |
 | Cache | Verify `enableGlobalCache`, `cacheFolder` and `enableMirror`; a fresh local cache alone may reuse a global mirror. Preserve committed zero-install archives. |
 | Frozen graph | `sfw yarn install --immutable --mode=skip-build` with matching cache/age settings. |
-| Gotchas | Never use a blanket time-gate bypass. For an approved fresh exact pin, a temporary exact descriptor in `npmPreapprovedPackages` can bypass multiple gates; verify its full effect and preserve stronger policies or stop. |
+| Gotchas | Never use a blanket time-gate bypass. `npmPreapprovedPackages` bypasses all package gates, so do not add an entry as a freshness exception. Stop if an age-only exception cannot be verified; user freshness approval does not authorize bypassing other gates. |
 
 Documentation checked 2026-10-19: [Classic install](https://classic.yarnpkg.com/en/docs/cli/install/), [modern add](https://yarnpkg.com/cli/add), [settings](https://yarnpkg.com/configuration/yarnrc), [rebuild](https://yarnpkg.com/cli/rebuild). Documentation only, not modern-Yarn live validation.

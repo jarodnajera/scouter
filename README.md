@@ -27,7 +27,7 @@ The `scouter/` folder is a complete standalone skill.
 
 ## Coverage and limits
 
-Keep the project's manager: npm, pnpm, modern Yarn, Yarn Classic, pip and uv are covered by short guides. Poetry remains unsupported without migration. First-clone installation and vulnerability investigation/remediation are outside v1. A specifically requested security-fix version receives ordinary installation review; a fresh release asks for informed approval rather than a special remediation waiver.
+Review additions and upgrades, including those the agent proposes within an authorized task; review does not authorize unrelated changes. Keep the project's manager: npm, pnpm, modern Yarn, Yarn Classic, pip and uv are covered by short guides. Poetry remains unsupported without migration. First-clone installation and vulnerability investigation/remediation are outside v1. A specifically requested security-fix version receives ordinary installation review; a fresh release asks for informed approval rather than a special remediation waiver.
 
 The agent checks direct dependencies and runs a combined public advisory lookup over the resolved graph. Native cooldowns handle transitive ages; absent coverage is disclosed as Unsure. Failed/partial advisories, missing comparisons, unfamiliarity and new suppressed scripts also require an informed decision. Ambiguous identity needs explicit name-and-registry confirmation, not a generic yes. Exact coordinates, supported working `sfw`, stronger policies and confirmed-compromise blocking remain mandatory.
 
@@ -53,7 +53,7 @@ All packages, evidence and outcomes below are fictional. No install or scan occu
 
 The [v1 offline pass](evals/v1/results.md) completed 16 contexts: **15 pass, one retained uv-requirements efficiency failure**, with a duplicate-pin fixture limitation. It tests decisions using supplied evidence, not live evidence gathering. [Live observations](evals/v1/live-results.md) record guarded npm, pip and uv requirements installations and real advisory findings for an initially considered old Python candidate. Updated tools resolved the earlier Python prerequisites; pnpm's guarded proposal stopped on a sandbox store-lock failure. Fresh candidates were not installed. There is no full four-manager validation claim.
 
-The separate Socket guide was restored after these runs; the current documentation has not been evaluated again.
+The [Round 4 follow-up](evals/round4/results.md) tested the revised instructions in six contexts: five passed; the corrected uv case still proposed an unnecessary compile. The matched no-skill routine case also passed, but token/tool-call telemetry was unavailable, so cost remains unmeasured. [Follow-up live checks](evals/round4/live-results.md) completed real Express/Sphinx graphs, pnpm and Yarn Classic installs, and a uv project sync with a disclosed harness sequencing gap. Absolute-cutoff rejection was observed; approved fresh installation remains pending because the user declined the advisory-affected newer npm tool. These are scoped observations, not full qualification.
 
 The [older independent comparison](evals/experiment-results.md) is retained separately and does not qualify this revision. External-model and automatic-activation testing remain pending. [Instruction counts](evals/README.md#current-instruction-counts) are document sizes, not measured savings or safety improvements.
 
