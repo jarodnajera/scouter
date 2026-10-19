@@ -1,0 +1,16 @@
+{
+  "checkedDate": "2026-10-19",
+  "skillDigest": "17b1417316e2750c1efb4e2248973c48d3427704a75e2b68e5fe4c0dfeb13cdf",
+  "coreBodyWords": 887,
+  "coreIncludingMetadataWords": 958,
+  "referenceWords": {
+    "npm.md": 250,
+    "pip.md": 314,
+    "pnpm.md": 234,
+    "socket-operations.md": 460,
+    "uv.md": 432,
+    "yarn.md": 380
+  },
+  "behavioralEvaluation": "not rerun after Socket reference restoration and data-minimization clarification",
+  "testedSnapshot": "70fbf6df9170abe2d37f93bc85efae33ccf422e2335bc111e3f8cfd7f175717c"
+}

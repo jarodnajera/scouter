@@ -1,0 +1,115 @@
+{
+  "simulation": true,
+  "reviewTime": "2026-10-19T17:00:00Z",
+  "cutoff": "2026-10-12T17:00:00Z",
+  "authorization": {
+    "install": true,
+    "riskAcceptance": null,
+    "buildExecution": false,
+    "toolExecution": false
+  },
+  "policy": {
+    "publicCoordinatesOnly": true,
+    "socketTelemetryAllowed": true,
+    "strongerRestrictions": []
+  },
+  "project": {
+    "existing": true,
+    "firstCloneInstall": false,
+    "manager": "npm",
+    "workspace": "root",
+    "category": "runtime",
+    "unrelatedChanges": []
+  },
+  "manager": {
+    "version": "12.2.0",
+    "trustedExecutable": "<trusted-npm>",
+    "verifiedHelpAndEffectiveConfig": true,
+    "registry": "https://registry.npmjs.org/",
+    "audit": false,
+    "scriptsSuppressed": true,
+    "hooks": [],
+    "bootstrap": false,
+    "nativeCooldownDays": 7,
+    "nativeCoversProposedGraph": true,
+    "scopedExactPinAgeExceptionSupported": true,
+    "freshCache": "<task-cache>",
+    "frozenGraphSupported": true
+  },
+  "socket": {
+    "available": true,
+    "trusted": true,
+    "operationArtifactCoverageVerified": true,
+    "registrySupported": true,
+    "launcherUpdate": "native binary present; no bootstrap/update required",
+    "mandatoryTelemetry": [
+      "coordinates",
+      "machine identifier",
+      "timing/errors",
+      "potential GitHub organization"
+    ],
+    "policyCompatible": true,
+    "hasRun": false
+  },
+  "packages": [
+    {
+      "name": "scouter-sim-widget",
+      "version": "1.0.0",
+      "registry": "https://registry.npmjs.org/",
+      "public": true,
+      "uploadedAt": "2026-09-01T00:00:00Z",
+      "maintainedSince": "2022-01-01",
+      "identity": {
+        "officialDocumentation": "https://scouter-sim-widget.example.invalid/install",
+        "independentOfficialText": "The official distribution is scouter-sim-widget on public npm.",
+        "publisherConsistent": true,
+        "verifiedCompromise": false
+      },
+      "publishedManifest": {
+        "name": "scouter-sim-widget",
+        "version": "1.0.0",
+        "scripts": {},
+        "bin": {},
+        "dependencies": {}
+      },
+      "staticArtifactInspection": "Manifest and relevant published source inspected without execution; no scripts, binary, downloader, credential or new network behavior.",
+      "comparison": "Supplied prior 0.9.0 static diff: only documented local function fix; no new scripts/binaries/downloaders.",
+      "malware": {
+        "checked": true,
+        "confirmed": false,
+        "source": "synthetic analyst fixture"
+      },
+      "advisory": {
+        "checked": true,
+        "findings": []
+      }
+    }
+  ],
+  "graph": {
+    "complete": true,
+    "registryOriginsVerified": true,
+    "integrityVerified": true,
+    "exactGraphPreserved": true,
+    "nodes": [
+      {
+        "name": "scouter-sim-widget",
+        "version": "1.0.0",
+        "ecosystem": "npm",
+        "registry": "https://registry.npmjs.org/",
+        "dependencies": []
+      }
+    ]
+  },
+  "bulkAdvisoryResponse": {
+    "source": "synthetic OSV fixture",
+    "complete": true,
+    "allPagesComplete": true,
+    "findings": [],
+    "reviewedAt": "2026-10-19T17:00:00Z"
+  },
+  "operation": {
+    "attempted": false,
+    "output": null,
+    "validationPending": true
+  }
+}

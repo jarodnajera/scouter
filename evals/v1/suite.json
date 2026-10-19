@@ -1,0 +1,113 @@
+{
+  "suiteVersion": "v1-revision",
+  "fixedClock": "2026-10-19T17:00:00Z",
+  "mode": "offline proposed actions only",
+  "cases": [
+    {
+      "id": "01-safe",
+      "prompt": "cases/01-safe/prompt.md",
+      "evidence": "cases/01-safe/evidence.json"
+    },
+    {
+      "id": "02-fresh",
+      "prompt": "cases/02-fresh/prompt.md",
+      "evidence": "cases/02-fresh/evidence.json"
+    },
+    {
+      "id": "03-identity",
+      "prompt": "cases/03-identity/prompt.md",
+      "evidence": "cases/03-identity/evidence.json"
+    },
+    {
+      "id": "04-limits",
+      "prompt": "cases/04-limits/prompt.md",
+      "evidence": "cases/04-limits/evidence.json"
+    },
+    {
+      "id": "05-unsafe",
+      "prompt": "cases/05-unsafe/prompt.md",
+      "evidence": "cases/05-unsafe/evidence.json"
+    },
+    {
+      "id": "06-injection",
+      "prompt": "cases/06-injection/prompt.md",
+      "evidence": "cases/06-injection/evidence.json"
+    },
+    {
+      "id": "07-script",
+      "prompt": "cases/07-script/prompt.md",
+      "evidence": "cases/07-script/evidence.json"
+    },
+    {
+      "id": "08-batch",
+      "prompt": "cases/08-batch/prompt.md",
+      "evidence": "cases/08-batch/evidence.json"
+    },
+    {
+      "id": "09-failure",
+      "prompt": "cases/09-failure/prompt.md",
+      "evidence": "cases/09-failure/evidence.json"
+    },
+    {
+      "id": "13-npm",
+      "prompt": "cases/13-npm/prompt.md",
+      "evidence": "cases/13-npm/evidence.json",
+      "sourceEvidenceDigest": "c01f82bc2215786d1928c481572b69702cc30c9895e052bdd5acea8951477852"
+    },
+    {
+      "id": "13-pip",
+      "prompt": "cases/13-pip/prompt.md",
+      "evidence": "cases/13-pip/evidence.json",
+      "sourceEvidenceDigest": "883f5d43973fac82688f6d85477957b76dcb7110cf265fb0677ccaf9edcb8c01"
+    },
+    {
+      "id": "13-pnpm",
+      "prompt": "cases/13-pnpm/prompt.md",
+      "evidence": "cases/13-pnpm/evidence.json",
+      "sourceEvidenceDigest": "e9b6eede0105f9b18cdc6ae2aac28b66a9e797c8cb3f2722e75d632b05398977"
+    },
+    {
+      "id": "13-uv-pip",
+      "prompt": "cases/13-uv-pip/prompt.md",
+      "evidence": "cases/13-uv-pip/evidence.json",
+      "sourceEvidenceDigest": "18d065af9429b25955f3b2893242b4c45c51f6cb4c32cc0ac41f4ebdd345c26c"
+    },
+    {
+      "id": "13-uv-project",
+      "prompt": "cases/13-uv-project/prompt.md",
+      "evidence": "cases/13-uv-project/evidence.json",
+      "sourceEvidenceDigest": "d4add758c3cda081b60137d276c607a6698fc68607c9f7d830bfd5a01516d587"
+    },
+    {
+      "id": "13-yarn-classic",
+      "prompt": "cases/13-yarn-classic/prompt.md",
+      "evidence": "cases/13-yarn-classic/evidence.json",
+      "sourceEvidenceDigest": "f682c23a5be49337eafbda1c603f39e8969f0206fbbad7c32ee35d7a2446b29b"
+    },
+    {
+      "id": "13-yarn-modern",
+      "prompt": "cases/13-yarn-modern/prompt.md",
+      "evidence": "cases/13-yarn-modern/evidence.json",
+      "sourceEvidenceDigest": "6f00b310064a8dc769b84696ebea05412ebb2e4479919a52cde57ee4f756bbd3"
+    }
+  ],
+  "followups": {
+    "02-fresh": [
+      "followups/02-fresh-1.md"
+    ],
+    "03-identity": [
+      "followups/03-identity-1.md",
+      "followups/03-identity-2.md"
+    ],
+    "05-unsafe": [
+      "followups/05-unsafe-1.md"
+    ],
+    "07-script": [
+      "followups/07-script-1.md"
+    ],
+    "13-yarn-classic": [
+      "followups/13-yarn-classic-1.md"
+    ]
+  },
+  "maxSolverContexts": 16
+}

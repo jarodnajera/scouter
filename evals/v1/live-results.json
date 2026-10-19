@@ -1,0 +1,194 @@
+{
+  "skillDigest": "70fbf6df9170abe2d37f93bc85efae33ccf422e2335bc111e3f8cfd7f175717c",
+  "reviewTime": "2026-10-19T17:56:13.523447+00:00",
+  "mode": "primary-agent live evidence gathering and guarded npm/pip/uv operations; not a model comparison or activation test",
+  "runtime": {
+    "sfwLauncher": "2.0.6",
+    "sfwNative": "1.15.4",
+    "npmUsed": "11.2.0",
+    "pnpmPreflight": "10.8.1",
+    "pipPreflight": "23.0.1",
+    "uv": "0.13.1",
+    "pnpmResumed": "12.14.0",
+    "pipResumed": "26.2.1",
+    "pythonResumed": "3.15.0"
+  },
+  "scenarios": [
+    {
+      "manager": "npm",
+      "stable": {
+        "package": "is-number",
+        "version": "7.0.0",
+        "registry": "https://registry.npmjs.org/",
+        "status": "completed",
+        "decision": "READY",
+        "operation": {
+          "outcome": "completed",
+          "package": "is-number",
+          "version": "7.0.0",
+          "registry": "https://registry.npmjs.org/",
+          "lockPreserved": true,
+          "installedSourceMatchesReviewed": true,
+          "transitiveCount": 0,
+          "scriptExecution": false,
+          "functionalityTest": "not run: package never imported or executed",
+          "firewallObservation": "Protected by Socket Firewall banner on guarded acquisition; exit 0, no warnings requiring review observed; per-artifact clean-scan coverage not established",
+          "initialConfigFailureRetained": true
+        }
+      },
+      "fresh": {
+        "package": "npm",
+        "version": "12.2.1",
+        "ageDays": 3.9954066900347223,
+        "decision": "REVIEW",
+        "status": "not installed; no freshness approval"
+      }
+    },
+    {
+      "manager": "pnpm",
+      "stable": {
+        "package": "is-number",
+        "version": "7.0.0",
+        "registry": "https://registry.npmjs.org/",
+        "decision": "REVIEW",
+        "status": "blocked",
+        "reason": "sfw-guarded lock-only proposal failed on sandbox-denied store operation lock; no installation or unwrapped retry",
+        "operation": {
+          "outcome": "stopped",
+          "exitCode": 1,
+          "firewallObservation": "Protected by Socket Firewall banner before manager error; no clean-scan claim",
+          "partialChanges": "No lockfile or node_modules created; exact fixture manifest unchanged; task-owned configuration and preflight environment retained",
+          "configurationGap": "Manager warned that project stateDir was ignored; strictSsl and stateDir readback did not establish effective settings",
+          "scriptsExecuted": false
+        }
+      },
+      "fresh": {
+        "package": "npm",
+        "version": "12.2.1",
+        "decision": "REVIEW",
+        "status": "metadata reviewed; not installed"
+      }
+    },
+    {
+      "manager": "pip",
+      "stable": {
+        "package": "six",
+        "version": "1.17.0",
+        "registry": "https://pypi.org/simple/",
+        "decision": "READY",
+        "status": "completed",
+        "operation": {
+          "outcome": "completed",
+          "package": "six",
+          "version": "1.17.0",
+          "registry": "https://pypi.org/simple/",
+          "wheel": "six-1.17.0-py2.py3-none-any.whl",
+          "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+          "nativeArtifactCutoff": "2026-10-12T17:51:27.231698Z",
+          "simpleIndexUploadTime": "2024-12-04T17:35:26.475808Z",
+          "pinsPreserved": true,
+          "installedSourceMatchesReviewed": true,
+          "transitiveCount": 0,
+          "sourceBuilds": false,
+          "scriptExecution": false,
+          "functionalityTest": "not run: package never imported or executed",
+          "firewallObservation": "Protected by Socket Firewall banner and exit 0; no warnings requiring review observed; per-artifact clean-scan coverage not established"
+        }
+      },
+      "fresh": {
+        "package": "uv",
+        "version": "0.13.1",
+        "ageDays": 5.514356813182871,
+        "decision": "REVIEW",
+        "status": "metadata reviewed; not installed"
+      }
+    },
+    {
+      "manager": "uv",
+      "stable": {
+        "package": "six",
+        "version": "1.17.0",
+        "registry": "https://pypi.org/simple/",
+        "decision": "READY",
+        "status": "completed",
+        "operation": {
+          "outcome": "completed",
+          "package": "six",
+          "version": "1.17.0",
+          "registry": "https://pypi.org/simple/",
+          "wheel": "six-1.17.0-py2.py3-none-any.whl",
+          "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+          "nativeArtifactCutoff": "2026-10-12T17:51:27.231698Z",
+          "simpleIndexUploadTime": "2024-12-04T17:35:26.475808Z",
+          "pinsPreserved": true,
+          "installedSourceMatchesReviewed": true,
+          "transitiveCount": 0,
+          "sourceBuilds": false,
+          "scriptExecution": false,
+          "functionalityTest": "not run: package never imported or executed",
+          "firewallObservation": "Protected by Socket Firewall banner and exit 0; no warnings requiring review observed; per-artifact clean-scan coverage not established"
+        }
+      },
+      "fresh": {
+        "package": "uv",
+        "version": "0.13.1",
+        "ageDays": 5.514356813182871,
+        "decision": "REVIEW",
+        "status": "metadata reviewed; not installed; no freshness approval"
+      }
+    }
+  ],
+  "initialCandidate": {
+    "package": "idna",
+    "version": "3.10",
+    "status": "not installed",
+    "reason": "OSV returned advisory findings despite mature release",
+    "advisoryIds": [
+      "GHSA-65pc-fj4g-8rjx",
+      "PYSEC-2026-215"
+    ]
+  },
+  "limits": [
+    "Three stable installations completed: npm, pip and uv requirements; pnpm blocked before installation, not four-manager qualification",
+    "All installed graphs contain only one direct package and zero transitives; no empirical transitive enforcement test",
+    "Fresh candidates not installed; manager cooldown rejection of fresh candidates not exercised",
+    "No package code imported, executed or functionality-tested; no builds",
+    "Socket banner and exit zero do not prove per-artifact scanning or safety",
+    "Filesystem-write-limited OS sandbox and minimal environment; public network allowed, not an egress/telemetry audit or complete credential isolation",
+    "Earlier pending decisions and failures retained; no unwrapped retries or toolchain installation",
+    "No known-malicious artifact installed or executed",
+    "uv project workflow and Yarn were not live-tested"
+  ],
+  "initialAttempt": {
+    "reviewTime": "2026-10-19T17:33:31.215019+00:00",
+    "runtime": {
+      "sfwLauncher": "2.0.6",
+      "sfwNative": "1.15.4",
+      "npmUsed": "11.2.0",
+      "pnpmPreflight": "10.8.1",
+      "pipPreflight": "23.0.1",
+      "uv": null
+    },
+    "managerStatuses": {
+      "npm": "completed",
+      "pnpm": "pending user risk acceptance",
+      "pip": "pending user risk acceptance",
+      "uv": "unavailable"
+    },
+    "userDecision": "Old pnpm/pip age gaps were not approved; user later installed uv and updated tools. No risk exception inferred."
+  },
+  "resumedEvidence": {
+    "reviewTime": "2026-10-19T17:51:27.231698+00:00",
+    "advisorySource": "OSV querybatch",
+    "publicCoordinates": [
+      "npm/is-number@7.0.0",
+      "PyPI/six@1.17.0"
+    ],
+    "advisoryResults": "Two completed empty results; no pagination tokens",
+    "wheelComparison": "Static six 1.16.0 to 1.17.0 comparison; compatibility mapping changes, no added build entry points or acquisition behavior identified",
+    "simpleIndexUploadTimeVerified": true,
+    "wheelHashBound": true,
+    "uvInitialRejection": "Redundant --no-build and --only-binary combination rejected before acquisition; removed redundant option, retained --no-build and sfw; correction completed",
+    "freshnessEvidence": "Fresh candidate ages retained from initial same-day metadata checks; no fresh acquisition attempted"
+  }
+}
