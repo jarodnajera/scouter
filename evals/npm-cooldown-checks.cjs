@@ -76,7 +76,7 @@ async function main() {
     assert(requests.every(r => new Date(r.before).toISOString() === cutoff))
     assert(!fs.existsSync(path.join(folder, 'node_modules')))
   })
-  await check('missing timestamps are admitted by resolver, so coverage is unproven', () => {
+  await check('missing timestamps are admitted by resolver; independent verification is needed', () => {
     const p = pack('scouter-fixture-missing-time')
     delete p.time['1.1.0']
     assert.equal(pick(p, '1.1.0', { before: cutoff }).version, '1.1.0')
@@ -150,6 +150,57 @@ async function main() {
     assert.deepEqual(JSON.parse(fs.readFileSync(snapshot)), before)
     assert.notDeepEqual(JSON.parse(fs.readFileSync(snapshot)), JSON.parse(fs.readFileSync(file)))
     assert.deepEqual(JSON.parse(fs.readFileSync(path.join(folder, 'node_modules/.package-lock.json'))), after)
+  })
+  await check('batched timestamp fallback: boundaries, failures, deduplication and compact output', async () => {
+    // Offline policy model, not production helper or agent behavior evaluation.
+    const coordinates = [
+      { name: 'public-old', version: '1.0.0' },
+      { name: 'public-old', version: '1.0.0', optional: true },
+      { name: 'public-old', version: '2.0.0' },
+      { name: 'public-fresh', version: '1.0.0', reusedLock: true },
+      ...['missing', 'invalid', 'failed', 'optional'].map(n => ({ name: `public-${n}`, version: '1.0.0', optional: n === 'optional' })),
+    ]
+    const metadata = {
+      'public-old': { time: { '1.0.0': '2026-10-01T00:00:00Z', '2.0.0': cutoff }, large: 'DO_NOT_PRINT'.repeat(10000) },
+      'public-fresh': { time: { '1.0.0': '2026-10-17T00:00:00Z' } },
+      'public-missing': { time: {} },
+      'public-invalid': { time: { '1.0.0': 'invalid' } },
+      'public-optional': { time: { '1.0.0': '2026-10-01T00:00:00Z' } },
+    }
+    const unique = [...new Map(coordinates.map(x => [`${x.name}@${x.version}`, x])).values()]
+    const names = [...new Set(unique.map(x => x.name))]
+    let next = 0, active = 0, maximum = 0
+    const fetched = new Map(), calls = new Map()
+    await Promise.all(Array.from({ length: Math.min(4, names.length) }, async () => {
+      while (next < names.length) {
+        const name = names[next++]
+        calls.set(name, (calls.get(name) || 0) + 1)
+        active++; maximum = Math.max(maximum, active)
+        await new Promise(resolve => setTimeout(resolve, 1))
+        fetched.set(name, metadata[name] || null)
+        active--
+      }
+    }))
+    const rows = unique.map(({name, version}) => {
+      const m = fetched.get(name), t = m?.time?.[version]
+      const reason = !m ? 'lookup failed' : !t ? 'missing timestamp' :
+        !Number.isFinite(Date.parse(t)) ? 'invalid timestamp' : Date.parse(t) > Date.parse(cutoff) ? 'newer than cutoff' : ''
+      return `${name} | ${version} | ${t || '-'} | ${reason ? 'FAIL: ' + reason : 'PASS'}`
+    })
+    assert.equal(calls.size, 6)
+    assert([...calls.values()].every(n => n === 1))
+    assert(maximum <= 4)
+    assert.equal(rows.filter(x => x.endsWith('PASS')).length, 3)
+    assert.equal(rows.filter(x => x.includes('FAIL:')).length, 4)
+    assert(rows.some(x => x.includes('public-fresh') && x.includes('FAIL: newer')))
+    assert(rows.some(x => x.includes('public-optional') && x.endsWith('PASS')))
+    assert(rows.join('\n').length < 1000)
+    assert(!rows.join('\n').includes('DO_NOT_PRINT'))
+    // Local origin allowlist must run before exposing names to a fetcher.
+    const allowed = x => { try { return new URL(x.resolved).origin === 'https://registry.npmjs.org' } catch { return false } }
+    assert(!allowed({ resolved: 'https://private.example/private.tgz' }))
+    assert(!allowed({ resolved: 'file:private.tgz' }))
+    assert(allowed({ resolved: 'https://registry.npmjs.org/public-old/-/public-old-1.0.0.tgz' }))
   })
   console.log(`${passed} offline checks passed; no live acquisition or agent decisions tested.`)
 }

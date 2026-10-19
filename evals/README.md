@@ -2,7 +2,7 @@
 
 ## Current revision
 
-The current metadata-based routine path and npm cutoff feedback revision have not received a model or live-install repeat. See the [offline npm checks and policy limits](npm-cooldown-checks.md) for the new revision. See the [local policy walkthrough](routine-review-checks.md) and [fresh-session Tailwind handoff](tailwind-repeat.md); the latter is not a claimed result. It changes source-review depth and permits graph advisory completion after acquisition but before execution.
+The current npm timestamp revision has eight offline checks and a resumed staged Tailwind installation/build. It has not received an independent model or fresh-session routine repeat; browser interaction remains pending because no browser was available. See the [offline npm checks and policy limits](npm-cooldown-checks.md) for the new revision. See the [local policy walkthrough](routine-review-checks.md) and [fresh-session Tailwind handoff](tailwind-repeat.md); the latter is not a claimed result. It changes source-review depth and permits graph advisory completion after acquisition but before execution.
 
 The historical [Round 4 follow-up](round4/README.md) ran six targeted contexts against its own frozen revision, including a matched routine npm pair. [Results](round4/results.md) retain five passes and one corrected uv efficiency failure; shared task/safety checks passed in all six under primary-agent manual grading. Token/tool-call costs remain unavailable, not zero. No comparative safety benefit or causal savings claim is made.
 
@@ -12,17 +12,17 @@ Earlier [v1 inputs](v1/README.md), [16-context results](v1/results.md), [live ob
 
 ## Current instruction counts
 
-Recounted 2026-10-19. [Current content record](current-skill.json): SHA-256 `be57dbfc499eee599acef284248322f8086f4382dfe30d1e051f19bf8d3f1f07`. Core body **1286** words; including metadata **1365**. Loading is core plus the applicable manager section. The conditional Socket guide adds **460** words for setup, uncertainty, cache adoption or restricted policy. Classic is outside native-cooldown routine eligibility.
+Recounted 2026-10-19. [Current content record](current-skill.json): SHA-256 `c95a51eca65a8d8f5f7e96e6db253ced1ef041cef1b722257217be02207da6a0`. Core body **968** words; including metadata **1047**. The conditional Socket guide remains **460** words. Counts reflect the Test 3 trim; other manager guides are unchanged.
 
 | Workflow | Manager guide words | Core + entire manager guide |
 | --- | ---: | ---: |
-| npm | 533 | 1898 |
-| pnpm | 241 | 1606 |
-| Yarn Classic | 395 | 1760 |
-| modern Yarn | 395 | 1760 |
-| pip | 335 | 1700 |
-| uv project | 485 | 1850 |
-| uv requirements | 485 | 1850 |
+| npm | 349 | 1396 |
+| pnpm | 241 | 1288 |
+| Yarn Classic | 395 | 1442 |
+| modern Yarn | 395 | 1442 |
+| pip | 335 | 1382 |
+| uv project | 485 | 1532 |
+| uv requirements | 485 | 1532 |
 
 Counts are whitespace-separated document sizes, not measured tokens or savings. Whole-file bounds include incidental Yarn/uv sections. The historical Round 4 snapshot had 918 core-body words (997 including metadata), with path totals npm 1279, pnpm 1231, Yarn 1383, pip 1311 and uv 1429. The earlier v1 snapshot had 799 core-body words (870 including metadata), with path totals npm 1120, pnpm 1104, Yarn 1250, pip 1184 and uv 1302. Its digests and results are unchanged. Earlier counts and protocols remain in [the historical guide](legacy-guide.md).
 

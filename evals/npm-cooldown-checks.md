@@ -1,6 +1,6 @@
 # npm cooldown feedback revision checks
 
-Recorded October 19, 2026. This revision addresses the Tailwind retest feedback without resuming its pending installation. Historical evaluation snapshots and the original work log remain unchanged. The repeat in [the handoff](tailwind-repeat.md) is still pending.
+Recorded October 19, 2026; updated for Test 3 feedback. Historical evaluation snapshots remain unchanged. The existing Tailwind run resumed (see the appended work log); the independent fresh-session repeat remains pending.
 
 ## Reproduce the offline checks
 
@@ -15,7 +15,7 @@ The opt-in JavaScript check loads the installed npm resolver and Arborist with i
 
 ## Observed results
 
-Seven checks passed using Node 22.14.0 and npm 11.2.0:
+Eight checks passed using Node 22.14.0 and npm 11.2.0:
 
 | Check | Observation and limit |
 | --- | --- |
@@ -38,7 +38,7 @@ These are manual instruction walkthroughs, not new model evaluations or executab
 | Situation | Required behavior retained in the revised instructions |
 | --- | --- |
 | Missing `min-release-age`, supported `before`, otherwise complete evidence | Routine exact guarded addition may proceed without a lock-only proposal or redundant Scouter question. |
-| Missing timestamps or unverified prelocked acquisition | REVIEW; absence of resolver errors is insufficient. No forced lock deletion or mandatory exhaustive timestamp research. |
+| Theoretical npm timestamp gap or unverified reused locks | Use the npm-specific batched graph check before execution; no proposal or risk question solely for the theoretical limitation. Actual missing/invalid/fresh timestamps or failed checks remain REVIEW. |
 | Changed origin/integrity or incomplete advisory results | REVIEW and stop execution; disclose partial acquisition if it already occurred. |
 | Socket warning despite exit zero | Inspect and resolve the concern before execution; confirmed compromise is BLOCK. |
 | Telemetry prohibited or assurance unavailable | Stop or disclose the unresolved policy gap; routine README disclosure does not grant policy exceptions. |
@@ -46,3 +46,11 @@ These are manual instruction walkthroughs, not new model evaluations or executab
 | Harness approves a shell/network action | This does not accept Scouter REVIEW risks or override BLOCK. |
 
 The README retains a conditional prompt-count target, not a promised count. No global tools, permissions, skill version, CLI, or APIs changed. Newer npm age/exclusion controls, live Socket coverage, agent decisions, and Tailwind browser behavior require their separate validation; the offline checks do not certify them.
+
+## Test 3 revision validation
+
+The eighth offline check models a four-worker batch: mature and exactly-at-cutoff timestamps pass; fresh reused locks, missing/invalid timestamps and lookup failures fail. Duplicate coordinates are collapsed, multiple versions share one package fetch, optional entries remain included, and output excludes bulky metadata. A local origin allowlist rejects private/file sources before lookup. This is a synthetic policy model, not shared production code or proof of agent behavior. The live batch separately observed 38 passing coordinates, 36 HTTP requests and two reused metadata responses in one command.
+
+Native resolver/runtime/baseline checks remain unchanged in substance. Only npm receives the timestamp fallback. Harness permissions remain separate from risk acceptance; browser interaction remains pending because no browser connection was available.
+
+Current validation: all eight JavaScript checks and 55 Python evaluator tests passed; the skill validator passed with the existing Anaconda Python (default Python lacks PyYAML). The resumed install added 18 packages; the manifest/lock matched the proposal and three application builds passed, including temporary second-source discovery and cleanup. Click feedback passed a minimal DOM fixture, not a real browser. See [resumed work log](../tailwind-button-work-log.md#resumed-run-after-test-3-feedback--october-19-2026) for limits and permission accounting.
