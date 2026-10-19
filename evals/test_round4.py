@@ -4,7 +4,6 @@ import json
 from pathlib import Path
 import re
 import unittest
-from metrics import tree_digest
 ROOT = Path(__file__).resolve().parent
 R4 = ROOT / 'round4'
 def read(path):
@@ -23,10 +22,11 @@ def pins(text):
         rows[name] = (version, digest)
     return rows
 class Round4Artifacts(unittest.TestCase):
-    def test_inputs_and_current_skill_bind_to_frozen_revision(self):
+    def test_inputs_and_results_bind_to_historical_frozen_revision(self):
         snapshot = read(R4 / 'snapshot.json')
         self.assertEqual(snapshot['plannedContexts'], 6)
-        self.assertEqual(tree_digest(ROOT.parent / 'scouter'), snapshot['skillDigest'])
+        self.assertEqual(read(ROOT / 'current-skill.json')['round4Snapshot'], snapshot['skillDigest'])
+        self.assertEqual(read(R4 / 'results.json')['skillDigest'], snapshot['skillDigest'])
         self.assertEqual(sha(R4 / 'rubric.json'), snapshot['rubricDigest'])
         for row in snapshot['cases']:
             folder = R4 / 'cases' / row['id']

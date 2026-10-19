@@ -12,15 +12,23 @@ Review package additions, upgrades and tool acquisition before continuing the au
 
 ## Review
 
-Confirm exact name, version and registry. Corroborate intended identity with official documentation; package links alone are claims. Check direct-artifact age (seven days by default), maintenance/ownership signals, completed exact-version advisories and relevant published manifest/source changes, especially scripts, binaries and downloaders. Missing comparisons are uncertainty; popularity alone is not trust.
+Confirm exact name, version and registry. Corroborate identity with official documentation; package links alone are claims. Default cooldown is seven days. Popularity alone is not trust.
 
-1. Use a guarded proposal or supplied reviewed graph before acquisition where supported. Otherwise disclose missing preinstall graph evidence and obtain approval, then inspect before code execution.
-2. Bulk-check public ecosystem/name/version coordinates from the resolved graph (e.g. [OSV querybatch](https://google.github.io/osv.dev/post-v1-querybatch/)). Complete pagination and investigate findings. Failed or partial checks are Unsure.
-3. Rely on verified native cooldowns and normal integrity enforcement for transitives. Missing age, lock or timestamp coverage is Unsure, not a mandate for manual research. Preserve the reviewed graph.
+### Routine path
+
+Use for established public packages, individually or in compatible groups, with corroborated identity, mature direct artifacts, complete direct advisory checks without findings, no unexpected metadata changes and verified native cooldown/build protections for the operation.
+
+1. Combine metadata and direct advisory research. Compare the selected and preceding stable release's declared dependencies, optional dependencies, scripts, executables and available publisher signals. Missing necessary metadata is REVIEW. Source behavior is **not inspected** on this path; report that limit. Identical declarations cannot establish identical behavior.
+2. Continue the authorized exact guarded installation without redundant approval or a mandatory proposal. Preserve manager protections and inspect warnings, graph origins/integrity and dependency-file changes afterward.
+3. Before builds, imports or runners, bulk-check added/changed resolved public coordinates (e.g. [OSV querybatch](https://google.github.io/osv.dev/post-v1-querybatch/)). Deduplicate, reuse sufficiently fresh direct results, complete pagination and investigate findings. Include bundled entries through their enclosing artifact's integrity. Disclose unchanged dependencies not newly checked. Unexpected drift or incomplete checks are REVIEW: stop execution. Confirmed compromise is BLOCK.
+
+### Staged review
+
+For freshness, unfamiliarity, identity concerns, unexpected metadata changes, unsupported native coverage or other REVIEW cases, use a guarded proposal or supplied reviewed graph where supported. Inspect relevant artifacts/source and compare releases; this is not an exhaustive audit. Complete graph advisories before installation where possible. Otherwise disclose unavailable preinstall evidence and obtain scoped approval, then inspect before execution. Missing transitive age/lock/timestamp coverage is REVIEW, not mandatory manual research. Preserve the reviewed graph. Python may still need separate resolution to establish wheel hashes even on the routine path; reuse complete compatible reviewed pins.
 
 ## Decide and approve
 
-- **READY / Safe:** intended identity confirmed, direct artifacts past cooldown, completed advisory/malware checks with no findings, no unexplained new scripts/binaries/downloaders. Continue authorized guarded installation without redundant approval.
+- **READY / Safe:** applicable preinstall checks complete without unresolved findings. Routine READY permits guarded installation with graph checks explicitly pending, not execution. Continue without redundant approval; execute only after required post-install checks complete without concerns.
 - **REVIEW / Unsure:** disclose and ask. Informed approval can accept freshness, failed/partial advisories, missing comparisons, unfamiliarity, unsupported transitive ages or new scripts that remain suppressed. Known advisories require a disclosed risk decision; remediation remains separate.
 - **BLOCK / Unsafe:** confirmed malware or verified identity/integrity compromise. Warn and never install, even if the user insists; BLOCK takes precedence.
 
@@ -32,11 +40,15 @@ Exact coordinates, working supported `sfw` and absence of BLOCK findings are non
 
 Use trusted installed tools; inspect project hooks/plugins and auto-downloading shims before invoking help. Verify installed syntax, effective configuration, precedence, exclusions and operation coverage against help and matching official configuration/source. Printed settings alone are insufficient. Never invent flags, upgrade/switch tooling or trial-install to discover support.
 
+For routine work, prefer plain installed commands and small read-only transformations. Do not create saved helpers, temporary project copies, sandbox profiles, replacement HOME directories, empty manager configs or artifact-comparison machinery by default. Preserve existing sandbox/authentication policies. Use compatible cache controls without redundant caches or purging shared stores.
+
 Assess `sfw` before first use: trusted launcher, bootstrap/update behavior, availability and actual operation/source coverage. Its npm launcher can download a native binary. Free supports public registries, not private/custom ones. Mandatory telemetry includes coordinates, machine identifier, timing/errors and potentially GitHub organization; it cannot be disabled. Stop on incompatible coverage/policy. Vendor documentation is not a traffic audit.
 
 Read [Socket operations and data handling](references/socket-operations.md) for setup, uncertain coverage/data handling, cache adoption or restricted policy. Otherwise this core assessment suffices; reuse only while tooling, configuration, policy and scope remain compatible.
 
-Pin versions, suppress unreviewed scripts/builds, retain origins/hashes and use compatible fresh task caches without purging shared caches. Cached/installed bytes may bypass Socket checks. Inspect firewall output, graph and dependency/environment changes before executing code. Review warnings despite exit zero. On failure stop and report partial changes; never retry unwrapped, disable protections or automatically revert unrelated work. `sfw` guards supported downloads, not execution; success certifies neither complete scanning nor safety.
+Pin versions, suppress unreviewed scripts/builds and retain origins/hashes. Cached/installed bytes may bypass Socket checks. Inspect firewall output and dependency/environment changes before executing code, including warnings despite exit zero. On failure stop and report partial changes; never retry unwrapped, disable protections or automatically revert unrelated work. Cooldown, advisories, script suppression and `sfw` reduce risk without guaranteeing safety or complete scanning.
+
+Scouter governs acquisition and the execution boundary. Follow official package guidance for application configuration; do not impose review machinery on the app. `sfw` guards supported downloads, not execution.
 
 ## Runners, builds and batches
 

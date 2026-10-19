@@ -2,7 +2,9 @@
 
 ## Current revision
 
-Start with the [Round 4 follow-up](round4/README.md): six targeted contexts against the current frozen revision, including a matched routine npm pair. [Results](round4/results.md) retain five passes and one corrected uv efficiency failure; shared task/safety checks passed in all six under primary-agent manual grading. Token/tool-call costs remain unavailable, not zero. No comparative safety benefit or causal savings claim is made.
+The current metadata-based routine path has not received a model or live-install repeat. See the [local policy walkthrough](routine-review-checks.md) and [fresh-session Tailwind handoff](tailwind-repeat.md); the latter is not a claimed result. It changes source-review depth and permits graph advisory completion after acquisition but before execution.
+
+The historical [Round 4 follow-up](round4/README.md) ran six targeted contexts against its own frozen revision, including a matched routine npm pair. [Results](round4/results.md) retain five passes and one corrected uv efficiency failure; shared task/safety checks passed in all six under primary-agent manual grading. Token/tool-call costs remain unavailable, not zero. No comparative safety benefit or causal savings claim is made.
 
 [Round 4 live observations](round4/live-results.md) cover real Express/Sphinx graphs (64 and 21 transitives), pnpm/Yarn Classic installs, native absolute-cutoff rejection and uv project sync with a disclosed sequencing gap. Approved fresh installation remains pending after the user declined the newer npm tool's bundled-advisory risk. Modern Yarn is not live-qualified.
 
@@ -10,19 +12,19 @@ Earlier [v1 inputs](v1/README.md), [16-context results](v1/results.md), [live ob
 
 ## Current instruction counts
 
-Recounted 2026-10-19. [Current content record](current-skill.json): SHA-256 `d2afc72914e01d4345f35f572a10fef00159e190c676b42a2a5155f2b0ebb0a5`. Core body **918** words; including metadata **997**. Routine loading is core plus the applicable manager guide. The conditional Socket guide adds **460** words for setup, uncertainty, cache adoption or restricted policy.
+Recounted 2026-10-19. [Current content record](current-skill.json): SHA-256 `c9d7264017b8b8566a4dab306781864abb0491df5b701489a1bcd5c2d606cf1e`. Core body **1145** words; including metadata **1224**. Loading is core plus the applicable manager section. The conditional Socket guide adds **460** words for setup, uncertainty, cache adoption or restricted policy. Classic is outside native-cooldown routine eligibility.
 
 | Workflow | Manager guide words | Core + entire manager guide |
 | --- | ---: | ---: |
-| npm | 282 | 1279 |
-| pnpm | 234 | 1231 |
-| Yarn Classic | 386 | 1383 |
-| modern Yarn | 386 | 1383 |
-| pip | 314 | 1311 |
-| uv project | 432 | 1429 |
-| uv requirements | 432 | 1429 |
+| npm | 287 | 1511 |
+| pnpm | 241 | 1465 |
+| Yarn Classic | 395 | 1619 |
+| modern Yarn | 395 | 1619 |
+| pip | 335 | 1559 |
+| uv project | 485 | 1709 |
+| uv requirements | 485 | 1709 |
 
-Counts are whitespace-separated document sizes, not measured tokens or savings. Whole-file bounds include incidental Yarn/uv sections. The earlier v1 snapshot had 799 core-body words (870 including metadata), with path totals npm 1120, pnpm 1104, Yarn 1250, pip 1184 and uv 1302. Its digests and results are unchanged. Earlier counts and protocols remain in [the historical guide](legacy-guide.md).
+Counts are whitespace-separated document sizes, not measured tokens or savings. Whole-file bounds include incidental Yarn/uv sections. The historical Round 4 snapshot had 918 core-body words (997 including metadata), with path totals npm 1279, pnpm 1231, Yarn 1383, pip 1311 and uv 1429. The earlier v1 snapshot had 799 core-body words (870 including metadata), with path totals npm 1120, pnpm 1104, Yarn 1250, pip 1184 and uv 1302. Its digests and results are unchanged. Earlier counts and protocols remain in [the historical guide](legacy-guide.md).
 
 ## Local validation
 

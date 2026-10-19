@@ -29,17 +29,27 @@ The `scouter/` folder is a complete standalone skill.
 
 Review additions and upgrades, including those the agent proposes within an authorized task; review does not authorize unrelated changes. Keep the project's manager: npm, pnpm, modern Yarn, Yarn Classic, pip and uv are covered by short guides. Poetry remains unsupported without migration. First-clone installation and vulnerability investigation/remediation are outside v1. A specifically requested security-fix version receives ordinary installation review; a fresh release asks for informed approval rather than a special remediation waiver.
 
-The agent checks direct dependencies and runs a combined public advisory lookup over the resolved graph. Native cooldowns handle transitive ages; absent coverage is disclosed as Unsure. Failed/partial advisories, missing comparisons, unfamiliarity and new suppressed scripts also require an informed decision. Ambiguous identity needs explicit name-and-registry confirmation, not a generic yes. Exact coordinates, supported working `sfw`, stronger policies and confirmed-compromise blocking remain mandatory.
+For established public packages, routine review combines identity, direct-artifact age, direct advisories and release metadata comparisons. With verified native cooldown/build controls, the agent may perform the authorized guarded addition without a separate proposal. **Routine source behavior is not inspected:** metadata describes declarations, not actual behavior. After acquisition, inspect firewall output and dependency-file changes, then bulk-check added or changed public graph coordinates before any build, import or runner. Unchanged dependencies are not newly reviewed. READY permits acquisition while those graph checks are pending; it does not permit execution.
 
-Use a compatible fresh task cache. Cached/already-installed artifacts may bypass Socket download checks; neither cache isolation nor successful exit proves full scanning. Scripts/builds remain suppressed until separately reviewed and authorized. `sfw` guards supported downloads, not application execution or network isolation. Warnings, partial changes and pending validation remain visible.
+Unexpected metadata, unfamiliarity, fresh releases or unsupported protections use staged review and relevant artifact inspection. Incomplete checks or unexplained graph changes become REVIEW; confirmed malware or identity/integrity compromise becomes BLOCK. Classic Yarn lacks native cooldown and stays outside routine eligibility. Python retains wheel/hash binding and separate resolution when needed; complete compatible supplied pins are reused. Failed/partial advisories and missing comparisons require an informed decision. Ambiguous identity needs explicit name-and-registry confirmation, not a generic yes. Exact coordinates, supported working `sfw` and stronger policies remain mandatory.
+
+Use compatible cache controls without purging shared caches or creating redundant caches for every step. Cached/already-installed artifacts may bypass Socket download checks; neither cache isolation nor successful exit proves full scanning. Scripts/builds remain suppressed until separately reviewed and authorized. Cooldown, advisories, suppression and `sfw` reduce risk without guaranteeing safety. Scouter controls acquisition and the execution boundary; application configuration follows official package guidance. `sfw` does not sandbox execution. Warnings, partial changes and pending validation remain visible.
+
+## Reducing permission prompts
+
+Scouter's risk questions and the agent harness's execution/network approvals are separate. A routine authorized addition needs no redundant Scouter approval, but the harness may still ask to run a command or access a service. A harness approval does not accept a Scouter REVIEW concern or override BLOCK.
+
+Users can configure narrowly scoped permissions for trusted `sfw` operations with a specific manager, subcommand and project, public-registry metadata requests, and OSV queries containing public coordinates only. Verify that the harness actually constrains the intended arguments, working directory and destinations; otherwise retain the prompt. Do not grant unrestricted shell, interpreter, `sfw` or network access. Scouter does not change permission settings automatically or replace existing sandbox, authentication or project policies.
+
+Under compatible preconfigured permissions, **two or three routine dependency stages and zero or one permission prompt are test targets, not guarantees**. Metadata/direct lookups, acquisition and post-install graph checks remain visible; Python may require separate resolution. Count actual commands and lookups separately. Never hide many operations in a large helper or bypass protections to reach a target. The [fresh-session Tailwind repeat](evals/tailwind-repeat.md) describes how to record these observations; it has not been run.
 
 ## Example conversations (simulated)
 
-All packages, evidence and outcomes below are fictional. No install or scan occurred. They illustrate [the current synthetic suite](evals/v1/README.md), not live security conclusions.
+All packages, evidence and outcomes below are fictional. No install or scan occurred. These illustrate reporting, not live security conclusions or evaluated results for the current policy.
 
 **User:** Add scouter-sim-widget@1.0.0 from public npm.
 
-**Agent:** `scouter-sim-widget@1.0.0 (public npm) — READY — identity, age, advisory and artifact fixtures clear; authorized exact addition; operation not run; synthetic evidence 2026-10-19T17:00:00Z, guarded output/diff validation pending.`
+**Agent:** `scouter-sim-widget@1.0.0 (public npm) — READY — direct identity/age/advisories and metadata fixtures clear, native controls verified; source uninspected; authorized exact addition; operation not run; synthetic evidence 2026-10-19T17:00:00Z, firewall/diff inspection and added/changed graph advisories pending before execution.`
 
 **User:** Install the two-day-old version after reviewing it.
 
@@ -50,6 +60,8 @@ All packages, evidence and outcomes below are fictional. No install or scan occu
 **Agent:** `scouter-sim-widget@1.0.0 (public npm) — REVIEW — freshness accepted by explicit simulated user reply for this exact operation; operation not run; synthetic evidence 2026-10-19T17:00:00Z, scoped guarded acquisition and resulting validation pending.`
 
 ## Evaluation
+
+The current metadata-based routine path changes review depth and advisory timing. It has received local document/fixture checks, not a new model evaluation or live installation test. Earlier results below apply to their recorded snapshots; they do not validate this changed policy. Previously cancelled tests remain cancelled. A fresh-session repeat is documented as a handoff only.
 
 The [v1 offline pass](evals/v1/results.md) completed 16 contexts: **15 pass, one retained uv-requirements efficiency failure**, with a duplicate-pin fixture limitation. It tests decisions using supplied evidence, not live evidence gathering. [Live observations](evals/v1/live-results.md) record guarded npm, pip and uv requirements installations and real advisory findings for an initially considered old Python candidate. Updated tools resolved the earlier Python prerequisites; pnpm's guarded proposal stopped on a sandbox store-lock failure. Fresh candidates were not installed. There is no full four-manager validation claim.
 

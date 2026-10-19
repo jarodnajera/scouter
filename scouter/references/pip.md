@@ -5,7 +5,7 @@ Use the core with the intended interpreter/venv, never an unrelated global pip o
 | Field | pip |
 | --- | --- |
 | Detect | Requirements/constraints and `pyproject.toml`; follow local includes, inspect remote includes, index/find-links/TLS settings and editable/direct-URL options without exposing credentials. Do not switch Poetry/uv projects to pip. |
-| Guarded acquisition | First resolve wheels: `sfw <python> -m pip install --dry-run --ignore-installed --report <proposal.json> --only-binary=:all: --no-cache-dir <name>==<exact>` (or `-r <reviewed-input>` with existing constraints). Inspect the proposed graph; then use the hashed command below. |
+| Guarded acquisition | Reuse supplied complete compatible reviewed pins without repeating resolution. Otherwise resolve wheels: `sfw <python> -m pip install --dry-run --ignore-installed --report <proposal.json> --only-binary=:all: --no-cache-dir <name>==<exact>` (or `-r <reviewed-input>` with existing constraints). Bind selected wheel origins/hashes and use the hashed command below. Routine graph advisories may follow acquisition; staged review inspects the proposal first. |
 | Native cooldown | Where verified, append `--uploaded-prior-to <UTC-cutoff>` to proposal and acquisition; use index upload-time metadata and selected-wheel coverage, including later uploads. Otherwise transitive age enforcement is Unsure. |
 | Script/build suppression | `--only-binary=:all:`. Preflight and stop for separate review of local/editable/source/backend builds; a dry-run may otherwise execute metadata code. |
 | Cache | `--no-cache-dir`; local find-links and already-satisfied packages can still bypass Socket downloads. |
