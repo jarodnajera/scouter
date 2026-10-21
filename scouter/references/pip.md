@@ -1,17 +1,13 @@
 # pip
 
-Use the core with the intended interpreter/venv, never an unrelated global pip or system-environment override. Preserve constraints, extras, markers and the project's declaration conventions.
+Apply the core using the project's intended interpreter/venv, requirements/constraints and declaration conventions; do not override system environments or switch managers.
 
-| Field | pip |
-| --- | --- |
-| Detect | Requirements/constraints and `pyproject.toml`; follow local includes, inspect remote includes, index/find-links/TLS settings and editable/direct-URL options without exposing credentials. Do not switch Poetry/uv projects to pip. |
-| Guarded acquisition | Reuse supplied complete compatible reviewed pins without repeating resolution. Otherwise resolve wheels: `sfw <python> -m pip install --dry-run --ignore-installed --report <proposal.json> --only-binary=:all: --no-cache-dir <name>==<exact>` (or `-r <reviewed-input>` with existing constraints). Bind selected wheel origins/hashes and use the hashed command below. Routine graph advisories may follow acquisition; staged review inspects the proposal first. |
-| Native cooldown | Where verified, append `--uploaded-prior-to <UTC-cutoff>` to proposal and acquisition; use index upload-time metadata and selected-wheel coverage, including later uploads. Otherwise transitive age enforcement is Unsure. |
-| Script/build suppression | `--only-binary=:all:`. Preflight and stop for separate review of local/editable/source/backend builds; a dry-run may otherwise execute metadata code. |
-| Cache | `--no-cache-dir`; local find-links and already-satisfied packages can still bypass Socket downloads. |
-| Frozen graph | Pin every resolved distribution and reviewed compatible wheel SHA-256 in `<pins.txt>`, then `sfw <python> -m pip install --require-hashes --only-binary=:all: --no-cache-dir --report <installed.json> -r <pins.txt>`. |
-| Gotchas | JSON reports and `pip freeze` are not hashed locks. Bind wheel URL/origin/hash to registry evidence; inspect installed report and declaration changes. Never force reinstall, disable build isolation, or omit dependencies to make it succeed. |
+| Guarded add | Cooldown | Builds off |
+| --- | --- | --- |
+| `sfw <python> -m pip install "<pkg>==<exact>" --only-binary=:all: --no-cache-dir --report <installed.json>` | Verified `--uploaded-prior-to P7D` or original UTC cutoff | `--only-binary=:all:` |
 
-pip has no documented package-scoped cutoff exception here. For an approved fresh wheel, use only the core's frozen/hash-bound fallback after establishing the original cutoff for non-exempt artifacts; do not run open resolution with a globally relaxed cutoff. If that cannot be bounded, stop. Lack of any native age feature remains a disclosed approvable gap, not a claim of native protection.
+- Append the supported cutoff: it requires index upload-time metadata. Missing native support/coverage is REVIEW; disclose and ask. Preserve registry/TLS routing, constraints, extras and markers. Local/editable/URL/source builds require separate review; never remove wheel-only restrictions or force reinstall to succeed.
+- Reuse complete compatible hash-bound requirements directly with `--require-hashes -r <pins.txt>` and the same wheel/cache/cutoff controls. If the project requires pins not yet available, resolve separately through `sfw` with supported `--dry-run --ignore-installed --report <proposal.json> --only-binary=:all: --no-cache-dir` and the cutoff; preserve selected wheel hashes. When no lock exists, compare target-environment metadata before/after and inspect the install report. Reports and `pip freeze` are not hashed locks; do not recompile compatible supplied pins.
+- Preserve normal manager integrity enforcement; local sources and already-satisfied packages may bypass Socket downloads. Review report/declaration changes and added/changed public advisories before execution. No documented package-scoped cooldown exception here: a fresh candidate stops, even if its freshness is accepted; never globally relax the cutoff.
 
-Documentation checked 2026-10-19: [install/cutoff](https://pip.pypa.io/en/stable/cli/pip_install/), [hashes](https://pip.pypa.io/en/stable/topics/secure-installs/), [reports](https://pip.pypa.io/en/stable/reference/installation-report/). Local pip 23.0.1 help confirms reports/wheels/hashes, not the newer cutoff. No live pip qualification.
+Sources: [install/cutoff](https://pip.pypa.io/en/stable/cli/pip_install/), [hashes](https://pip.pypa.io/en/stable/topics/secure-installs/). Cutoff syntax rechecked 2026-10-21 in official documentation; not live qualification or proof of installed support.

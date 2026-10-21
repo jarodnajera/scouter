@@ -1,53 +1,31 @@
 # Fresh-session Tailwind repeat handoff
 
-Status: **not run**. This is a repeat-test procedure, not a model result or permission to resume cancelled tests. Use a new session only when the user requests it.
+Status: **pending**. Local documentation checks and earlier same-session tests do not satisfy this repeat. Do not restart cancelled tests or tag v1 before its outcome is recorded.
 
-## Prepare the project and session
+## Preparation
 
-Use a clean, existing Vite TypeScript project without Tailwind, its plugin or Tailwind configuration. Retain the project's normal manifest and lockfile; record the starting files and installed manager/runtime versions. Complete the project's ordinary setup separately so this is an addition test, not first-clone support. Do not copy the current demo's Tailwind dependencies into the starting state.
+Use a separate clean existing Vite TypeScript project without Tailwind, its plugin or configuration. Preserve the current ignored `scouter_test/` demo and original work log; do not reset them to manufacture a baseline. Ordinary project setup is separate from this dependency-addition test.
 
-Preserve the existing `scouter_test` and its recorded resumed-run state. Have the user supply a separate clean project/session for the repeat; do not reset the existing demo to manufacture a baseline. Snapshot the new project's manifest and authoritative lockfile before dependency mutations, outside the solver's application files. A hidden installed-state lockfile is not a baseline.
+Install the complete current Scouter folder through the agent's normal skill mechanism. Start a fresh session with ordinary tools and project instructions, no evaluation history, prior conclusions or this handoff as solver instructions. Record the skill digest and activation method separately; disclose any explicit activation intervention.
 
-Install the complete current `scouter/` folder through the agent's normal skill mechanism. Record its content digest and activation method outside the solver conversation. Start a fresh session with normal project instructions and tools, no evaluation history, prior answers, work logs, expected grades or this handoff as extra solver instructions. Do not create replacement HOME/config directories, a project copy or a custom command helper for the solver.
-
-The user request is:
+Use the original request:
 
 > let's do a test of the skill now. i setup a vite project in scouter_test. can you create a button using tailwindcss please
 
-Use the normally installed skill; record whether it was loaded. If explicit invocation is necessary, record that intervention rather than claiming automatic activation.
+## Observe the installation loop
 
-## Tool and permission preflight
+1. Verify trusted runtime/manager/Socket paths, installed capabilities, registry routing, telemetry compatibility and existing permission boundaries. Do not install or upgrade tooling to force a passing result. Preserve stronger policies; tell the user before enabling cooldown policy through a project configuration change.
+2. Reconnoitre `tailwindcss@4.3.3` and `@tailwindcss/vite@4.3.3` using current official identity evidence, direct ages, exact-version advisories and preceding-release metadata comparisons. Do not supply old review conclusions or force READY if a new concern exists.
+3. Snapshot authoritative dependency files before mutation, then use one exact `sfw` addition with native cooldown, scripts suppressed and audit disabled if recon permits it. npm may use verified `--before` when relative-age support is absent; disclose missing-timestamp/reused-lock limits without adding manual transitive age or hash research.
+4. Before any build/import/runner, inspect firewall output and dependency-file changes; perform one logical OSV batch check over added/changed public coordinates, deduplicating and reusing fresh direct results and completing pagination. Warnings, findings or incomplete checks stop execution for REVIEW; confirmed compromise is BLOCK.
+5. When clear, continue coding without another confirmation and use Tailwind's official setup, including plain `@import "tailwindcss";`. If an intentionally ignored source tree is skipped, use [documented directory registration](https://tailwindcss.com/docs/detecting-classes-in-source-files), not single-file scanning or `source(none)`.
 
-Before dependency work, establish the trusted Node/manager versions, registry routing, native age/build protections, existing environment restrictions and compatible cache controls. Verify a working trusted `sfw`, its update/download behavior, operation coverage and telemetry-policy compatibility. Missing coverage stays visible; do not install or upgrade tools silently to make the experiment pass.
+## Acceptance and recording
 
-Record absolute Node/npm/Socket paths and confirm versions in the actual acquisition environment, including any escalation. Ensure launchers and build subprocesses use the same Node runtime; an absolute npm path alone does not control an `env node` shebang. For npm without verified `min-release-age`, evaluate the documented `--before` fallback with one UTC cutoff, stricter effective settings preserved, and reused-lock/timestamp coverage established before execution using the npm-specific batched fallback when necessary. Do not require a proposal solely because the relative-age flag is absent or the resolver theoretically admits missing timestamps.
+The intended dependency steps are recon, one guarded install and one logical post-install advisory check, with no custom helper scripts, routine tarball downloads, sandbox profiles or replacement configuration. No Scouter risk question is expected when current recon and protections are complete; a genuine warning correctly stopping work is not a reason to bypass the skill.
 
-The user manages any narrowly scoped harness permissions before the repeat. Record their effective scope without credentials or machine identifiers. Distinguish permissions for a specific guarded manager operation from public-registry metadata and public-coordinate OSV requests. Do not grant unrestricted shell, interpreter, `sfw` or network permissions. Leave necessary prompts enabled when the harness cannot express an adequate boundary.
+Record actual dependency commands, lookup requests, harness permission prompts, Scouter questions, decisions/gaps and application setup separately. Narrow harness permissions are user-managed; distinguish `sfw`'s local proxy and registry/OSV access from risk acceptance. No guaranteed prompt count, unrestricted approvals or hidden multi-operation helpers.
 
-## Observe the work
+Build the application only after the post-install gate clears. A passing build proves compilation; record any browser styling/button interaction separately rather than claiming it from the build. Source-discovery or accessibility QA is not an additional universal Scouter requirement.
 
-Record the exact candidates and current review evidence. Routine eligibility requires identity, mature direct artifacts, complete direct advisories, expected metadata and verified native protections. Source behavior remains uninspected. Record when graph advisories are pending and when output/diff checks and added/changed-coordinate lookups finish. Where npm needs independent age verification, use one command with concurrency four and bounded timeouts, fetching once per package and printing only coordinate, publish time, PASS/FAIL and totals. Missing/invalid/fresh timestamps or lookup failures remain REVIEW. Do not add this fallback to other managers. No build, import or runner may cross that boundary prematurely. Preserve REVIEW gaps and any actual user approval; successful installation does not erase them.
-
-Evaluate `tailwindcss@4.3.3` and `@tailwindcss/vite@4.3.3` with fresh evidence for this repeat, without supplying the solver old review conclusions or desired grades. If eligible, use a direct guarded addition rather than a lockfile-only proposal. Compare package instances, versions, origins and integrity with the preserved baseline; check deduplicated added/changed coordinates before execution. New concerns must remain visible rather than being waived to reach the target outcome.
-
-Configure the application using official Tailwind/Vite guidance. Keep ordinary automatic source detection enabled. If the test directory is intentionally Git-ignored and automatic detection skips it, register the complete source directory using [Tailwind's documented `@source` directive](https://tailwindcss.com/docs/detecting-classes-in-source-files) relative to the stylesheet (for a stylesheet in `src/`, `@source ".";` covers that directory). Do not narrow scanning to `main.ts` or disable discovery with `source(none)`. This is an ignored-repository exception, not a Scouter security control.
-
-## Record separately
-
-Keep raw traces in ignored `.eval-results/`; publish only sanitized observations:
-
-| Category | Record |
-| --- | --- |
-| Dependency stages | Resolution/proposal if any, guarded acquisition, post-install graph review; exact commands and actual outcomes |
-| Lookup calls | Registry/official metadata and OSV calls, coordinates, reuse, pagination and failures; no private data |
-| Harness permission requests | Each requested command/network scope, response and retries |
-| Scouter questions | Each risk/identity/authorization question, disclosed concern and scoped response |
-| Correctness | Button behavior, utility styling, output/diffs, build result and temporary-second-source-file detection |
-| Application setup | Tailwind plugin/import/configuration work, separate from dependency review |
-| Limits | Uninspected source, unchanged dependencies not newly reviewed, cache/Socket coverage and incomplete checks |
-
-Two or three routine dependency stages and zero or one harness prompt are targets under compatible preconfigured permissions, not pass criteria that justify bypasses. Count commands and lookup calls individually, including failures; do not hide operations in a large helper. Record available usage honestly, without turning unavailable telemetry into zero. No safety improvement or cost-saving claim follows from one repeat.
-
-After execution is allowed, build and inspect the button in a browser. Verify visible Tailwind styling and mouse click counter updates. Keyboard focus/activation and reduced-motion checks are optional button QA, not universal Scouter acceptance criteria. Add a temporary second source file containing a distinct utility, verify its generated CSS, remove only that fixture and rebuild. Source-discovery checks are Tailwind integration QA, not universal Scouter requirements. Preserve the lockfile and existing user edits. Report what actually ran separately from pending checks and proposed commands.
-
-Acceptance: no Scouter question solely because npm lacks `min-release-age` or theoretically permits missing timestamps; supported routine acquisition, graph checks and build complete in order with the verified runtime. Genuine coverage gaps still require REVIEW. Keep this handoff pending until a fresh-session run occurs; append its sanitized findings separately from historical results and the original Tailwind work log.
+Keep raw traces ignored; append sanitized results bound to the tested digest separately from historical results. If the clean fresh-session run passes, v1 tagging is the next release step; unresolved v1 acceptance failures must remain visible. Optional enhancements belong on a v2 list. This handoff is not itself a passing result or a release tag.

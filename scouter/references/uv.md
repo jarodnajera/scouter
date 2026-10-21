@@ -1,31 +1,22 @@
 # uv
 
-Use the core and only the selected workflow. Preserve interpreter/environment, sources, extras, markers, dependency groups, workspace selection and registry routing. Inspect local/editable/VCS inputs and dynamic metadata before resolution. `--no-build` does not prevent every first-party/editable backend; stop for their separate review, never silently remove source settings.
+Apply the core with the intended interpreter, registry routing, extras, markers, groups and workspace selection. Inspect sources before resolution; no automatically authorized local/editable/backend builds.
 
 ## Project
 
-| Field | uv project |
-| --- | --- |
-| Detect | `pyproject.toml`, `uv.lock`, `uv.toml`, `.python-version`, `tool.uv.sources`. |
-| Guarded acquisition | Routine: `sfw uv --no-cache --no-python-downloads add <name>==<exact> --no-build --no-install-project --no-install-workspace --exclude-newer <cutoff> --python <python>`; then inspect lock/install results before execution. For staged review, add `--no-sync`, inspect the proposal and use locked sync below. A scoped `lock --upgrade-package <name>==<exact>` with the same protections handles a compatible lock-only upgrade. |
-| Native cooldown | `--exclude-newer <UTC-cutoff>` at least seven days old; verify source upload metadata, per-package overrides and locked-artifact coverage. Gaps mean Unsure. |
-| Script/build suppression | `--no-build --no-install-project --no-install-workspace` on sync; other local/editable dependencies still need preflight. |
-| Cache | `--no-cache` or a verified fresh cache; neither rescans installed bytes. |
-| Frozen graph | `sfw uv --no-cache --no-python-downloads sync --locked --no-build --no-install-project --no-install-workspace --exclude-newer <cutoff> --python <python>`. Preserve selected groups/extras. |
-| Gotchas | `--locked` checks freshness; `--frozen` skips that check. Neither establishes safety. Exact sync can remove extraneous packages; check authorization. Do not casually use auto-syncing `uv run` during inspection. |
+| Guarded add | Cooldown | Builds off |
+| --- | --- | --- |
+| `sfw uv --no-cache --no-python-downloads add "<pkg>==<exact>" --python <python> --no-build --no-install-project --no-install-workspace` | Append verified `--exclude-newer <UTC-cutoff>` (or `"7 days"`) | `--no-build` plus project/workspace exclusions |
+
+- Preserve sources and native lock integrity. `--no-build` alone does not prevent every editable/project backend; stop unsupported inputs. Do not use auto-syncing `uv run` before checks.
 
 ## Requirements
 
-| Field | uv requirements |
-| --- | --- |
-| Detect | Existing uv pip workflow, requirements/constraints and intended interpreter/venv. |
-| Guarded acquisition | Reuse supplied complete compatible reviewed hashed pins; do not recompile them. Otherwise `sfw uv --no-cache --no-python-downloads pip compile <input> --generate-hashes --no-build --exclude-newer <cutoff> --python <python> --output-file <pins.txt>`; bind compatible wheel origins/hashes before installation. Routine graph advisories may follow acquisition; staged review inspects the proposal first. |
-| Native cooldown | Same verified `--exclude-newer` selected-artifact coverage; missing coverage means Unsure. |
-| Script/build suppression | `--no-build`; wheel-only reviewed sources, no automatically authorized local/editable/project backend. |
-| Cache | `--no-cache`; disclose already-satisfied/reused artifacts. |
-| Frozen graph | `sfw uv --no-cache --no-python-downloads pip install --require-hashes --no-build --exclude-newer <cutoff> --python <python> -r <pins.txt>`. |
-| Gotchas | Keep every dependency pinned; bind accepted hashes to compatible selected wheels. Install does not save project declarations or exact-sync removals. An intentional `pip sync` needs its removal effects reviewed. |
+| Guarded acquisition | Cooldown | Builds off |
+| --- | --- | --- |
+| `sfw uv --no-cache --no-python-downloads pip install --python <python> --require-hashes --no-build -r <pins.txt>` | Same verified `--exclude-newer <cutoff>` | `--no-build`, reviewed wheels only |
 
-For either workflow, bind selected wheels to registry origins/hashes and native age evidence (or disclosed gaps). Universal locks may include other targets: identify the installed subset. Prevent automatic Python downloads. For approved freshness, verify the installed subcommand's package-scoped cutoff override (`--exclude-newer-package` or matching configuration), bind to the exact pin/graph and preserve the cutoff for all other packages; restore temporary edits. No global `--exclude-newer false` bypass.
+- Reuse complete compatible hash-bound pins. If missing, separately use guarded `uv pip compile <input> --generate-hashes --no-build --exclude-newer <cutoff> --python <python>` with the same cache/Python-download controls; never recompile supplied compatible pins.
+- For both workflows, preserve selected wheel hashes and disclose reused-cache/locked-age limits. `--locked` checks lock freshness; `--frozen` does not. Exact sync may remove packages and needs authorization. Approved freshness requires a verified subcommand's `--exclude-newer-package` scoped to approved pins, original cutoff for others and no persistent relaxation; without it, stop.
 
-Documentation checked 2026-10-19: [CLI](https://docs.astral.sh/uv/reference/cli/), [settings](https://docs.astral.sh/uv/reference/settings/), [sync](https://docs.astral.sh/uv/concepts/projects/sync/). Earlier templates were documentation-only. Scoped help check: installed uv 0.13.1 exposes add’s no-install-project/workspace, build and Python-download controls. This update performs no live acquisition qualification.
+Sources: [CLI](https://docs.astral.sh/uv/reference/cli/), [sync](https://docs.astral.sh/uv/concepts/projects/sync/). Scoped documentation recheck 2026-10-21; prior uv 0.13.1 help evidence is not a new live qualification.
